@@ -1,3 +1,16 @@
-title: Home
+title: Plurimath
 redirectFrom: []
 media: []
+contents:
+  doc:
+    type: doc
+    content:
+      - type: paragraph
+summary:
+  doc:
+    type: doc
+    content:
+      - type: paragraph
+        content:
+          - type: text
+            text: What is Plurimath
