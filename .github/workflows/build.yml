@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./plurimath-com
+        working-directory: ./plurimath-org
     steps:
       - name: Use Node
         uses: actions/setup-node@v1

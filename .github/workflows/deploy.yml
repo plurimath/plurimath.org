@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: https://www.plurimath.com
+      url: https://www.plurimath.org
     defaults:
       run:
-        working-directory: ./plurimath-com
+        working-directory: ./plurimath-org
 
     steps:
       - name: Use Node
