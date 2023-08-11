@@ -1,6 +1,5 @@
-
-node_modules
-tmp
-artifacts
-dist
-      
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
