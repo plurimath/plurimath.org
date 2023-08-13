@@ -21,10 +21,10 @@
 title: Plurimath
 # email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Official website for Plurimath
+  Plurimath, converter between math representational languages.
 # baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.plurimath.org"
-github_repo_url: https://github.com/plurimath/plurimath.org
+github_repo_url: https://github.com/plurimath/plurimath.github.io
 github_repo_branch: main
 permalink: /blog/:year-:month-:day-:title/
 
@@ -59,7 +59,7 @@ theme: jekyll-theme-open-project
 landing_priority: [custom_intro, blog, specs, software]
 
 tagline: >-
-  Packaging&nbsp;cross-platform&nbsp;Ruby&nbsp;executables
+  Convert&nbsp;between&nbsp;multiple math&nbsp;representation&nbsp;languages
 
 author:
   name: Ribose Inc.
@@ -87,8 +87,6 @@ legal:
   name: Ribose Group Inc.
   tos_link: https://www.ribose.com/tos
   privacy_policy_link: https://www.ribose.com/privacy
-
-time: "Aug 10, 2023"
 
 home_calls_to_action:
   - { url: "/blog/", title: "Blog" }
