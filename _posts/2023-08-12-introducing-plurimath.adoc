@@ -1,0 +1,145 @@
+---
+layout: post
+title:  "Introducing Plurimath"
+date:   2023-08-12 00:00:00 +0800
+categories:
+  - plurimath
+  - introduction
+author:
+  name: Ronald Tse
+  email: tse@ribose.com
+  use_picture: assets
+  social_links:
+    - https://github.com/ronaldtse
+excerpt: >-
+    Plurimath is created to convert between multiple math representational
+    languages, including MathML, LaTeX math, OMML and AsciiMath.
+---
+
+= Introducing Plurimath
+
+== Background
+
+Many math representational languages are in current use, and they all do a great
+job of representing math in formulas.
+
+The commonly used _presentational math languages_ include:
+
+* https://www.w3.org/TR/MathML3/[MathML 3.0] (Presentational MathML)
+* https://en.wikibooks.org/wiki/LaTeX/Mathematics[LaTeX math (amsmath package)]
+* https://devblogs.microsoft.com/math-in-office/officemath/[Microsoft Office Math Markup Language (OMML) "OfficeMath"]
+* http://asciimath.org[AsciiMath (JavaScript)] and https://github.com/asciidoctor/asciimath[Asciimath (Ruby)]
+
+While they mostly can achieve the same presentational output, these languages
+are based on different data models on how they understand math syntax. A formula
+represented in one of them cannot be easily converted into each other in a
+roundtrip fashion.
+
+NOTE: Asciimath is a math input language created to output MathML, so while it
+easily converts into MathML, the reverse is not always straightforward.
+
+NOTE: There is "AsciiMath" (capital "M"), the original implementation of
+AsciiMath, and "Asciimath" (lowercase "M"), the AsciiMath implementation in Ruby
+by the Asciidoctor project. The syntaxes they support are slightly different and
+their behaviors are incompatible. A topic for another blog post.
+
+
+== Need for math conversion
+
+Backtracking a bit -- the Plurimath project was created due to the need from
+the https://www.metanorma.org[Metanorma] standards authoring suite.
+
+Metanorma is widely used by standardization bodies to create standards, and the
+accurate representation of math is a foremost priority in these standards.
+
+One interesting fact in math publication, is that different publication formats
+are bound different math presentational languages, lending to different
+challenges in rendering math:
+
+* PDF: MathML is typically used to render math into graphics. PDF 2.0
+  specifically accepts MathML 2 as input, but doesn't render them.
+
+* HTML: MathML is now increasingly the default choice due to growing native
+  browser support. However, many people still use LaTeX math with MathJax.
+
+* Word: Word only supports OMML, Microsoft's version of math presentation.
+
+* LaTeX: Only LaTeX math input is supported, and is typically rendered into PDF.
+
+Different bodies create publications using different workflows and standardize
+on different publication formats.
+
+Since Metanorma has to produce an identical math presentation across multiple
+formats, we created Plurimath to solve this problem.
+
+
+== Consolidated math representation model
+
+Wait... isn't that just Content MathML?
+
+True, a complete semantic model for math, such as Content MathML, and
+OpenMath, can technically be the answer.
+
+However, notice that all the math representation languages we listed out
+are _presentation math languages_, which means that they are meant to only
+represent the look of the math formula, not provide the underlying meaning
+of a math formula.
+
+This is easiest illustrated by the multiplication operator. In a formula
+"ab", two variables placed adjacent to each other typically mean a
+multiplied by b, but could also take on other meanings depending on the context.
+In a _semantic math language_, this issue is resolved by directly encoding the
+desired mathematical operator to the variables, such as illustrated as
+"times(a, b)".
+
+In order to allow conversion between these various presentational math languages,
+we have to first create a data model that accommodates the most complex features
+of this language collection, and then link this data model back to each
+presentational language. This is the consolidated math representation
+model that we have created for Plurimath.
+
+
+== Journey
+
+Math was never an afterthought in Metanorma. Fortuitously, in a way that fortune
+favors the prepared, we already have created a set of unidirectional
+converters for selected pairs of languages.
+
+These include:
+
+* omml2mathml (converts OMML into MathML)
+* mathml2asciimath (converts MathML into AsciiMath)
+* latexmath (converts LaTeX math input into MathML)
+* html2asciimath (converts HTML "fake math" into AsciiMath)
+
+This previous portfolio, though, clearly did not cover all language pairs and
+conversion directions.
+Based on these implementations, we embarked on the Plurimath project that
+consolidates all functionality of these libraries into a unified implementation.
+
+
+== Availability and usage
+
+https://github.com/plurimath/plurimath[Plurimath] is currently published as a
+Ruby library (https://rubygems.org/gems/plurimath[plurimath at Rubygems]) that
+provides a central interface for conversion of multiple math representation
+languages, including:
+
+* Presentational MathML 3.0
+* Microsoft Office Math Markup Language
+* AsciiMath
+* LaTeX math
+* HTML math
+
+And it's available today.
+
+== Moving forward
+
+There are many more topics about interoperability of math representations,
+such as Unicode coverage of math symbols, font coverage of Unicode math,
+and rendering ambiguity. The Plurimath team shall address them in a future
+series of posts.
+
+In the meantime, try Plurimath out -- any feedback would be greatly appreciated!
+
+NOTE: A Javascript version of Plurimath will soon be available...
