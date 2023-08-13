@@ -107,10 +107,10 @@ converters for selected pairs of languages.
 
 These include:
 
-* omml2mathml (converts OMML into MathML)
-* mathml2asciimath (converts MathML into AsciiMath)
-* latexmath (converts LaTeX math input into MathML)
-* html2asciimath (converts HTML "fake math" into AsciiMath)
+* https://github.com/plurimath/omml2mathml[omml2mathml] (converts OMML into MathML)
+* https://github.com/plurimath/mathml2asciimath[mathml2asciimath] (converts MathML into AsciiMath)
+* https://github.com/plurimath/latexmath[latexmath] (converts LaTeX math input into MathML)
+* https://github.com/plurimath/html2asciimath[html2asciimath] (converts HTML "fake math" into AsciiMath)
 
 This previous portfolio, though, clearly did not cover all language pairs and
 conversion directions.
