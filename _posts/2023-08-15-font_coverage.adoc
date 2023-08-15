@@ -1,0 +1,1366 @@
+---
+layout: post
+title:  "Font coverage of Unicode math"
+date:   2023-08-15 00:00:00 +0800
+categories:
+  - plurimath
+  - introduction
+authors:
+  -
+    name: Alexander Dyuzhev
+    email: dyuzhev@gmail.com
+    social_links:
+      - https://www.linkedin.com/in/alexander-dyuzhev/
+      - https://github.com/Intelligent2013/
+  -
+    name: Ronald Tse
+    email: tse@ribose.com
+    social_links:
+      - https://github.com/ronaldtse
+
+
+excerpt: >-
+    Pluramath supports all latex-accessible math constants. Math fonts
+    have different support of math glyphs.
+
+
+= Font coverage of Unicode math
+
+The one of main goals for any math representation formats is displaying.
+There are a few typical math fonts that contain the big set of mathematical symbols:
+
+* Cambria Math
+
+* STIX Two Math
+
+* Noto Math
+
+* Libertinus Math
+
+When people / SDOs choose one of these fonts, they need to know what math symbols are 
+available and which ones are not.
+
+Each font has own set of supported glyphs. We have compared the sets of the mathematical 
+glyphs from these four fonts and get the results. The sets of glyphs based on Pluramath's
+latex-accessible math constants
+(determined in https://github.com/plurimath/plurimath/blob/main/lib/plurimath/latex/constants.rb).
+
+We have compared four math fonts on what glyphs are supported. You can find the rendered PDF with
+glyphs for each font link:/assets/blog/plurimath_latex_constants.pdf[here]. 
+Note: the character '#' means 'glyph is not available in font' (except number sign U+0023 char).
+
+== Cambria Math - 176 missing glyphs
+
+* nvtwoheadleftarrowtail 0x2b3c
+* nVtwoheadleftarrowtail 0x2b3d
+* underrightharpoondown 0x20ec
+* underleftharpoondown 0x20ed
+* blackcircledrightdot 0x2688
+* twoheadleftarrowtail 0x2b3b
+* rightarrowbackapprox 0x2b48
+* blockthreeqtrshaded 0x2593
+* blackcircledtwodots 0x2689
+* twoheadleftdbkarrow 0x2b37
+* leftarrowbackapprox 0x2b42
+* longleftsquigarrow 0x2b33
+* nvtwoheadleftarrow 0x2b34
+* nVtwoheadleftarrow 0x2b35
+* bsimilarrightarrow 0x2b47
+* rightarrowbsimilar 0x2b4c
+* rightpentagonblack 0x2b53
+* varhexagonlrbonds 0x232c
+* diamondrightblack 0x2b17
+* circleonleftarrow 0x2b30
+* bsimilarleftarrow 0x2b41
+* leftarrowbsimilar 0x2b4b
+* diamondleftblack 0x2b16
+* leftarrowonoplus 0x2b32
+* rightarrowsupset 0x2b44
+* similarleftarrow 0x2b49
+* enleadertwodots 0x2025
+* enclosetriangle 0x20e4
+* underrightarrow 0x20ef
+* circledrightdot 0x2686
+* diamondtopblack 0x2b18
+* diamondbotblack 0x2b19
+* varhexagonblack 0x2b22
+* leftthreearrows 0x2b31
+* twoheadmapsfrom 0x2b36
+* nvleftarrowtail 0x2b39
+* nVleftarrowtail 0x2b3a
+* leftcurvedarrow 0x2b3f
+* leftarrowapprox 0x2b4a
+* underleftarrow 0x20ee
+* blockrighthalf 0x2590
+* blockqtrshaded 0x2591
+* circledtwodots 0x2687
+* squaretopblack 0x2b12
+* squarebotblack 0x2b13
+* equalleftarrow 0x2b40
+* bdtriplevdash 0x2506
+* blocklefthalf 0x258c
+* sixteenthnote 0x266c
+* Hermaphrodite 0x26a5
+* mdsmwhtcircle 0x26ac
+* draftingarrow 0x279b
+* squareurblack 0x2b14
+* squarellblack 0x2b15
+* vysmblksquare 0x2b1d
+* vysmwhtsquare 0x2b1e
+* pentagonblack 0x2b1f
+* rightarrowgtr 0x2b43
+* rightpentagon 0x2b54
+* hyphenbullet 0x2043
+* blocklowhalf 0x2584
+* bigwhitestar 0x2606
+* invsmileface, blacksmiley 0x263b
+* varspadesuit, varspade 0x2664
+* varheartsuit, varheart 0x2665
+* dingasterisk 0x273d
+* hexagonblack 0x2b23
+* mdblkdiamond 0x2b25
+* mdwhtdiamond 0x2b26
+* mdblklozenge 0x2b27
+* mdwhtlozenge 0x2b28
+* smblkdiamond 0x2b29
+* smblklozenge 0x2b2a
+* smwhtlozenge 0x2b2b
+* leftdotarrow 0x2b38
+* medwhitestar 0x2b50
+* medblackstar 0x2b51
+* backtrprime 0x2037
+* caretinsert 0x2038
+* asteraccent 0x20f0
+* blockuphalf 0x2580
+* sagittarius 0x2650
+* capricornus 0x2651
+* varclubsuit, varclub 0x2667
+* quarternote 0x2669
+* mdwhtcircle, medcirc 0x26aa
+* mdblkcircle, medbullet 0x26ab
+* ballotcheck, checkmark 0x2713
+* circledstar 0x272a
+* arrowbullet 0x27a2
+* lgblksquare 0x2b1b
+* lgwhtsquare 0x2b1c
+* lgblkcircle 0x2b24
+* blkhorzoval 0x2b2c
+* whthorzoval 0x2b2d
+* blkvertoval 0x2b2e
+* whtvertoval 0x2b2f
+* RRightarrow 0x2b46
+* smwhitestar 0x2b52
+* backdprime 0x2036
+* CheckedBox 0x2611
+* pointright 0x261e
+* eighthnote 0x266a
+* varhexagon 0x2b21
+* leftarrowx 0x2b3e
+* LLeftarrow 0x2b45
+* postalmark 0x3012
+* backprime 0x2035
+* tieconcat, cat 0x2040
+* trapezium 0x23e2
+* accurrent 0x23e6
+* radiation 0x2622
+* biohazard 0x2623
+* smileface, smiley 0x263a
+* rightmoon 0x263d
+* Question 0x2047
+* elinters 0x23e7
+* astrosun, Sun 0x2609
+* steaming 0x2615
+* leftmoon 0x263e
+* varEarth, earth 0x2641
+* aquarius 0x2652
+* twonotes 0x266b
+* acidfree 0x267e
+* pentagon 0x2b20
+* closure 0x2050
+* annuity 0x20e7
+* ubrbrak 0x23e1
+* benzenr 0x23e3
+* bigstar 0x2605
+* yinyang 0x262f
+* frownie, sadface 0x2639
+* mercury, Mercury 0x263f
+* jupiter, Jupiter 0x2643
+* neptune, Neptune 0x2646
+* scorpio, Scorpio 0x264f
+* natural 0x266e
+* recycle 0x267b
+* diceiii 0x2682
+* warning 0x26a0
+* ballotx 0x2717
+* varstar 0x2736
+* lbrbrak 0x2772
+* rbrbrak 0x2773
+* hzigzag 0x3030
+* Square 0x2610
+* danger 0x2621
+* female, Venus 0x2640
+* saturn, Saturn 0x2644
+* uranus, Uranus 0x2645
+* taurus, Taurus 0x2649
+* gemini, Gemini 0x264a
+* cancer 0x264b
+* pisces 0x2653
+* diceii 0x2681
+* diceiv 0x2683
+* dicevi 0x2685
+* anchor 0x2693
+* swords 0x2694
+* neuter 0x26b2
+* pencil 0x270e
+* strns 0x23e4
+* fltns 0x23e5
+* skull 0x2620
+* pluto, Pluto 0x2647
+* aries, Aries 0x2648
+* virgo 0x264d
+* libra, Libra 0x264e
+* sharp 0x266f
+* dicei 0x2680
+* dicev 0x2684
+* XBox 0x2612
+* male, Mars 0x2642
+* flat 0x266d
+* sun 0x263c
+* leo, Leo 0x264c
+
+
+== STIX Two Math - 3 missing glyphs
+
+* arrowbullet 0x27a2
+* ballotx 0x2717
+* pencil 0x270e
+
+
+== Noto Sans Math - 321 missing glyphs
+
+* smallblacktriangleright 0x25b8
+* invwhiteupperhalfcircle 0x25da
+* invwhitelowerhalfcircle 0x25db
+* smallblacktriangleleft 0x25c2
+* blackcircleulquadwhite 0x25d5
+* circlebottomhalfblack 0x25d2
+* bigblacktriangledown 0x25bc
+* circlerighthalfblack, RIGHTcircle 0x25d1
+* blackrighthalfcircle, RIGHTCIRCLE 0x25d7
+* blackcircledrightdot 0x2688
+* whitearrowupfrombar 0x21ea
+* blockthreeqtrshaded 0x2593
+* blackinwhitediamond 0x25c8
+* circlelefthalfblack, LEFTcircle 0x25d0
+* blacklefthalfcircle, LEFTCIRCLE 0x25d6
+* blackcircledtwodots 0x2689
+* blackinwhitesquare 0x25a3
+* parallelogramblack 0x25b0
+* bigblacktriangleup 0x25b2
+* blacktriangleright, RHD 0x25b6
+* smalltriangleright 0x25b9
+* circletophalfblack 0x25d3
+* inversewhitecircle 0x25d9
+* trianglerightblack 0x25ee
+* rightpentagonblack 0x2b53
+* vardoublebarwedge 0x2306
+* varhexagonlrbonds 0x232c
+* varcarriagereturn 0x23ce
+* blackpointerright 0x25ba
+* whitepointerright 0x25bb
+* blacktriangledown 0x25be
+* smalltriangledown, triangledown 0x25bf
+* blacktriangleleft, LHD 0x25c0
+* smalltriangleleft 0x25c3
+* circleurquadblack 0x25d4
+* triangleleftblack 0x25ed
+* diamondrightblack 0x2b17
+* blackpointerleft 0x25c4
+* whitepointerleft 0x25c5
+* squarerightblack 0x25e8
+* diamondleftblack 0x2b16
+* enleadertwodots 0x2025
+* unicodeellipsis, ldots 0x2026
+* enclosetriangle 0x20e4
+* downzigzagarrow, lightning 0x21af
+* rightwhitearrow 0x21e8
+* blockhalfshaded 0x2592
+* squarecrossfill 0x25a9
+* hrectangleblack 0x25ac
+* vrectangleblack 0x25ae
+* blacktriangleup, blacktriangle 0x25b4
+* smalltriangleup, vartriangle 0x25b5
+* lrblacktriangle 0x25e2
+* llblacktriangle 0x25e3
+* ulblacktriangle 0x25e4
+* urblacktriangle 0x25e5
+* squareleftblack 0x25e7
+* circledrightdot 0x2686
+* diamondtopblack 0x2b18
+* diamondbotblack 0x2b19
+* varhexagonblack 0x2b22
+* enclosediamond 0x20df
+* leftwhitearrow 0x21e6
+* downwhitearrow 0x21e9
+* blockrighthalf 0x2590
+* blockqtrshaded 0x2591
+* squarenwsefill 0x25a7
+* squareneswfill 0x25a8
+* mdlgblkdiamond, Diamondblack 0x25c6
+* mdlgwhtdiamond, Diamond 0x25c7
+* circlevertfill 0x25cd
+* vardiamondsuit, vardiamond 0x2666
+* circledtwodots 0x2687
+* squaretopblack 0x2b12
+* squarebotblack 0x2b13
+* ocommatopright 0x315
+* enclosecircle 0x20dd
+* enclosesquare 0x20de
+* sansLmirrored 0x2143
+* bdtriplevdash 0x2506
+* blocklefthalf 0x258c
+* mdlgblksquare 0x25a0
+* mdlgwhtsquare 0x25a1
+* parallelogram 0x25b1
+* mdlgwhtcircle, Circle 0x25cb
+* mdlgblkcircle, CIRCLE 0x25cf
+* inversebullet 0x25d8
+* topsemicircle 0x25e0
+* botsemicircle 0x25e1
+* squareulblack 0x25e9
+* squarelrblack 0x25ea
+* mdsmwhtsquare 0x25fd
+* mdsmblksquare 0x25fe
+* sixteenthnote 0x266c
+* Hermaphrodite 0x26a5
+* mdsmwhtcircle 0x26ac
+* draftingarrow 0x279b
+* squareurblack 0x2b14
+* squarellblack 0x2b15
+* vysmblksquare 0x2b1d
+* vysmwhtsquare 0x2b1e
+* pentagonblack 0x2b1f
+* rightpentagon 0x2b54
+* upbackepsilon, backepsilon 0x3f6
+* hyphenbullet 0x2043
+* PropertyLine 0x214a
+* upwhitearrow 0x21e7
+* blocklowhalf 0x2584
+* squarehvfill 0x25a6
+* trianglecdot 0x25ec
+* squareulquad 0x25f0
+* squarellquad 0x25f1
+* squarelrquad 0x25f2
+* squareurquad 0x25f3
+* circleulquad 0x25f4
+* circlellquad 0x25f5
+* circlelrquad 0x25f6
+* circleurquad 0x25f7
+* bigwhitestar 0x2606
+* invsmileface, blacksmiley 0x263b
+* varspadesuit, varspade 0x2664
+* varheartsuit, varheart 0x2665
+* dingasterisk 0x273d
+* dottedsquare 0x2b1a
+* hexagonblack 0x2b23
+* mdblkdiamond 0x2b25
+* mdwhtdiamond 0x2b26
+* mdblklozenge 0x2b27
+* mdwhtlozenge 0x2b28
+* smblkdiamond 0x2b29
+* smblklozenge 0x2b2a
+* smwhtlozenge 0x2b2b
+* medwhitestar 0x2b50
+* medblackstar 0x2b51
+* oturnedcomma 0x312
+* mathsterling, sterling, pounds 0xa3
+* smblkcircle, bullet 0x2022
+* caretinsert 0x2038
+* asteraccent 0x20f0
+* sansLturned 0x2142
+* varbarwedge 0x2305
+* wasylozenge, sqlozenge 0x2311
+* blockuphalf 0x2580
+* squarehfill 0x25a4
+* squarevfill 0x25a5
+* smblksquare 0x25aa
+* smwhtsquare 0x25ab
+* smwhtcircle 0x25e6
+* lgwhtcircle 0x25ef
+* blacksquare, mdblksquare 0x25fc
+* sagittarius 0x2650
+* capricornus 0x2651
+* diamondsuit 0x2662
+* varclubsuit, varclub 0x2667
+* quarternote 0x2669
+* mdwhtcircle, medcirc 0x26aa
+* mdblkcircle, medbullet 0x26ab
+* ballotcheck, checkmark 0x2713
+* circledstar 0x272a
+* arrowbullet 0x27a2
+* lgblksquare 0x2b1b
+* lgwhtsquare 0x2b1c
+* lgblkcircle 0x2b24
+* blkhorzoval 0x2b2c
+* whthorzoval 0x2b2d
+* blkvertoval 0x2b2e
+* whtvertoval 0x2b2f
+* smwhitestar 0x2b52
+* upoldKoppa, Qoppa, Koppa 0x3d8
+* upoldkoppa, qoppa, koppa 0x3d9
+* twolowline 0x2017
+* Eulerconst, Euler 0x2107
+* turnediota 0x2129
+* conictaper 0x2332
+* sqrtbottom 0x23b7
+* hrectangle 0x25ad
+* ultriangle 0x25f8
+* urtriangle 0x25f9
+* lltriangle 0x25fa
+* lrtriangle 0x25ff
+* CheckedBox 0x2611
+* pointright 0x261e
+* eighthnote 0x266a
+* varhexagon 0x2b21
+* postalmark 0x3012
+* underline 0x332
+* upvarbeta, varbeta 0x3d0
+* upDigamma, Digamma 0x3dc
+* updigamma, digamma 0x3dd
+* tieconcat, cat 0x2040
+* fracslash 0x2044
+* Angstroem, Angstrom 0x212b
+* lvboxline 0x23b8
+* rvboxline 0x23b9
+* trapezium 0x23e2
+* accurrent 0x23e6
+* blockfull 0x2588
+* radiation 0x2622
+* biohazard 0x2623
+* smileface, smiley 0x263a
+* rightmoon 0x263d
+* spadesuit 0x2660
+* heartsuit 0x2661
+* horizbar 0x2015
+* Question 0x2047
+* medspace 0x205f
+* diameter 0x2300
+* profline 0x2312
+* profsurf 0x2313
+* viewdata 0x2317
+* elinters 0x23e7
+* bullseye 0x25ce
+* astrosun, Sun 0x2609
+* steaming 0x2615
+* leftmoon 0x263e
+* varEarth, earth 0x2641
+* aquarius 0x2652
+* clubsuit 0x2663
+* twonotes 0x266b
+* acidfree 0x267e
+* pentagon 0x2b20
+* mathring, ocirc, ring 0x30a
+* underbar 0x331
+* upStigma, Stigma 0x3da
+* upstigma, stigma 0x3db
+* mathcent, cent 0xa2
+* circledR 0xae
+* ddagger 0x2021
+* closure 0x2050
+* hexagon 0x2394
+* benzenr 0x23e3
+* squoval 0x25a2
+* fisheye 0x25c9
+* bigstar 0x2605
+* yinyang 0x262f
+* frownie, sadface 0x2639
+* mercury, Mercury 0x263f
+* jupiter, Jupiter 0x2643
+* neptune, Neptune 0x2646
+* scorpio, Scorpio 0x264f
+* recycle 0x267b
+* diceiii 0x2682
+* warning 0x26a0
+* ballotx 0x2717
+* maltese 0x2720
+* varstar 0x2736
+* lbrbrak 0x2772
+* rbrbrak 0x2773
+* hzigzag 0x3030
+* upKoppa 0x3de
+* upkoppa 0x3df
+* upSampi, Sampi 0x3e0
+* upsampi, sampi 0x3e1
+* matheth, eth 0xf0
+* dagger 0x2020
+* Exclam 0x203c
+* hslash 0x210f
+* invamp, upand 0x214b
+* boxbar 0x25eb
+* Square 0x2610
+* danger 0x2621
+* female, Venus 0x2640
+* saturn, Saturn 0x2644
+* uranus, Uranus 0x2645
+* taurus, Taurus 0x2649
+* gemini, Gemini 0x264a
+* cancer 0x264b
+* pisces 0x2653
+* diceii 0x2681
+* diceiv 0x2683
+* dicevi 0x2685
+* anchor 0x2693
+* swords 0x2694
+* neuter 0x26b2
+* pencil 0x270e
+* langle 0x2329
+* rangle 0x232a
+* ovhook 0x309
+* candra 0x310
+* droang 0x31a
+* spddot 0xa8
+* tcohm 0x2126
+* house 0x2302
+* frown 0x2322
+* smile 0x2323
+* strns 0x23e4
+* fltns 0x23e5
+* ularc 0x25dc
+* urarc 0x25dd
+* lrarc 0x25de
+* llarc 0x25df
+* skull 0x2620
+* pluto, Pluto 0x2647
+* aries, Aries 0x2648
+* virgo 0x264d
+* libra, Libra 0x264e
+* dicei 0x2680
+* dicev 0x2684
+* imath 0x131
+* jmath 0x237
+* grave 0x300
+* acute 0x301
+* breve 0x306
+* check 0x30c
+* Micro, tcmu 0xb5
+* cdotp 0xb7
+* Vert 0x2016
+* euro 0x20ac
+* Finv 0x2132
+* Game 0x2141
+* XBox 0x2612
+* male, Mars 0x2642
+* Zbar 0x1b5
+* ell 0x2113
+* mho, Mho 0x2127
+* Yup 0x2144
+* sun 0x263c
+* leo, Leo 0x264c
+* not 0x338
+* yen 0xa5
+* wp 0x2118
+
+== Libertinus Math - 792 missing glyphs
+
+* rightarrowshortleftarrow 0x2942
+* leftarrowshortrightarrow 0x2943
+* shortrightarrowleftarrow 0x2944
+* leftrightharpoondowndown, leftrightharpoondown 0x2950
+* smallblacktriangleright 0x25b8
+* invwhiteupperhalfcircle 0x25da
+* invwhitelowerhalfcircle 0x25db
+* concavediamondtickright 0x27e3
+* nvtwoheadrightarrowtail 0x2917
+* nVtwoheadrightarrowtail 0x2918
+* updownharpoonrightright, rightupdownharpoon 0x294f
+* updownharpoonsleftright, updownharpoons, upequilibrium 0x296e
+* downupharpoonsleftright, uprevequilibrium, downupharpoons 0x296f
+* smallblacktriangleleft 0x25c2
+* concavediamondtickleft 0x27e2
+* leftrightharpoonupdown, leftrightharpoon 0x294a
+* leftrightharpoondownup, rightleftharpoon 0x294b
+* updownharpoonrightleft 0x294c
+* updownharpoonleftright 0x294d
+* downtrianglerightblack 0x29e9
+* partialmeetcontraction 0x2aa3
+* nvtwoheadleftarrowtail 0x2b3c
+* nVtwoheadleftarrowtail 0x2b3d
+* underrightharpoondown 0x20ec
+* rangledownzigzagarrow 0x237c
+* twoheadrightarrowtail, bij 0x2916
+* updownharpoonleftleft, leftupdownharpoon 0x2951
+* downharpoonsleftright, downdownharpoons 0x2965
+* leftrightharpoonsdown 0x2967
+* rightleftharpoonsdown 0x2969
+* downtriangleleftblack 0x29e8
+* blackdiamonddownarrow 0x29ea
+* closedvarcupsmashprod 0x2a50
+* underleftharpoondown 0x20ed
+* CapitalDifferentialD, DD 0x2145
+* blackcircledrightdot 0x2688
+* whiteinwhitetriangle 0x27c1
+* whitesquaretickright 0x27e5
+* barrightarrowdiamond 0x2920
+* downrightcurvedarrow 0x2935
+* rightdowncurvedarrow 0x2937
+* curvearrowrightminus 0x293c
+* leftrightarrowcircle 0x2948
+* twoheaduparrowcircle 0x2949
+* leftrightharpoonupup, leftrightharpoonup 0x294e
+* dashrightharpoondown, barrightharpoon 0x296d
+* blackcircledownarrow 0x29ed
+* NestedGreaterGreater, Gt 0x2aa2
+* twoheadleftarrowtail 0x2b3b
+* rightarrowbackapprox 0x2b48
+* blockthreeqtrshaded 0x2593
+* blackinwhitediamond 0x25c8
+* blackcircledtwodots 0x2689
+* whitesquaretickleft 0x27e4
+* nvtwoheadrightarrow, psurj, psur 0x2900
+* nVtwoheadrightarrow 0x2901
+* diamondleftarrowbar 0x291f
+* leftdowncurvedarrow 0x2936
+* downharpoonrightbar, RightDownVectorBar 0x2955
+* rightharpoondownbar, DownRightVectorBar 0x2957
+* bardownharpoonright, RightDownTeeVector 0x295d
+* barrightharpoondown, DownRightTeeVector 0x295f
+* upharpoonsleftright, upupharpoons 0x2963
+* rightharpoonsupdown, rightrightharpoons 0x2964
+* leftrightharpoonsup 0x2966
+* rightleftharpoonsup 0x2968
+* dashleftharpoondown, barleftharpoon 0x296b
+* twoheadleftdbkarrow 0x2b37
+* leftarrowbackapprox 0x2b42
+* measuredrightangle 0x22be
+* blackinwhitesquare 0x25a3
+* parallelogramblack 0x25b0
+* smalltriangleright 0x25b9
+* inversewhitecircle 0x25d9
+* trianglerightblack 0x25ee
+* curvearrowleftplus 0x293d
+* ccwundercurvearrow 0x293f
+* barleftharpoondown, DownLeftVectorBar 0x2956
+* downharpoonleftbar, LeftDownVectorBar 0x2959
+* leftharpoondownbar, DownLeftTeeVector 0x295e
+* bardownharpoonleft, LeftDownTeeVector 0x2961
+* leftharpoonsupdown, leftleftharpoons 0x2962
+* rightharpoonupdash, rightbarharpoon 0x296c
+* circledwhitebullet 0x29be
+* errbarblackdiamond 0x29f1
+* longleftsquigarrow 0x2b33
+* nvtwoheadleftarrow 0x2b34
+* nVtwoheadleftarrow 0x2b35
+* bsimilarrightarrow 0x2b47
+* rightarrowbsimilar 0x2b4c
+* rightpentagonblack 0x2b53
+* vardoublebarwedge 0x2306
+* varhexagonlrbonds 0x232c
+* varcarriagereturn 0x23ce
+* blackpointerright 0x25ba
+* whitepointerright 0x25bb
+* blacktriangledown 0x25be
+* smalltriangledown, triangledown 0x25bf
+* smalltriangleleft 0x25c3
+* triangleleftblack 0x25ed
+* rightarrowonoplus 0x27f4
+* rightarrowdiamond 0x291e
+* uprightcurvearrow 0x2934
+* cwundercurvearrow 0x293e
+* rightharpoonupbar, RightVectorBar 0x2953
+* barupharpoonright, RightUpVectorBar 0x2954
+* barrightharpoonup, RightTeeVector 0x295b
+* upharpoonrightbar, RightUpTeeVector 0x295c
+* leftharpoonupdash, leftbarharpoon 0x296a
+* measuredangleleft 0x299b
+* errbarblacksquare 0x29ef
+* errbarblackcircle 0x29f3
+* diamondrightblack 0x2b17
+* bsimilarleftarrow 0x2b41
+* leftarrowbsimilar 0x2b4b
+* APLrightarrowbox 0x2348
+* blackpointerleft 0x25c4
+* whitepointerleft 0x25c5
+* squarerightblack 0x25e8
+* nvrightarrowtail, pinj 0x2914
+* nVrightarrowtail, finj 0x2915
+* diamondleftarrow 0x291d
+* rightcurvedarrow, leadsto 0x2933
+* acwunderarcarrow 0x293b
+* barleftharpoonup, LeftVectorBar 0x2952
+* barupharpoonleft, LeftUpVectorBar 0x2958
+* leftharpoonupbar, LeftTeeVector 0x295a
+* upharpoonleftbar, LeftUpTeeVector 0x2960
+* sphericalangleup 0x29a1
+* RightTriangleBar, vbrtri 0x29d0
+* diamondleftblack 0x2b16
+* leftarrowonoplus 0x2b32
+* rightarrowsupset 0x2b44
+* similarleftarrow 0x2b49
+* enclosetriangle 0x20e4
+* widebridgeabove 0x20e9
+* rightthreetimes 0x22cc
+* APLnotbackslash, notbackslash 0x2340
+* APLleftarrowbox 0x2347
+* APLdownarrowbox 0x2357
+* blockhalfshaded 0x2592
+* squarecrossfill 0x25a9
+* hrectangleblack 0x25ac
+* vrectangleblack 0x25ae
+* blacktriangleup, blacktriangle 0x25b4
+* smalltriangleup, vartriangle 0x25b5
+* lrblacktriangle 0x25e2
+* llblacktriangle 0x25e3
+* ulblacktriangle 0x25e4
+* urblacktriangle 0x25e5
+* squareleftblack 0x25e7
+* circledrightdot 0x2686
+* downarrowbarred 0x2908
+* cwrightarcarrow 0x2938
+* acwleftarcarrow 0x2939
+* acwoverarcarrow 0x293a
+* leftarrowsubset 0x297a
+* measanglerutone 0x29a8
+* measanglelutonw 0x29a9
+* measanglerdtose 0x29aa
+* measangleldtosw 0x29ab
+* measangleurtone 0x29ac
+* measangleultonw 0x29ad
+* measangledrtose 0x29ae
+* measangledltosw 0x29af
+* circledparallel 0x29b7
+* uparrowoncircle 0x29bd
+* LeftTriangleBar, ltrivb 0x29cf
+* circledownarrow 0x29ec
+* bigtriangleleft 0x2a1e
+* diamondtopblack 0x2b18
+* diamondbotblack 0x2b19
+* varhexagonblack 0x2b22
+* twoheadmapsfrom 0x2b36
+* nvleftarrowtail 0x2b39
+* nVleftarrowtail 0x2b3a
+* leftcurvedarrow 0x2b3f
+* leftarrowapprox 0x2b4a
+* enclosediamond 0x20df
+* leftthreetimes 0x22cb
+* APLboxquestion 0x2370
+* blockrighthalf 0x2590
+* blockqtrshaded 0x2591
+* squarenwsefill 0x25a7
+* squareneswfill 0x25a8
+* circlevertfill 0x25cd
+* circledtwodots 0x2687
+* rightouterjoin 0x27d6
+* concavediamond 0x27e1
+* fdiagovnearrow 0x292f
+* rdiagovsearrow 0x2930
+* acwcirclearrow 0x2940
+* rightarrowplus 0x2945
+* rightanglemdot 0x299d
+* triangleserifs 0x29cd
+* blackhourglass 0x29d7
+* mdlgblklozenge, blacklozenge 0x29eb
+* bigslopedwedge 0x2a58
+* doublebarwedge 0x2a5e
+* wedgedoublebar 0x2a60
+* NestedLessLess, Lt 0x2aa1
+* squaretopblack 0x2b12
+* squarebotblack 0x2b13
+* equalleftarrow 0x2b40
+* enclosecircle 0x20dd
+* enclosesquare 0x20de
+* threeunderdot 0x20e8
+* sansLmirrored 0x2143
+* DifferentialD, dd 0x2146
+* varlrtriangle 0x22bf
+* divideontimes 0x22c7
+* equalparallel, hash 0x22d5
+* APLuparrowbox 0x2350
+* APLboxupcaret 0x2353
+* bdtriplevdash 0x2506
+* blocklefthalf 0x258c
+* parallelogram 0x25b1
+* inversebullet 0x25d8
+* topsemicircle 0x25e0
+* botsemicircle 0x25e1
+* squareulblack 0x25e9
+* squarelrblack 0x25ea
+* mdsmwhtsquare 0x25fd
+* mdsmblksquare 0x25fe
+* draftingarrow 0x279b
+* leftouterjoin 0x27d5
+* fullouterjoin 0x27d7
+* twoheadmapsto 0x2905
+* uparrowbarred 0x2909
+* rightdotarrow 0x2911
+* cwcirclearrow 0x2941
+* leftarrowplus 0x2946
+* leftarrowless 0x2977
+* rightfishtail, strictif 0x297d
+* mdsmblkcircle, spot 0x2981
+* rightanglesqr 0x299c
+* wideangledown 0x29a6
+* emptysetocirc 0x29b2
+* emptysetoarrl 0x29b4
+* circledbslash, obslash 0x29b8
+* circledbullet 0x29bf
+* errbardiamond 0x29f0
+* triangleminus 0x2a3a
+* triangletimes 0x2a3b
+* shortlefttack 0x2ade
+* shortdowntack 0x2adf
+* threedotcolon 0x2af6
+* biginterleave 0x2afc
+* bigtalloblong 0x2aff
+* squareurblack 0x2b14
+* squarellblack 0x2b15
+* vysmblksquare 0x2b1d
+* vysmwhtsquare 0x2b1e
+* pentagonblack 0x2b1f
+* rightarrowgtr 0x2b43
+* rightpentagon 0x2b54
+* hyphenbullet 0x2043
+* PropertyLine 0x214a
+* hermitmatrix 0x22b9
+* smwhtdiamond, diamond 0x22c4
+* blocklowhalf 0x2584
+* squarehvfill 0x25a6
+* dottedcircle 0x25cc
+* trianglecdot 0x25ec
+* squareulquad 0x25f0
+* squarellquad 0x25f1
+* squarelrquad 0x25f2
+* squareurquad 0x25f3
+* circleulquad 0x25f4
+* circlellquad 0x25f5
+* circlelrquad 0x25f6
+* circleurquad 0x25f7
+* bigwhitestar 0x2606
+* dingasterisk 0x273d
+* longdivision 0x27cc
+* lozengeminus 0x27e0
+* rightbkarrow 0x290d
+* leftdbkarrow 0x290e
+* DownArrowBar, downarrowbar 0x2913
+* rightdbltail 0x291c
+* rdiagovfdiag 0x292b
+* fdiagovrdiag 0x292c
+* leftfishtail, strictfi 0x297c
+* downfishtail 0x297f
+* lbrackultick 0x298d
+* rbracklrtick 0x298e
+* lbracklltick 0x298f
+* rbrackurtick 0x2990
+* revangleubar 0x29a5
+* emptysetobar 0x29b1
+* emptysetoarr 0x29b3
+* odotslashdot 0x29bc
+* ogreaterthan, circledgtr 0x29c1
+* triangleodot 0x29ca
+* triangleubar 0x29cb
+* multimapboth, dualmap 0x29df
+* lrtriangleeq 0x29e1
+* errbarsquare 0x29ee
+* errbarcircle 0x29f2
+* triangleplus 0x2a39
+* closedvarcup 0x2a4c
+* closedvarcap 0x2a4d
+* wedgeonwedge 0x2a55
+* bigslopedvee 0x2a57
+* wedgemidvert 0x2a5a
+* doublebarvee 0x2a62
+* veedoublebar 0x2a63
+* eqqslantless 0x2a9b
+* subsetapprox 0x2ac9
+* supsetapprox 0x2aca
+* dottedsquare 0x2b1a
+* hexagonblack 0x2b23
+* mdblkdiamond 0x2b25
+* mdwhtdiamond 0x2b26
+* mdblklozenge 0x2b27
+* mdwhtlozenge 0x2b28
+* smblkdiamond 0x2b29
+* smblklozenge 0x2b2a
+* smwhtlozenge 0x2b2b
+* leftdotarrow 0x2b38
+* medwhitestar 0x2b50
+* medblackstar 0x2b51
+* caretinsert 0x2038
+* vertoverlay 0x20d2
+* asteraccent 0x20f0
+* sansLturned 0x2142
+* ExponetialE, ee 0x2147
+* varisinobar, barin 0x22f6
+* varbarwedge 0x2305
+* wasylozenge, sqlozenge 0x2311
+* APLnotslash, notslash 0x233f
+* invdiameter 0x2349
+* blockuphalf 0x2580
+* squarehfill 0x25a4
+* squarevfill 0x25a5
+* smblksquare 0x25aa
+* smwhtsquare 0x25ab
+* lgwhtcircle 0x25ef
+* mdwhtsquare, square 0x25fb
+* blacksquare, mdblksquare 0x25fc
+* mdwhtcircle, medcirc 0x26aa
+* mdblkcircle, medbullet 0x26ab
+* ballotcheck, checkmark 0x2713
+* circledstar 0x272a
+* arrowbullet 0x27a2
+* threedangle 0x27c0
+* diamondcdot, Diamonddot 0x27d0
+* multimapinv 0x27dc
+* leftbkarrow 0x290c
+* leftdbltail 0x291b
+* seovnearrow 0x292d
+* neovsearrow 0x292e
+* neovnwarrow 0x2931
+* nwovnearrow 0x2932
+* rightarrowx 0x2947
+* wideangleup 0x29a7
+* revemptyset 0x29b0
+* circledvert 0x29b6
+* circledless, olessthan 0x29c0
+* gleichstark 0x29e6
+* ruledelayed 0x29f4
+* otimeslhrim 0x2a34
+* otimesrhrim 0x2a35
+* midbarwedge 0x2a5c
+* simminussim 0x2a6c
+* eqslantless 0x2a95
+* eqqslantgtr 0x2a9c
+* precnapprox 0x2ab9
+* succnapprox 0x2aba
+* shortuptack 0x2ae0
+* lgblksquare 0x2b1b
+* lgwhtsquare 0x2b1c
+* lgblkcircle 0x2b24
+* blkhorzoval 0x2b2c
+* whthorzoval 0x2b2d
+* blkvertoval 0x2b2e
+* whtvertoval 0x2b2f
+* RRightarrow 0x2b46
+* smwhitestar 0x2b52
+* Eulerconst, Euler 0x2107
+* turnediota 0x2129
+* conictaper 0x2332
+* APLcomment 0x235d
+* hrectangle 0x25ad
+* vrectangle 0x25af
+* ultriangle 0x25f8
+* urtriangle 0x25f9
+* lltriangle 0x25fa
+* lrtriangle 0x25ff
+* CheckedBox 0x2611
+* subsetcirc 0x27c3
+* supsetcirc 0x27c4
+* DDownarrow 0x27f1
+* UpArrowBar, baruparrow 0x2912
+* rightimply 0x2970
+* upfishtail 0x297e
+* lbrackubar 0x298b
+* rbrackubar 0x298c
+* lparenless 0x2993
+* Rparenless 0x2996
+* lblkbrbrak 0x2997
+* rblkbrbrak 0x2998
+* circlehbar 0x29b5
+* doubleplus 0x29fa
+* tripleplus 0x29fb
+* plussubtwo 0x2a27
+* commaminus 0x2a29
+* minusfdots 0x2a2b
+* minusrdots 0x2a2c
+* opluslhrim 0x2a2d
+* oplusrhrim 0x2a2e
+* smashtimes 0x2a33
+* cupovercap 0x2a46
+* capovercup 0x2a47
+* veeonwedge 0x2a59
+* veemidvert 0x2a5b
+* equivVvert 0x2a69
+* lessapprox 0x2a85
+* lesseqqgtr 0x2a8b
+* gtreqqless 0x2a8c
+* eqslantgtr 0x2a96
+* rightslice, gtcc 0x2aa7
+* precapprox 0x2ab7
+* succapprox 0x2ab8
+* subsetplus 0x2abf
+* supsetplus 0x2ac0
+* subsetneqq 0x2acb
+* supsetneqq 0x2acc
+* interleave 0x2af4
+* talloblong 0x2afe
+* varhexagon 0x2b21
+* leftarrowx 0x2b3e
+* LLeftarrow 0x2b45
+* postalmark 0x3012
+* tieconcat, cat 0x2040
+* Angstroem, Angstrom 0x212b
+* pitchfork 0x22d4
+* varniobar 0x22fd
+* bagmember 0x22ff
+* turnednot 0x2319
+* sumbottom 0x23b3
+* lvboxline 0x23b8
+* rvboxline 0x23b9
+* trapezium 0x23e2
+* accurrent 0x23e6
+* blockfull 0x2588
+* radiation 0x2622
+* biohazard 0x2623
+* DashVDash 0x27da
+* dashVdash 0x27db
+* vlongdash 0x27dd
+* longdashv 0x27de
+* righttail 0x291a
+* nwsearrow 0x2921
+* neswarrow 0x2922
+* hknwarrow 0x2923
+* hknearrow 0x2924
+* langledot 0x2991
+* rangledot 0x2992
+* rparengtr 0x2994
+* Lparengtr 0x2995
+* fourvdots 0x2999
+* turnangle 0x29a2
+* angleubar 0x29a4
+* boxbslash 0x29c5
+* boxcircle 0x29c7
+* triangles 0x29cc
+* hourglass 0x29d6
+* conjquant 0x2a07
+* disjquant 0x2a08
+* modtwosum 0x2a0a
+* cupbarcap 0x2a48
+* capbarcup 0x2a49
+* wedgeodot 0x2a51
+* midbarvee 0x2a5d
+* varveebar 0x2a61
+* equivVert 0x2a68
+* hatapprox 0x2a6f
+* approxeqq 0x2a70
+* gtrapprox 0x2a86
+* leftslice, ltcc 0x2aa6
+* subsetdot 0x2abd
+* supsetdot 0x2abe
+* subseteqq 0x2ac5
+* supseteqq 0x2ac6
+* leqqslant 0x2af9
+* geqqslant 0x2afa
+* medspace 0x205f
+* ComplexI, ii 0x2148
+* ComplexJ, jj 0x2149
+* multimap 0x22b8
+* intercal 0x22ba
+* barwedge 0x22bc
+* varisins 0x22f3
+* isinobar 0x22f7
+* profline 0x2312
+* profsurf 0x2313
+* viewdata 0x2317
+* APLinput 0x235e
+* bbrktbrk 0x23b6
+* elinters 0x23e7
+* steaming 0x2615
+* acidfree 0x267e
+* bsolhsub 0x27c8
+* wedgedot 0x27d1
+* pullback 0x27d3
+* UUparrow 0x27f0
+* drbkarow 0x2910
+* lefttail 0x2919
+* hksearow 0x2925
+* hkswarow 0x2926
+* revangle 0x29a3
+* boxslash, boxdiag 0x29c4
+* boxonbox 0x29c9
+* rtriltri 0x29ce
+* lfbowtie 0x29d1
+* rfbowtie 0x29d2
+* lvzigzag 0x29d8
+* rvzigzag 0x29d9
+* Lvzigzag 0x29da
+* Rvzigzag 0x29db
+* tieinfty 0x29dd
+* smeparsl 0x29e4
+* eqvparsl 0x29e5
+* bigtimes, varprod 0x2a09
+* cirfnint 0x2a10
+* rppolint 0x2a12
+* scpolint 0x2a13
+* pointint 0x2a15
+* intlarhk 0x2a17
+* zproject, project 0x2a21
+* ringplus 0x2a22
+* plustrif 0x2a28
+* minusdot 0x2a2a
+* vectimes 0x2a2f
+* dottimes 0x2a30
+* timesbar 0x2a31
+* intprodr 0x2a3d
+* capwedge 0x2a44
+* veeonvee 0x2a56
+* wedgebar 0x2a5f
+* dotequiv 0x2a67
+* simrdots 0x2a6b
+* Coloneqq, Coloneq 0x2a74
+* lesdotor 0x2a83
+* gesdotol 0x2a84
+* lnapprox 0x2a89
+* gnapprox 0x2a8a
+* forksnot 0x2add
+* varVdash 0x2ae6
+* pentagon 0x2b20
+* closure 0x2050
+* annuity 0x20e7
+* isindot 0x22f5
+* hexagon 0x2394
+* obrbrak 0x23e0
+* ubrbrak 0x23e1
+* benzenr 0x23e3
+* squoval 0x25a2
+* recycle 0x267b
+* diceiii 0x2682
+* warning 0x26a0
+* ballotx 0x2717
+* maltese 0x2720
+* varstar 0x2736
+* lbrbrak 0x2772
+* rbrbrak 0x2773
+* suphsol 0x27c9
+* pushout 0x27d4
+* dbkarow 0x290f
+* subrarr 0x2979
+* suplarr 0x297b
+* llangle, lblot 0x2989
+* rrangle, rblot 0x298a
+* vzigzag 0x299a
+* olcross 0x29bb
+* cirscir 0x29c2
+* fbowtie 0x29d3
+* lftimes 0x29d4
+* rftimes 0x29d5
+* nvinfty 0x29de
+* shuffle 0x29e2
+* thermod 0x29e7
+* npolint 0x2a14
+* plushat 0x2a23
+* simplus 0x2a24
+* plusdot 0x2a25
+* plussim 0x2a26
+* intprod 0x2a3c
+* twocups 0x2a4a
+* twocaps 0x2a4b
+* veeodot 0x2a52
+* congdot 0x2a6d
+* eqqplus 0x2a71
+* pluseqq 0x2a72
+* ddotseq 0x2a77
+* equivDD 0x2a78
+* ltquest 0x2a7b
+* gtquest 0x2a7c
+* lesdoto 0x2a81
+* gesdoto 0x2a82
+* eqqless 0x2a99
+* simless 0x2a9d
+* bumpeqq 0x2aae
+* llcurly, Prec 0x2abb
+* ggcurly, Succ 0x2abc
+* submult 0x2ac1
+* supmult 0x2ac2
+* subedot 0x2ac3
+* supedot 0x2ac4
+* lsqhook 0x2acd
+* rsqhook 0x2ace
+* suphsub 0x2ad7
+* supdsub 0x2ad8
+* topfork 0x2ada
+* revnmid 0x2aee
+* nhVvert 0x2af5
+* lllnest 0x2af7
+* gggnest 0x2af8
+* trslash 0x2afb
+* hzigzag 0x3030
+* invamp, upand 0x214b
+* Bumpeq 0x224e
+* bumpeq 0x224f
+* prurel 0x22b0
+* scurel 0x22b1
+* veebar 0x22bb
+* barvee 0x22bd
+* Subset 0x22d0
+* Supset 0x22d1
+* isinvb 0x22f8
+* varnis 0x22fb
+* niobar 0x22fe
+* topbot 0x2336
+* APLinv 0x2339
+* APLlog 0x235f
+* sumtop 0x23b2
+* boxbar 0x25eb
+* Square 0x2610
+* danger 0x2621
+* diceii 0x2681
+* diceiv 0x2683
+* dicevi 0x2685
+* anchor 0x2693
+* swords 0x2694
+* neuter 0x26b2
+* pencil 0x270e
+* veedot 0x27c7
+* bigbot 0x27d8
+* bigtop 0x27d9
+* cirbot 0x27df
+* ltlarr 0x2976
+* gtrarr 0x2978
+* lBrace 0x2983
+* rBrace 0x2984
+* Lparen, lParen 0x2985
+* Rparen, rParen 0x2986
+* angles 0x299e
+* angdnr 0x299f
+* gtlpar 0x29a0
+* boxast 0x29c6
+* boxbox 0x29c8
+* iinfin 0x29dc
+* laplac 0x29e0
+* eparsl 0x29e3
+* tminus 0x29ff
+* sumint 0x2a0b
+* intbar 0x2a0d
+* intBar 0x2a0e
+* sqrint, sqint 0x2a16
+* intcap 0x2a19
+* intcup 0x2a1a
+* lowint 0x2a1c
+* btimes 0x2a32
+* Otimes 0x2a37
+* capdot 0x2a40
+* uminus 0x2a41
+* barcup 0x2a42
+* barcap 0x2a43
+* cupvee 0x2a45
+* dotsim 0x2a6a
+* eqqsim 0x2a73
+* eqeqeq, Same 0x2a76
+* lesdot 0x2a7f
+* gesdot 0x2a80
+* lesges 0x2a93
+* gesles 0x2a94
+* elsdot 0x2a97
+* egsdot 0x2a98
+* eqqgtr 0x2a9a
+* simgtr 0x2a9e
+* subsim 0x2ac7
+* supsim 0x2ac8
+* subsup 0x2ad3
+* supsub 0x2ad4
+* subsub 0x2ad5
+* supsup 0x2ad6
+* vDdash 0x2ae2
+* cirmid 0x2aef
+* midcir 0x2af0
+* topcir 0x2af1
+* parsim 0x2af3
+* sslash 0x2afd
+* disin 0x22f2
+* isins 0x22f4
+* isinE 0x22f9
+* strns 0x23e4
+* fltns 0x23e5
+* ularc 0x25dc
+* urarc 0x25dd
+* lrarc 0x25de
+* llarc 0x25df
+* skull 0x2620
+* dicei 0x2680
+* dicev 0x2684
+* Vvert, VERT 0x2980
+* operp 0x29b9
+* zhide, xbsol, hide 0x29f9
+* tplus 0x29fe
+* awint 0x2a11
+* upint 0x2a1b
+* zpipe 0x2a20
+* Sqcap 0x2a4e
+* Sqcup 0x2a4f
+* Wedge 0x2a53
+* ndres, dsub 0x2a64
+* nrres, rsub 0x2a65
+* eqdot 0x2a66
+* asteq 0x2a6e
+* Equal, eqeq 0x2a75
+* ltcir 0x2a79
+* gtcir 0x2a7a
+* lsime 0x2a8d
+* gsime 0x2a8e
+* lsimg 0x2a8f
+* gsiml 0x2a90
+* simlE 0x2a9f
+* simgE 0x2aa0
+* lescc 0x2aa8
+* gescc 0x2aa9
+* csube 0x2ad1
+* csupe 0x2ad2
+* forkv 0x2ad9
+* forks 0x2adc
+* perps 0x2ae1
+* dashV 0x2ae3
+* Dashv 0x2ae4
+* DashV 0x2ae5
+* vBarv 0x2ae9
+* nhpar 0x2af2
+* Finv 0x2132
+* Game 0x2141
+* nisd 0x22fa
+* obar 0x233d
+* XBox 0x2612
+* Lbag, lbag 0x27c5
+* Rbag, rbag 0x27c6
+* upin 0x27d2
+* tona 0x2927
+* toea 0x2928
+* tosa 0x2929
+* towa 0x292a
+* obot 0x29ba
+* cirE 0x29c3
+* xsol 0x29f8
+* fint 0x2a0f
+* intx 0x2a18
+* Join 0x2a1d
+* zcmp, semi 0x2a1f
+* odiv 0x2a38
+* smte 0x2aac
+* late 0x2aad
+* csub 0x2acf
+* csup 0x2ad0
+* mlcp 0x2adb
+* Barv 0x2ae7
+* vBar 0x2ae8
+* barV, Top 0x2aea
+* Vbar, Perp, Bot 0x2aeb
+* bNot 0x2aed
+* Yup 0x2144
+* Cap 0x22d2
+* Cup 0x22d3
+* nis 0x22fc
+* Vee 0x2a54
+* lgE 0x2a91
+* glE 0x2a92
+* glj 0x2aa4
+* gla 0x2aa5
+* smt 0x2aaa
+* lat 0x2aab
+* Not 0x2aec
+
+== Missing glyphs in all fonts:
+
+* arrowbullet 0x27a2
+* ballotx 0x2717
+* pencil 0x270e
+
+= Conclusion
+
+The font STIX Two Math has the fullest math support.
