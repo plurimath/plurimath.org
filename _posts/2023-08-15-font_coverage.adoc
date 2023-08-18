@@ -22,7 +22,9 @@ authors:
 excerpt: >-
     Pluramath supports all latex-accessible math constants. Math fonts
     have different support of math glyphs.
+---
 
+:page-liquid:
 
 == Font coverage of Unicode math
 
@@ -64,33 +66,18 @@ We have compared four math fonts on what glyphs are supported.
 
 {% for symbol in site.data.2023-08-15-font_coverage.symbols %}
 
-| `{ symbol.latex_symbol_name }` | `{ symbol.unicode_char_code }` 
+
+| `{{ symbol.latex_symbol_name }}` | `{{ symbol.unicode_char_code | escape_once }}` 
 
 {% assign stixtwomath_font = symbol.fonts | where: "font_name", "STIX Two Math" | first %}
 {% assign cambriamath_font = symbol.fonts | where: "font_name", "Cambria Math" | first %}
 {% assign notosansmath_font = symbol.fonts | where: "font_name", "Noto Sans Math" | first %}
 {% assign libertinusmath_font = symbol.fonts | where: "font_name", "Libertinus Math" | first %}
 
-| {% if stixtwomath_font.support %}
-  ✅
-{% else %}
-  ❎
-{% endif %} 
-| {% if cambriamath_font.support %}
-  ✅
-{% else %}
-  ❎
-{% endif %} 
-| {% if notosansmath_font.support %}
-  ✅
-{% else %}
-  ❎
-{% endif %} 
-| {% if libertinusmath_font.support %}
-  ✅
-{% else %}
-  ❎
-{% endif %} 
+| {% if stixtwomath_font.support %}✅{% else %}❌{% endif %} 
+| {% if cambriamath_font.support %}✅{% else %}❌{% endif %} 
+| {% if notosansmath_font.support %}✅{% else %}❌{% endif %} 
+| {% if libertinusmath_font.support %}✅{% else %}❌{% endif %} 
 
 {% endfor %}
 
