@@ -19932,7 +19932,7 @@ symbols:
         support: true
       - font_name: Libertinus Math
         support: true
-  - latex_symbol_name: "|"
+  - latex_symbol_name: "\\|"
     unicode_char_code: "&#x7c;"
     fonts:
       - font_name: STIX Two Math
