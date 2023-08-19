@@ -10,10 +10,11 @@ author:
   email: tse@ribose.com
   use_picture: assets
   social_links:
+    - https://www.linkedin.com/in/rhtse/
     - https://github.com/ronaldtse
 excerpt: >-
-    Plurimath is created to convert between multiple math representational
-    languages, including MathML, LaTeX math, OMML and AsciiMath.
+  Plurimath is created to convert between multiple math representational
+  languages, including MathML, LaTeX math, OMML and AsciiMath.
 ---
 
 = Introducing Plurimath
