@@ -198,9 +198,11 @@ against the list of symbols.
 
 The fonts compared are:
 
-* Cambria Math (v6.99, July 7, 2019), from Windows 10
-
 * STIX Two Math (https://github.com/stipub/stixfonts/releases/tag/v2.13b171[v2.13 b171], May 26, 2021)
+
+* Cambria Math (https://github.com/fontist/formulas/blob/9f1ebc5fcf2813d66e79c6fbcb43ed18876d20a1/Formulas/pclinuxos_webcore_fonts.yml#L43[v5.24], Apr 23, 2009)
+
+* Cambria Math (v6.99, July 7, 2019), from Windows 10
 
 * Noto Sans Math (https://fonts.google.com/download?family=Noto%20Sans%20Math[v2.0001], Nov, 19, 2020)
 
@@ -224,7 +226,9 @@ The order of coverage concludes in this order:
 
 * STIX Two Math -- 3 missing glyphs
 
-* Cambria Math -- 176 missing glyphs
+* Cambria Math v6.99 -- 176 missing glyphs
+
+* Cambria Math v5.24 -- 288 missing glyphs
 
 * Noto Sans Math -- 321 missing glyphs
 
@@ -257,7 +261,7 @@ currently defaults to STIX Two Math for rendering math.
 .Supported LaTeX math symbols for dedicated math fonts
 [cols="a,a,a,a,a,a",options="header"]
 |===
-| LaTeX symbol name | Unicode character code | STIX Two Math | Cambria Math | Noto Sans Math | Libertinus Math
+| LaTeX symbol name | Unicode character code | STIX Two Math v2.13 b171 | Cambria Math v5.24 | Cambria Math v6.99 | Noto Sans Math v2.0001 | Libertinus Math v7.040
 
 {% for symbol in site.data.2023-08-15-font_coverage.symbols %}
 
@@ -265,11 +269,13 @@ currently defaults to STIX Two Math for rendering math.
 | `{{ symbol.latex_symbol_name }}` | `{{ symbol.unicode_char_code | escape_once }}`
 
 {% assign stixtwomath_font = symbol.fonts | where: "font_name", "STIX Two Math" | first %}
+{% assign cambriamath524_font = symbol.fonts | where: "font_name", "Cambria Math 524" | first %}
 {% assign cambriamath_font = symbol.fonts | where: "font_name", "Cambria Math" | first %}
 {% assign notosansmath_font = symbol.fonts | where: "font_name", "Noto Sans Math" | first %}
 {% assign libertinusmath_font = symbol.fonts | where: "font_name", "Libertinus Math" | first %}
 
 | {% if stixtwomath_font.support %}✅{% else %}❌{% endif %}
+| {% if cambriamath524_font.support %}✅{% else %}❌{% endif %}
 | {% if cambriamath_font.support %}✅{% else %}❌{% endif %}
 | {% if notosansmath_font.support %}✅{% else %}❌{% endif %}
 | {% if libertinusmath_font.support %}✅{% else %}❌{% endif %}
