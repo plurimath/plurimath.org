@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Font coverage of Unicode math"
+title:  "Coverage of LaTeX math symbols in dedicated math fonts"
 date:   2023-08-15 00:00:00 +0800
 categories:
   - plurimath
@@ -16,50 +16,235 @@ authors:
     name: Ronald Tse
     email: tse@ribose.com
     social_links:
+      - https://www.linkedin.com/in/rhtse/
       - https://github.com/ronaldtse
 
-
 excerpt: >-
-    Pluramath supports all latex-accessible math constants. Math fonts
-    have different support of math glyphs.
+  Plurimath supports all math symbols supported in LaTeX -- however not all math
+  fonts provide sufficient glyph coverage for all those symbols. This post
+  compares four most popular fonts used for math rendering.
 ---
-
 :page-liquid:
 
-== Font coverage of Unicode math
+= Coverage of LaTeX math symbols in dedicated math fonts
 
-The one of main goals for any math representation formats is displaying.
-There are a few typical math fonts that contain the big set of mathematical symbols:
+== Math symbols and Unicode
 
-* Cambria Math
+Plurimath supports all math symbols supported in LaTeX, including those
+in the https://ctan.org/pkg/amsmath[`amsmath`] package published by the
+https://www.ams.org[American Mathematical Society].
 
-* STIX Two Math
+LaTeX supports a huge collection of symbols, and a subset of them deal with math.
+The following references provide a listing of commonly used LaTeX math symbols:
 
-* Noto Math
+* https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf[Matthias Heinkenschloss's list of LaTeX Mathematical Symbols]
 
-* Libertinus Math
+* https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols[OEIS List of LaTeX mathematical symbols]
 
-When people / SDOs choose one of these fonts, they need to know what math symbols are 
-available and which ones are not.
+NOTE: http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf[The Comprehensive LaTeX Symbols List]
+provides a full list of symbols supported in LaTeX 2e.
 
-Each font has own set of supported glyphs. We have compared the sets of the mathematical 
-glyphs from these four fonts and get the results. The sets of glyphs based on Pluramath's
-latex-accessible math constants
-(determined in https://github.com/plurimath/plurimath/blob/main/lib/plurimath/latex/constants.rb).
+Rendering of math symbols depend on availability of corresponding glyphs
+from fonts, and fortunately, most of these math symbols have been standardized
+in https://home.unicode.org[Unicode].
 
-We'used these versions of the fonts:
+Math symbols are mostly provided in the following Unicode planes:
+
+* https://en.wikipedia.org/wiki/Mathematical_Alphanumeric_Symbols_(Unicode_block)[Mathematical Alphanumeric Symbols (1D400–1D7FF)]
+
+* https://en.wikipedia.org/wiki/Miscellaneous_Mathematical_Symbols-A[Miscellaneous Mathematical Symbols-A (27C0–27EF)]
+
+* https://en.wikipedia.org/wiki/Miscellaneous_Mathematical_Symbols-B[Miscellaneous Mathematical Symbols-B (2980–29FF)]
+
+* https://en.wikipedia.org/wiki/Supplemental_Mathematical_Operators[Supplemental Mathematical Operators (2A00–2AFF)]
+
+NOTE: There are certain math symbols not (yet) available via Unicode, which is
+a topic for another post.
+
+
+== Dedicated math fonts
+
+=== Introduction
+
+In text rendering, or computer typesetting, math symbols are shown using font
+glyphs. There are a number of fonts today that are dedicated for rendering
+math symbols, these are appropriately called the "dedicated math fonts".
+
+There are a few popular dedicated math fonts that contain the big set of
+mathematical symbols:
+
+* https://learn.microsoft.com/en-us/typography/font-list/cambria-math[Cambria Math]
+
+* https://www.stixfonts.org[STIX Two Math]
+
+* https://fonts.google.com/noto/specimen/Noto+Sans+Math[Noto Math]
+
+* https://github.com/alerque/libertinus[Libertinus Math]
+
+That said, the math symbol space is large. Not all math fonts provide sufficient
+glyph coverage for all these defined Unicode points.
+
+When people / SDOs choose one of these fonts, they need to know what math
+symbols are available and which ones are not.
+
+=== Cambria Math
+
+Cambria Math is the dedicated math font designed to accompany Cambria, the
+default document typesetting font from Microsoft for Windows and Office.
+Cambria itself was meant as a replacement for the rather universal font
+Times New Roman.
+
+Cambria Math was part of the Microsoft
+https://en.wikipedia.org/wiki/ClearType_Font_Collection[ClearType Font Collection]
+and the first font to implement the OpenType math extension, and was released in
+2007.
+
+The issue with Cambria Math is its licensing and availability. As the Unicode
+character sets grows, newer versions of fonts are extended to handle more
+glyphs. However, the latest version (6.99) of Cambria Math
+is only distributed through bundling on Microsoft products such as Windows and Office.
+
+The openly-available Microsoft ClearType Font Collection, only provides Cambria Math at version 5.24
+which is from 2008
+(https://github.com/fontist/formulas/blob/9f1ebc5fcf2813d66e79c6fbcb43ed18876d20a1/Formulas/pclinuxos_webcore_fonts.yml#L43[Fontist formula for Cambria Math]).
+
+These facts mean that Cambria Math is not the best choice for open source publishing
+or for use in non-Windows-based continuous integration systems.
+
+Official link: https://learn.microsoft.com/en-us/typography/font-list/cambria-math
+
+
+=== STIX Two Math
+
+The STIX Two Math font is part of the https://www.stixfonts.org[STIX fonts] project.
+
+From its website:
+
+[quote]
+____
+The mission of the Scientific and Technical Information Exchange (STIX) font
+creation project is the preparation of a comprehensive set of fonts that serve
+the scientific and engineering community in the process from manuscript creation
+through final publication, both in electronic and print formats.
+____
+
+STIX dates back to 1995 to the proposal from Arie de Ruiter of
+https://www.elsevier.com[Elsevier], and is joined by the
+https://www.ams.org[American Mathematical Society] in 1997. STIX Fonts 1.0 was
+released in May 2010, with STIX Fonts 2.0 ("STIX Two Fonts") released in
+December 2016.
+
+The STIX Two Math fonts are made available open-source and in an openly licensed
+manner, making it suitable for open-source publishing, re-distribution and for
+non-interactive continuous integration systems.
+
+Official link: https://www.stixfonts.org
+
+
+=== Noto Sans Math
+
+Noto Sans Math is a dedicated math font produced by Google as part of the Noto
+Sans family which belongs to the Noto collection.
+
+The Noto collection is best described by Google as:
+
+[quote]
+____
+Noto is a global font collection for writing in all modern and ancient languages.
+____
+
+Noto Sans Math provides 2,655 glyphs and is offered open source, available
+under the Open Font License, allowing anyone to use or modify the font.
+This makes Noto Sans Math suitable for open-source publishing, re-distribution
+and for non-interactive continuous integration systems.
+
+Official link: https://fonts.google.com/noto/specimen/Noto+Sans+Math
+
+=== Libertinus Math
+
+The Libertinus Math font was originally developed as the OpenType companion for
+the Linux Libertine fonts.
+
+Libertinus Math was forked from version 5.3.0 of Linux Libertine fonts,
+and was first released as 6.0.0 in 2016.
+
+Libertinus Math is offered under the Open Font License which
+makes it suitable for open-source publishing, re-distribution
+and for non-interactive continuous integration systems.
+
+Link: https://github.com/alerque/libertinus
+
+
+== Support of LaTeX math symbols
+
+=== General
+
+Plurimath supports the encoding of all LaTeX math symbols available as shown in
+its
+https://github.com/plurimath/plurimath/blob/main/lib/plurimath/latex/constants.rb[source code].
+
+Here we compare these dedicated math fonts to visualize their coverage gaps
+against the list of symbols.
+
+The fonts compared are:
 
 * Cambria Math (v6.99, July 7, 2019), from Windows 10
 
-* STIX Two Math (v2.13 b171, May 26, 2021), https://github.com/stipub/stixfonts/releases/tag/v2.13b171
+* STIX Two Math (https://github.com/stipub/stixfonts/releases/tag/v2.13b171[v2.13 b171], May 26, 2021)
 
-* Noto Sans Math (v2.0001, Nov, 19, 2020), https://fonts.google.com/download?family=Noto%20Sans%20Math
+* Noto Sans Math (https://fonts.google.com/download?family=Noto%20Sans%20Math[v2.0001], Nov, 19, 2020)
 
-* Libertinus Math (v7.040, Feb 26, 2021), https://github.com/alerque/libertinus/releases/tag/v7.040
-
-We have compared four math fonts on what glyphs are supported. 
+* Libertinus Math (https://github.com/alerque/libertinus/releases/tag/v7.040[v7.040], Feb 26, 2021)
 
 
+== Math symbols supported by dedicated math fonts
+
+The rendered PDF with glyphs for each font can be found
+link:/assets/blog/2023-08-15_plurimath_latex_constants.pdf[here].
+
+NOTE: the character `#` means that 'the glyph is not available in font' (except
+the number sign `U+0023` code).
+
+Refer to <<annex-a>> for the full comparison table.
+
+
+== Conclusion
+
+The order of coverage concludes in this order:
+
+* STIX Two Math -- 3 missing glyphs
+
+* Cambria Math -- 176 missing glyphs
+
+* Noto Sans Math -- 321 missing glyphs
+
+* Libertinus Math -- 792 missing glyphs
+
+Interestingly, there are some missing glyphs in all fonts, namely:
+
+* `arrowbullet` `0x27a2`
+* `ballotx` `0x2717`
+* `pencil` `0x270e`
+
+STIX Two Math is the clear winner where it provides most of the math glyphs
+supported in LaTeX, while Cambria Math comes as a second.
+
+Since Noto Sans and Libertinus Math are both open source projects, perhaps
+this is call that someone could contribute these missing glyphs to them!
+
+Certainly, those who work with Microsoft Word which uses Cambria might want to
+stay with Cambria Math for stylistic alignment and pretty good coverage.
+
+In conclusion, considering math glyph coverage with font licensing, STIX Two
+Math is the clear winner.
+
+NOTE: That's why Metanorma, the open source standards publication suite,
+currently defaults to STIX Two Math for rendering math.
+
+[[annex-a]]
+== Annex A: Supported LaTeX math symbols for dedicated math fonts
+
+.Supported LaTeX math symbols for dedicated math fonts
 [cols="a,a,a,a,a,a"]
 |===
 | LaTeX symbol name | Unicode character code | STIX Two Math | Cambria Math | Noto Sans Math | Libertinus Math
@@ -67,46 +252,18 @@ We have compared four math fonts on what glyphs are supported.
 {% for symbol in site.data.2023-08-15-font_coverage.symbols %}
 
 
-| `{{ symbol.latex_symbol_name }}` | `{{ symbol.unicode_char_code | escape_once }}` 
+| `{{ symbol.latex_symbol_name }}` | `{{ symbol.unicode_char_code | escape_once }}`
 
 {% assign stixtwomath_font = symbol.fonts | where: "font_name", "STIX Two Math" | first %}
 {% assign cambriamath_font = symbol.fonts | where: "font_name", "Cambria Math" | first %}
 {% assign notosansmath_font = symbol.fonts | where: "font_name", "Noto Sans Math" | first %}
 {% assign libertinusmath_font = symbol.fonts | where: "font_name", "Libertinus Math" | first %}
 
-| {% if stixtwomath_font.support %}✅{% else %}❌{% endif %} 
-| {% if cambriamath_font.support %}✅{% else %}❌{% endif %} 
-| {% if notosansmath_font.support %}✅{% else %}❌{% endif %} 
-| {% if libertinusmath_font.support %}✅{% else %}❌{% endif %} 
+| {% if stixtwomath_font.support %}✅{% else %}❌{% endif %}
+| {% if cambriamath_font.support %}✅{% else %}❌{% endif %}
+| {% if notosansmath_font.support %}✅{% else %}❌{% endif %}
+| {% if libertinusmath_font.support %}✅{% else %}❌{% endif %}
 
 {% endfor %}
 
 |===
-
-
-[NOTE]
-====
-* Cambria Math - 176 missing glyphs
-
-* STIX Two Math - 3 missing glyphs
-
-* Noto Sans Math - 321 missing glyphs
-
-* Libertinus Math - 792 missing glyphs
-
-Missing glyphs in all fonts:
-
-* arrowbullet 0x27a2
-* ballotx 0x2717
-* pencil 0x270e
-
-====
-
-You can find the rendered PDF with
-glyphs for each font link:/assets/blog/2023-08-15_plurimath_latex_constants.pdf[here]. 
-Note: the character '#' means 'glyph is not available in font' (except number sign U+0023 char).
-
-
-== Conclusion
-
-The font STIX Two Math has the fullest math support.
