@@ -7986,7 +7986,7 @@ symbols:
     unicode_char_code: "&#x27a2;"
     fonts:
       - font_name: STIX Two Math
-        support: true
+        support: false
       - font_name: Cambria Math
         support: false
       - font_name: Cambria Math 524
@@ -14200,7 +14200,7 @@ symbols:
     unicode_char_code: "&#x2717;"
     fonts:
       - font_name: STIX Two Math
-        support: true
+        support: false
       - font_name: Cambria Math
         support: false
       - font_name: Cambria Math 524
@@ -16878,7 +16878,7 @@ symbols:
     unicode_char_code: "&#x270e;"
     fonts:
       - font_name: STIX Two Math
-        support: true
+        support: false
       - font_name: Cambria Math
         support: false
       - font_name: Cambria Math 524
