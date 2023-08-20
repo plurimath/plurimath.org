@@ -41,6 +41,11 @@ The following references provide a listing of commonly used LaTeX math symbols:
 
 * https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols[OEIS List of LaTeX mathematical symbols]
 
+In total, there are 1,814 math symbols useable via predefined TeX commands.
+Plurimath supports usage of all these symbols, with the full list shown in
+its
+https://github.com/plurimath/plurimath/blob/main/lib/plurimath/latex/constants.rb[source code].
+
 NOTE: http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf[The Comprehensive LaTeX Symbols List]
 provides a full list of symbols supported in LaTeX 2e.
 
@@ -188,25 +193,20 @@ Link: https://github.com/alerque/libertinus
 
 === General
 
-Plurimath supports the encoding of all LaTeX math symbols available as shown in
-its
-https://github.com/plurimath/plurimath/blob/main/lib/plurimath/latex/constants.rb[source code]
-(total symbols of 1814).
-
 Here we compare these dedicated math fonts to visualize their coverage gaps
-against the list of symbols.
+against the list of LaTeX math symbols suppored by Plurimath.
 
 The fonts compared are:
 
-* STIX Two Math (https://github.com/stipub/stixfonts/releases/tag/v2.13b171[v2.13 b171], May 26, 2021)
+* STIX Two Math (https://github.com/stipub/stixfonts/releases/tag/v2.13b171[v2.13 b171], 2021-05-26)
 
-* Cambria Math (https://github.com/fontist/formulas/blob/9f1ebc5fcf2813d66e79c6fbcb43ed18876d20a1/Formulas/pclinuxos_webcore_fonts.yml#L43[v5.24], Apr 23, 2009)
+* Cambria Math (https://github.com/fontist/formulas/blob/9f1ebc5fcf2813d66e79c6fbcb43ed18876d20a1/Formulas/pclinuxos_webcore_fonts.yml#L43[v5.24], 2009-04-23)
 
-* Cambria Math (v6.99, July 7, 2019), from Windows 10
+* Cambria Math (v6.99, 2019-07-07), from Windows 10
 
-* Noto Sans Math (https://fonts.google.com/download?family=Noto%20Sans%20Math[v2.0001], Nov, 19, 2020)
+* Noto Sans Math (https://fonts.google.com/download?family=Noto%20Sans%20Math[v2.0001], 2020-11-19)
 
-* Libertinus Math (https://github.com/alerque/libertinus/releases/tag/v7.040[v7.040], Feb 26, 2021)
+* Libertinus Math (https://github.com/alerque/libertinus/releases/tag/v7.040[v7.040], 2021-02-26)
 
 
 == Math symbols supported by dedicated math fonts
