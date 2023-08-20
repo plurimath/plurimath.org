@@ -1,0 +1,455 @@
+---
+layout: post
+title:  "Licensing and availability of math fonts"
+date:   2023-08-20 00:00:00 +0800
+categories:
+  - plurimath
+  - introduction
+authors:
+  -
+    name: Ronald Tse
+    email: tse@ribose.com
+    social_links:
+      - https://www.linkedin.com/in/rhtse/
+      - https://github.com/ronaldtse
+
+excerpt: >-
+  Accurate rendering of math depends on the underlying font providing
+  full coverage and accurate representation of math symbols. However, not
+  all dedicated math fonts are offered under an open license. So which font
+  should we use?
+---
+= Licensing and availability of math fonts
+
+== Introduction
+
+Accurate rendering of math depends on the underlying font providing
+full coverage and accurate representation of math symbols.
+
+When selecting a dedicated math font for rendering math in organization styling,
+such as for Standards Development Organizations (SDOs), or even for personal
+use, there are certain considerations on choosing what font to use.
+
+== Considerations for choosing a math font
+
+Here are some typical considerations for selecting a dedicated math font:
+
+__Glyph coverage__:: does the math font fully cover all the math symbols used?
++
+NOTE: Please see the
+link:/blog/2023-08-15-font-coverage-latex-symbols[Coverage of LaTeX math symbols in dedicated math fonts]
+article for math font coverage information.
+
+__Style compatibility__:: does the math font render letters and symbols in a way
+that matches the surrounding text font?
++
+NOTE: An example style consideration: if "Cambria" is the surrounding text font,
+"Cambria Math" would be a natural choice for the dedicated math font.
+
+__Availability__:: is the math font available for the audience of a selected medium?
++
+NOTE: An example availability consideration: if the math is to be shown on
+HTML, is there a WOFF version or an embeddable version of the font that the
+reader can utilize to render the math?
+
+__Licensing__:: is the math font useable by the publication engine used?
++
+NOTE: An example license consideration: if the document is rendered on a
+continuous integration (CI) machine, does the font license allow distribution of
+the font to the CI machine?
+
+In this post we will discuss availability and licensing concerns, which are
+intertwined issues.
+
+== Font licenses, explained
+
+=== General
+
+Font licenses grant rights to the users for particular fonts. Some of the math
+fonts are offered under open-source licenses, and others are commercial.
+
+Common licensing considerations of using a dedicated math font include:
+
+* Commercial use: can this math font be used for commercial use?
+* Render: can this math font be used to render glyphs into graphics? This applies to rendering math symbols into non-generative medium, such as PDF.
+* Webfont: can this math font be served over the Internet, such as in the WOFF format, so that a web audience can render the font glyphs?
+* Embed in artifact: can this math font be embedded in a read-only artifact? For example, an eBook requires embedding of the font into the eBook archive itself so that the pages with math glyphs can be rendered in the chosen math font.
+* Embed in app: can this math font be embedded in an application, such as in an mobile app?
+* Distribute: can this math font be re-distributed?
+* Modify: can this math font be modified, extended and then re-distributed?
+
+NOTE: Fonts Arena provides a https://fontsarena.com/licenses-explained[detailed comparison of open-source font licenses].
+
+=== Open Font License
+
+The https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL[Open Font License (OFL)],
+formally, the SIL Open Font License, is a
+permissive open-source license specifically designed for fonts, and currently
+in use by many open-source fonts.
+
+The OFL is developed by https://www.sil.org[SIL], a non-profit organization that
+develops language solutions with local communities. Formerly the Summer
+Institute of Linguistics, it was founded in 1934 by William Cameron Townsend,
+and has been a leader in language software and solutions for the populations
+around the globe.
+
+OFL differs from typical open-source licenses that it is tailored for the use
+cases of fonts:
+
+* fonts remain open: derivative works based on the original font must be
+distributed under the same license terms, so that any modifications and
+enhancements remain open and accessible to the community.
+
+* font naming: the font name of the original and any derived fonts may be
+restricted to the original naming scheme for consistency reasons.
+
+* right to embed: fonts can be embedded within documents, web pages, and
+applications, enabling seamless distribution and display across different
+platforms and devices.
+
+* right to bundle: bundling the font with software is permitted, as long as the
+fonts themselves remain separate and unmodified.
+
+* compatible with other open-source licenses such as GPLv3.
+
+OFL is by far the most popular open-source font license adopted, including
+most fonts on Google Fonts.
+
+In summary, the OFL provides the following rights:
+
+* Commercial use: Yes.
+* Render: Yes.
+* Webfont: Yes.
+* Embed in artifact: Yes.
+* Embed in app: Yes.
+* Distribute: Yes.
+* Modify: Yes.
+
+
+// ❌
+
+
+[[ms-bundle-license]]
+=== Microsoft Windows bundled fonts
+
+There are two ways to use fonts bundled with Microsoft Windows:
+
+. Using the font on a Windows machine
+. Using the font outside of a Windows machine, such as in a service
+
+For the first category, the rights are as summarized as follows.
+The
+"https://learn.microsoft.com/en-us/typography/fonts/font-faq[Font redistribution FAQ for Windows]"
+describes how the bundled fonts can be used.
+
+The following rights are given for Windows-bundled fonts:
+
+* Commercial use: Yes, when the font is used on a Windows machine, otherwise a separate font license is necessary.
+* Render: Yes, when the font is used on a Windows machine, otherwise a "desktop
+font license" is necessary from https://www.fonts.com[Fonts.com].
++
+NOTE: Not all Windows-bundled fonts are offered an "desktop font license".
+* Webfont: No, a separate font license is necessary from
+https://www.fonts.com[Fonts.com].
+* Embed in artifact: Yes, when the font is used on a Windows machine, otherwise
+a "electronic doc license" is necessary from https://www.fonts.com[Fonts.com].
++
+NOTE: Not all Windows-bundled fonts are offered an "electronic doc license".
+* Embed in app: No, a separate font license is necessary.
+* Distribute: No.
+* Modify: No.
+
+For the second category, Microsoft fonts are offered licenses through
+https://www.fonts.com[Fonts.com], where the following types exist:
+
+* Desktop font license: install the font on your computer for use with authoring tools for rendering. Charged according to number of installs.
+
+* Digital ads license: using the font on a web or modile ad. Charged according to ad instances.
+
+* Web font license: using the font for web rendering on
+https://www.fonts.com[Fonts.com]. Charged according to web views.
+
+* Electronic doc license: using the font for embedding in electronic documents such as eBooks.
+
+
+== Dedicated math fonts compared
+
+The four popular dedicated math fonts are compared for their availability
+and licensing attributes:
+
+* https://learn.microsoft.com/en-us/typography/font-list/cambria-math[Cambria Math]
+
+* https://www.stixfonts.org[STIX Two Math]
+
+* https://fonts.google.com/noto/specimen/Noto+Sans+Math[Noto Math]
+
+* https://github.com/alerque/libertinus[Libertinus Math]
+
+
+== Cambria Math
+
+=== Introduction
+
+Cambria Math is the dedicated math font designed to accompany Cambria, the
+default document typesetting font from Microsoft for Windows and Office.
+Cambria itself was meant as a replacement for the rather universal font
+Times New Roman.
+
+Cambria Math is part of the Microsoft
+https://en.wikipedia.org/wiki/ClearType_Font_Collection[ClearType Font Collection]
+and the first font to implement the OpenType math extension, and was released in
+2007.
+
+The design philosophy and process of Cambria Math is elaborated in the
+http://tiro.com/Articles/mathematical_typesetting.pdf[Mathematical Typesetting: Mathematical and Scientific Typesetting Solutions from Microsoft]
+document edited by Ross Mills and John Hudson, with contributions by Richard
+Lawrence and Murray Sargent.
+
+=== Licensing
+
+Microsoft does not in particular offer a "license" specific to Cambria Math,
+so we can consider it to be licensed under the Microsoft Windows-bundled font
+licenses described <<ms-bundle-license,here>>.
+
+Specifically, the Cambria Math licenses available are described on the
+https://www.fonts.com/font/microsoft-corporation/cambria-math/licenses[Cambria Math Licenses]
+page on https://www.fonts.com[Fonts.com].
+Interestingly, only the "web font license" is available,
+which means that there is technically no avenue to use Cambria Math for document
+rendering or eBook embedding or app embedding.
+
+The openly available Cambria Math files are distributed under these terms:
+
+* Version 1.02: License as transcribed in its
+https://github.com/fontist/formulas/blob/9f1ebc5fcf2813d66e79c6fbcb43ed18876d20a1/Formulas/cleartype.yml#L401[Fontist formula]
+* Version 5.24: License as transcribed in its
+https://github.com/fontist/formulas/blob/9f1ebc5fcf2813d66e79c6fbcb43ed18876d20a1/Formulas/pclinuxos_webcore_fonts.yml#L701[Fontist formula],
+which points back to the Microsoft site.
+
+We can produce the following table for Cambria Math.
+
+[cols="a,a,a,a,a,a,a",options="header"]
+.Rights at a glance for Cambria Math
+|===
+| Commercial use | Render | webfont | Embed in artifact | Embed in app | Distribute | Modify
+
+| ✅ on Windows | ✅ on Windows | License required | ✅ on Windows | ❌ | ❌ | ❌
+
+|===
+
+
+
+=== Availability
+
+The method of distribution for the Cambria Math font is described under the
+https://sourceforge.net/projects/mscorefonts2/files/cabs/[`mscorefonts2` project at SourceForge]
+
+Most Cambria Math versions, especially the newer ones, are not independently
+available and are only offered bundled inside Microsoft products.
+
+This means that the usage of those newer fonts can only occur on Microsoft
+Windows or require some form of extraction of them, yet the licensing terms do
+not allow such usage.
+
+The latest version of Cambria Math is 6.99, bundled with
+https://learn.microsoft.com/en-us/typography/fonts/windows_10_font_list[Windows 10],
+https://learn.microsoft.com/en-us/typography/fonts/windows_11_font_list[Windows 11],
+https://support.microsoft.com/en-us/office/cloud-fonts-in-office-f7b009fe-037f-45ed-a556-b5fe6ede6adb[Office 365].
+
+Only version 5.24 offered through the Microsoft ClearType Font Collection
+and version 1.02 offered through the Microsoft PowerPoint Viewer 2007 executable
+are openly available.
+
+The versions of Cambria Math are available through the following avenues:
+
+.Availability of Cambria Math versions
+[cols="a,a,3a"]
+|===
+| Cambria Math version | Year released | Offered in
+
+| 0.90 | 2004 | ?
+| 0.95 | 2004 | ?
+| 1.00 | ? | ?
+| 1.02 | 2006 | https://web.archive.org/web/20171225132744if_/http://download.microsoft.com/download/E/6/7/E675FFFC-2A6D-4AB0-B3EB-27C9F8C8F696/PowerPointViewer.exe[Microsoft PowerPoint Viewer 2007]
+
+| 2.00 | 2006 | ?
+| 5.00 | 2006 | https://learn.microsoft.com/en-us/typography/font-list/cambria-math[Windows Vista]
+
+| 5.24 | 2008 |
+https://learn.microsoft.com/en-us/typography/cleartype/clear-type-font-collection[Microsoft ClearType Font Collection]
+from Windows Vista and Office 2007
+(https://github.com/fontist/formulas/blob/9f1ebc5fcf2813d66e79c6fbcb43ed18876d20a1/Formulas/pclinuxos_webcore_fonts.yml#L43[Fontist formula for Cambria Math])
+
+| 5.93 | ? |
+| 5.96 | ? |
+| 5.97 | 2007 | https://learn.microsoft.com/en-us/typography/fonts/windows_7_font_list[Windows 7]
+
+| 5.98 | ? |
+| 5.99 | 2009 |
+
+| 6.80 | ? |
+| 6.81 | ? |
+| 6.82 | ? |
+| 6.83 | ? |
+
+| 6.84 | 2012 |
+https://learn.microsoft.com/en-us/typography/fonts/windows_8_font_list[Windows 8],
+https://learn.microsoft.com/en-us/typography/fonts/windows_81_font_list[Windows 8.1]
+
+| 6.90 | ? |
+| 6.91 | 2016-11-25 |
+| 6.96 | ? |
+| 6.98 | ? |
+| 6.99 | ? |
+https://learn.microsoft.com/en-us/typography/fonts/windows_10_font_list[Windows 10],
+https://learn.microsoft.com/en-us/typography/fonts/windows_11_font_list[Windows 11],
+https://support.microsoft.com/en-us/office/cloud-fonts-in-office-f7b009fe-037f-45ed-a556-b5fe6ede6adb[Office 365]
+
+|===
+
+It is rather clear that the availability of Cambria Math becomes a huge
+challenge for users outside of the Windows platform.
+
+
+=== STIX Two Math
+
+==== Introduction
+
+The STIX Two Math font is part of the https://www.stixfonts.org[STIX fonts]
+project.
+
+STIX dates back to 1995 to the proposal from Arie de Ruiter of
+https://www.elsevier.com[Elsevier], and is joined by the
+https://www.ams.org[American Mathematical Society] in 1997. STIX Fonts 1.0 was
+released in May 2010, with STIX Fonts 2.0 ("STIX Two Fonts") released in
+December 2016.
+
+
+==== Licensing
+
+The STIX Two Math fonts are licensed under OFL, which means it is
+permissive and open.
+
+[cols="a,a,a,a,a,a,a",options="header"]
+.Rights at a glance for STIX Two Math
+|===
+| Commercial use | Render | webfont | Embed in artifact | Embed in app | Distribute | Modify
+
+| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅
+
+|===
+
+
+==== Availability
+
+The font is open sourced, available for re-distribution and download.
+
+The released fonts are available at the official https://www.stixfonts.org[STIX]
+site.
+
+The STIX fonts source code is available at GitHub:
+
+* https://github.com/stipub/stixfonts
+
+
+
+=== Noto Sans Math
+
+==== Introduction
+
+Noto Sans Math is a dedicated math font produced by Google as part of the Noto
+Sans family which belongs to the Noto collection. Noto Sans Math provides 2,655
+glyphs.
+
+
+==== Licensing
+
+Noto Sans Math is licensed under OFL, which means it is permissive and open.
+
+[cols="a,a,a,a,a,a,a",options="header"]
+.Rights at a glance for Noto Sans Math
+|===
+| Commercial use | Render | webfont | Embed in artifact | Embed in app | Distribute | Modify
+
+| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅
+
+|===
+
+
+==== Availability
+
+The font is open sourced, available for re-distribution and download.
+
+The released fonts are available at the official
+https://fonts.google.com/noto/specimen/Noto+Sans+Math[Google Fonts] site.
+
+The Noto Sans Math fonts source code is available at GitHub:
+
+* https://github.com/notofonts/math
+
+
+
+=== Libertinus Math
+
+==== Introduction
+
+The Libertinus Math font was originally developed as the OpenType companion for
+the Linux Libertine fonts.
+
+Libertinus Math was forked from version 5.3.0 of Linux Libertine fonts,
+and was first released as 6.0.0 in 2016.
+
+
+==== Licensing
+
+Libertinus Math is licensed under OFL v1.1, which means it is permissive and open.
+
+[cols="a,a,a,a,a,a,a",options="header"]
+.Rights at a glance for Libertinus Math
+|===
+| Commercial use | Render | webfont | Embed in artifact | Embed in app | Distribute | Modify
+
+| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅
+
+|===
+
+
+==== Availability
+
+The font is open sourced, available for re-distribution and download.
+
+All released fonts and versions are available at its
+https://github.com/alerque/libertinus/releases[GitHub releases] page.
+
+The Libertinus Math fonts source code is available at GitHub:
+
+* https://github.com/alerque/libertinus
+
+
+
+== Conclusion
+
+STIX Two Math, Noto Sans Math and Libertinus Math are all offered under the OFL
+which make then suitable for open-source publishing, re-distribution and for
+non-interactive continuous integration systems. The only considerations amongst
+them are stylistic and symbol coverage
+(see link:/blog/2023-08-15-font-coverage-latex-symbols[coverage post]).
+
+Cambria Math, while it is excellently designed and a popular choice for math
+representation, is marred by unclear licensing terms and a lock on the Windows
+platform. For open source publishing or for use in non-Windows-based continuous
+integration systems, Cambria Math is likely not the best choice.
+
+
+[cols="a,a,a,a,a,a,a,a,a",options="header"]
+.Rights and availability at a glance for typical math fonts
+|===
+| Font | Availability | Commercial use | Render | webfont | Embed in artifact | Embed in app | Distribute | Modify
+
+| STIX Two Math | Open | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅
+| Noto Sans Math | Open | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅
+| Libertinus Math | Open | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅
+| Cambria Math | On Windows, difficult on other platforms | ✅ on Windows | ✅ on Windows | License required | ✅ on Windows | ❌ | ❌ | ❌
+
+|===
+

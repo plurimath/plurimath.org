@@ -94,29 +94,37 @@ default document typesetting font from Microsoft for Windows and Office.
 Cambria itself was meant as a replacement for the rather universal font
 Times New Roman.
 
-Cambria Math was part of the Microsoft
+Cambria Math is part of the Microsoft
 https://en.wikipedia.org/wiki/ClearType_Font_Collection[ClearType Font Collection]
 and the first font to implement the OpenType math extension, and was released in
 2007.
 
+The design philosophy and process of Cambria Math is elaborated in the
+http://tiro.com/Articles/mathematical_typesetting.pdf[Mathematical Typesetting: Mathematical and Scientific Typesetting Solutions from Microsoft]
+document edited by Ross Mills and John Hudson, with contributions by Richard
+Lawrence and Murray Sargent.
+
 The issue with Cambria Math is its licensing and availability. As the Unicode
 character sets grows, newer versions of fonts are extended to handle more
-glyphs. However, the latest version (6.99) of Cambria Math
-is only distributed through bundling on Microsoft products such as Windows and Office.
+glyphs. However, the more recent versions of Cambria Math are not independently
+available and are only offered bundled inside Microsoft products,
+which means the usage of the font can only occur on Microsoft Windows
+or require some form of extraction of them.
 
-The openly-available Microsoft ClearType Font Collection, only provides Cambria Math at version 5.24
-which is from 2008
-(https://github.com/fontist/formulas/blob/9f1ebc5fcf2813d66e79c6fbcb43ed18876d20a1/Formulas/pclinuxos_webcore_fonts.yml#L43[Fontist formula for Cambria Math]).
+For open source publishing or for use in non-Windows-based continuous
+integration systems, Cambria Math may not be the best choice.
 
-These facts mean that Cambria Math is not the best choice for open source publishing
-or for use in non-Windows-based continuous integration systems.
+NOTE: Availability and licensing concerns of Cambria Math can be found at the
+link:/blog/2023-08-21-math-font-availability-licensing[Licensing and availability of math fonts]
+article.
 
 Official link: https://learn.microsoft.com/en-us/typography/font-list/cambria-math
 
 
 === STIX Two Math
 
-The STIX Two Math font is part of the https://www.stixfonts.org[STIX fonts] project.
+The STIX Two Math font is part of the https://www.stixfonts.org[STIX fonts]
+project.
 
 From its website:
 
@@ -160,6 +168,7 @@ and for non-interactive continuous integration systems.
 
 Official link: https://fonts.google.com/noto/specimen/Noto+Sans+Math
 
+
 === Libertinus Math
 
 The Libertinus Math font was originally developed as the OpenType companion for
@@ -168,9 +177,9 @@ the Linux Libertine fonts.
 Libertinus Math was forked from version 5.3.0 of Linux Libertine fonts,
 and was first released as 6.0.0 in 2016.
 
-Libertinus Math is offered under the Open Font License which
-makes it suitable for open-source publishing, re-distribution
-and for non-interactive continuous integration systems.
+Libertinus Math is offered under the Open Font License which makes it suitable
+for open-source publishing, re-distribution and for non-interactive continuous
+integration systems.
 
 Link: https://github.com/alerque/libertinus
 
@@ -245,7 +254,7 @@ currently defaults to STIX Two Math for rendering math.
 == Annex A: Supported LaTeX math symbols for dedicated math fonts
 
 .Supported LaTeX math symbols for dedicated math fonts
-[cols="a,a,a,a,a,a"]
+[cols="a,a,a,a,a,a",options="header"]
 |===
 | LaTeX symbol name | Unicode character code | STIX Two Math | Cambria Math | Noto Sans Math | Libertinus Math
 
