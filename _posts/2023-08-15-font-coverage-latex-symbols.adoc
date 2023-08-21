@@ -252,19 +252,24 @@ stay with Cambria Math for stylistic alignment and pretty good coverage.
 In conclusion, considering math glyph coverage with font licensing, STIX Two
 Math is the clear winner.
 
-NOTE: That's why Metanorma, the open source standards publication suite,
-currently defaults to STIX Two Math for rendering math.
+NOTE: That's why https://www.metanorma.org[Metanorma], the open source standards
+publication suite, currently defaults to STIX Two Math for rendering math.
 
 [[annex-a]]
 == Annex A: Supported LaTeX math symbols for dedicated math fonts
 
 .Supported LaTeX math symbols for dedicated math fonts
-[cols="a,a,a,a,a,a",options="header"]
+[cols="2a,a,a,a,a,a,a",options="header"]
 |===
-| LaTeX symbol name | Unicode character code | STIX Two Math v2.13 b171 | Cambria Math v5.24 | Cambria Math v6.99 | Noto Sans Math v2.0001 | Libertinus Math v7.040
+h| LaTeX symbol name
+h| Unicode character code
+h| STIX Two Math footnote:[STIX Two Math v2.13 b171]
+h| Cambria Math (open) footnote:[Cambria Math v5.24]
+h| Cambria Math (Windows) footnote:[Cambria Math v6.99]
+h| Noto Sans Math footnote:[Noto Sans Math v2.0001]
+h| Libertinus Math footnote:[Libertinus Math v7.040]
 
-{% for symbol in site.data.2023-08-15-font_coverage.symbols %}
-
+{% for symbol in site.data['2023-08-15-font_coverage'].symbols %}
 
 | `{{ symbol.latex_symbol_name }}` | `{{ symbol.unicode_char_code | escape_once }}`
 

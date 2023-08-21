@@ -23569,7 +23569,7 @@ symbols:
         support: true
       - font_name: Libertinus Math
         support: true
-  - latex_symbol_name: _
+  - latex_symbol_name: "_"
     unicode_char_code: "&#x5f;"
     fonts:
       - font_name: STIX Two Math
