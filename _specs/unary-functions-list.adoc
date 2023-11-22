@@ -1,0 +1,2871 @@
+[[unary-functions-list]]
+
+|===
+| | | |
+
+| link:#abs[abs] | link:#align[align] | link:#arccos[arccos] | link:#arcsin[arcsin]
+
+| link:#arctan[arctan] | link:#array[array] | link:#bar[bar] | link:#bold[bold]
+
+| link:#boldfraktur[boldfraktur] | link:#bolditalic[bolditalic] | link:#boldsansserif[boldsansserif] | link:#boldscript[boldscript]
+
+| link:#bmatrix[bmatrix] | link:#Bmatrix[Bmatrix] | link:#cancel[cancel] | link:#ceil[ceil]
+
+| link:#cos[cos] | link:#cosh[cosh] | link:#cot[cot] | link:#coth[coth]
+
+| link:#csc[csc] | link:#csch[csch] | link:#ddot[ddot] | link:#deg[deg]
+
+| link:#det[det] | link:#dim[dim] | link:#dot[dot] | link:#doublestruck[doublestruck]
+
+| link:#exp[exp] | link:#floor[floor] | link:#fraktur[fraktur] | link:#gcd[gcd]
+
+| link:#glb[glb] | link:#hat[hat] | link:#hom[hom] | link:#italic[italic]
+
+| link:#ker[ker] | link:#lcm[lcm] | link:#lg[lg] | link:#liminf[liminf]
+
+| link:#limsup[limsup] | link:#ln[ln] | link:#longdiv[longdiv] | link:#lub[lub]
+
+| link:#max[max] | link:#matrix[matrix] | link:#mbox[mbox] | link:#min[min]
+
+| link:#menclose[menclose] | link:#merror[merror] | link:#msgroup[msgroup] | link:#monospace[monospace]
+
+| link:#multline[multline] | link:#normal[normal] | link:#norm[norm] | link:#obrace[obrace]
+
+| link:#phantom[phantom] | link:#scarries[scarries] | link:#sec[sec] | link:#sech[sech]
+
+| link:#sin[sin] | link:#sinh[sinh] | link:#sqrt[sqrt] | link:#sup[sup]
+
+| link:#sansserif[sansserif] | link:#sansserifbolditalic[sansserifbolditalic] | link:#sansserifitalic[sansserifitalic] | link:#script[script]
+
+| link:#substack[substack] | link:#table[table] | link:#tan[tan] | link:#tanh[tanh]
+
+| link:#text[text] | link:#tilde[tilde] | link:#ubrace[ubrace] | link:#ul[ul]
+
+| link:#vec[vec] | link:#split[split] | link:#vmatrix[vmatrix] | link:#Vmatrix[Vmatrix]
+
+|===
+
+
+= Unary functions Examples
+
+[[abs]]
+
+== Abs
+* **AsciiMath**
+```
+abs(x)
+```
+* **LaTeX**
+```
+\abs{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mo>|</mo>
+      <mi>x</mi>
+      <mo>|</mo>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:d>
+      <m:dPr>
+        <w:rPr>
+          <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+        </w:rPr>
+        <m:begChr m:val="|"/>
+        <m:endChr m:val="|"/>
+        <m:sepChr m:val=""/>
+        <m:grow/>
+      </m:dPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:d>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[align]]
+
+== Align
+* **LaTeX**
+```
+\begin{align}x \\ y \\ z\end{align}
+```
+
+NOTE: In other conversions, the generated output will resemble the content in the link:#table[Table class]
+
+[[arccos]]
+
+== Arccos
+* **AsciiMath**
+```
+arccos(x)
+```
+* **LaTeX**
+```
+\arccos{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>arccos</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:func>
+      <m:funcPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:funcPr>
+      <m:fName>
+        <m:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+          </w:rPr>
+          <m:t>arccos</m:t>
+        </m:r>
+      </m:fName>
+      <m:e>
+        <m:d>
+          <m:dPr>
+            <m:begChr m:val="("/>
+            <m:endChr m:val=")"/>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:dPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+        </m:d>
+      </m:e>
+    </m:func>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[arcsin]]
+
+== Arcsin
+* **AsciiMath**
+```
+arcsin(x)
+```
+* **LaTeX**
+```
+\arcsin{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>arcsin</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:func>
+      <m:funcPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:funcPr>
+      <m:fName>
+        <m:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+          </w:rPr>
+          <m:t>arcsin</m:t>
+        </m:r>
+      </m:fName>
+      <m:e>
+        <m:d>
+          <m:dPr>
+            <m:begChr m:val="("/>
+            <m:endChr m:val=")"/>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:dPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+        </m:d>
+      </m:e>
+    </m:func>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[arctan]]
+
+== Arctan
+* **AsciiMath**
+```
+arctan(x)
+```
+* **LaTeX**
+```
+\arctan{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>arctan</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:func>
+      <m:funcPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:funcPr>
+      <m:fName>
+        <m:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+          </w:rPr>
+          <m:t>arctan</m:t>
+        </m:r>
+      </m:fName>
+      <m:e>
+        <m:d>
+          <m:dPr>
+            <m:begChr m:val="("/>
+            <m:endChr m:val=")"/>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:dPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+        </m:d>
+      </m:e>
+    </m:func>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[array]]
+
+== Array
+* **LaTeX**
+```
+\begin{array}.x \\ y \\ z\end{array}
+```
+
+NOTE: In other conversions, the generated output will resemble the content in the link:#table[Table class]
+
+[[bar]]
+
+== Bar
+* **AsciiMath**
+```
+bar(x)
+```
+* **LaTeX**
+```
+\overline{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mover>
+      <mi>x</mi>
+      <mo>&#xaf;</mo>
+    </mover>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:bar>
+      <m:barPr>
+        <m:pos m:val="top"/>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:barPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:bar>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[bold]]
+
+== Bold
+* **AsciiMath**
+```
+bb(x)
+```
+* **LaTeX**
+```
+\mathbf{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="bold">
+      <mi>x</mi>
+    </mstyle>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="b"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[boldfraktur]]
+
+== Boldfraktur
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="bold-fraktur">
+      <mtext>x</mtext>
+    </mstyle>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:scr m:val="fraktur"/>
+        <m:sty m:val="b"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `x`.
+
+[[bolditalic]]
+
+== Bolditalic
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="bold-italic">
+      <mtext>a</mtext>
+    </mstyle>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="bi"/>
+      </m:rPr>
+      <m:t>a</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a straightforward equation. For example, the output of this example in *AsciiMath* will be represented as `x`.
+
+[[boldsansserif]]
+
+== Boldsansserif
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="bold-sans-serif">
+      <mtext>x</mtext>
+    </mstyle>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:scr m:val="sans-serif"/>
+        <m:sty m:val="b"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a straightforward equation. For example, the output of this example in *AsciiMath* will be represented as `x`.
+
+[[boldscript]]
+
+== Boldscript
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="bold-script">
+      <mtext>x</mtext>
+    </mstyle>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:scr m:val="script"/>
+        <m:sty m:val="b"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a straightforward equation. For example, the output of this example in *AsciiMath* will be represented as `x`.
+
+[[bmatrix]]
+
+== bmatrix
+* **LaTeX**
+```
+\begin{bmatrix}x \\ y \\ z\end{bmatrix}
+```
+
+NOTE: In other conversions, the generated output will resemble the content in the link:#table[Table class]
+
+[[Bmatrix]]
+
+== Bmatrix
+* **LaTeX**
+```
+\begin{Bmatrix}x \\ y \\ z\end{Bmatrix}
+```
+
+NOTE: In other conversions, the generated output will resemble the content in the link:#table[Table class]
+
+[[cancel]]
+
+== Cancel
+* **AsciiMath**
+```
+cancel(x)
+```
+* **LaTeX**
+```
+\cancel{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <menclose notation="updiagonalstrike">
+      <mi>x</mi>
+    </menclose>
+  </mstyle>
+</math>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a straightforward equation. For example, the output of this example in *AsciiMath* will be represented as `x`.
+
+[[ceil]]
+
+== Ceil
+* **AsciiMath**
+```
+ceil(x)
+```
+* **LaTeX**
+```
+{\lceil x \rceil}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mo>&#x2308;</mo>
+      <mi>x</mi>
+      <mo>&#x2309;</mo>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="⌈"/>
+        <m:endChr m:val="⌉"/>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:dPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:d>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[cos]]
+
+== Cos
+* **AsciiMath**
+```
+cos(x)
+```
+* **LaTeX**
+```
+\cos{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>cos</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:func>
+      <m:funcPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:funcPr>
+      <m:fName>
+        <m:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+          </w:rPr>
+          <m:t>cos</m:t>
+        </m:r>
+      </m:fName>
+      <m:e>
+        <m:d>
+          <m:dPr>
+            <m:begChr m:val="("/>
+            <m:endChr m:val=")"/>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:dPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+        </m:d>
+      </m:e>
+    </m:func>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[cosh]]
+
+== Cosh
+* **AsciiMath**
+```
+cosh(x)
+```
+* **LaTeX**
+```
+\cosh{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>cosh</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:func>
+      <m:funcPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:funcPr>
+      <m:fName>
+        <m:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+          </w:rPr>
+          <m:t>cosh</m:t>
+        </m:r>
+      </m:fName>
+      <m:e>
+        <m:d>
+          <m:dPr>
+            <m:begChr m:val="("/>
+            <m:endChr m:val=")"/>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:dPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+        </m:d>
+      </m:e>
+    </m:func>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[cot]]
+
+== Cot
+* **AsciiMath**
+```
+cot(x)
+```
+* **LaTeX**
+```
+\cot{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>cot</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:func>
+      <m:funcPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:funcPr>
+      <m:fName>
+        <m:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+          </w:rPr>
+          <m:t>cot</m:t>
+        </m:r>
+      </m:fName>
+      <m:e>
+        <m:d>
+          <m:dPr>
+            <m:begChr m:val="("/>
+            <m:endChr m:val=")"/>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:dPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+        </m:d>
+      </m:e>
+    </m:func>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[coth]]
+
+== Coth
+* **AsciiMath**
+```
+coth(x)
+```
+* **LaTeX**
+```
+\coth{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>coth</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:func>
+      <m:funcPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:funcPr>
+      <m:fName>
+        <m:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+          </w:rPr>
+          <m:t>coth</m:t>
+        </m:r>
+      </m:fName>
+      <m:e>
+        <m:d>
+          <m:dPr>
+            <m:begChr m:val="("/>
+            <m:endChr m:val=")"/>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:dPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+        </m:d>
+      </m:e>
+    </m:func>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[csc]]
+
+== Csc
+* **AsciiMath**
+```
+csc(x)
+```
+* **LaTeX**
+```
+\csc{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>csc</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:func>
+      <m:funcPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:funcPr>
+      <m:fName>
+        <m:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+          </w:rPr>
+          <m:t>csc</m:t>
+        </m:r>
+      </m:fName>
+      <m:e>
+        <m:d>
+          <m:dPr>
+            <m:begChr m:val="("/>
+            <m:endChr m:val=")"/>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:dPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+        </m:d>
+      </m:e>
+    </m:func>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[csch]]
+
+== Csch
+* **AsciiMath**
+```
+csch(x)
+```
+* **LaTeX**
+```
+\csch{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>csch</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:func>
+      <m:funcPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:funcPr>
+      <m:fName>
+        <m:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+          </w:rPr>
+          <m:t>csch</m:t>
+        </m:r>
+      </m:fName>
+      <m:e>
+        <m:d>
+          <m:dPr>
+            <m:begChr m:val="("/>
+            <m:endChr m:val=")"/>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:dPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+        </m:d>
+      </m:e>
+    </m:func>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[ddot]]
+
+== Ddot
+* **AsciiMath**
+```
+ddot(x)
+```
+* **LaTeX**
+```
+\ddot{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mover accent="true">
+      <mi>x</mi>
+      <mo>..</mo>
+    </mover>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:limUpp>
+      <m:limUppPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:limUppPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>..</m:t>
+        </m:r>
+      </m:lim>
+    </m:limUpp>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[deg]]
+
+== Deg
+* **LaTeX**
+```
+\deg{( x )}
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the input of this example in *AsciiMath* will be processed as `d e g \(x\)`.
+
+[[det]]
+
+== Det
+* **AsciiMath**
+```
+det(x)
+```
+* **LaTeX**
+```
+\det{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>det</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the *presentation* of this example in *OMML*  will be `det ("x")`.
+
+[[dim]]
+
+== Dim
+* **AsciiMath**
+```
+dim(x)
+```
+* **LaTeX**
+```
+\dim{( x )}
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the *presentation* of this example in *OMML* will be represented as `dim (x)`.
+
+[[dot]]
+
+== Dot
+* **AsciiMath**
+```
+dot(x)
+```
+* **LaTeX**
+```
+\dot{x}
+```
+
+NOTE: In other conversions, the value of the class will be processed as a link:#overset[Overset class].
+
+[[doublestruck]]
+
+== Doublestruck
+* **AsciiMath**
+```
+mathbb(x)
+```
+* **LaTeX**
+```
+\mathbb{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="double-struck">
+      <mi>x</mi>
+    </mstyle>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:scr m:val="double-struck"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[exp]]
+
+== Exp
+* **AsciiMath**
+```
+exp(x)
+```
+* **LaTeX**
+```
+\exp{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>exp</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the presentation of this example in *OMML* will be represented as `exp ("x")`.
+
+[[floor]]
+
+== Floor
+* **AsciiMath**
+```
+floor(x)
+```
+
+NOTE: In other conversions, This class will be handled as link:#fenced[fenced]. For example, the output of this example in *LaTeX* will be `{\lfloor x \rfloor}`.
+
+[[fraktur]]
+
+== Fraktur
+* **AsciiMath**
+```
+mathfrak(x)
+```
+* **LaTeX**
+```
+\mathfrak{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="fraktur">
+      <mi>x</mi>
+    </mstyle>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:scr m:val="fraktur"/>
+        <m:sty m:val="p"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[gcd]]
+
+== Gcd
+* **AsciiMath**
+```
+gcd(x)
+```
+* **LaTeX**
+```
+\gcd{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>gcd</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the presentation of this example in *OMML* will be represented as `gcd ("x")`.
+
+[[glb]]
+
+== Glb
+* **AsciiMath**
+```
+glb(x)
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>glb</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+
+NOTE: In other conversions, the value of this class will be processed as a simple text. For example, the output of this example in *LaTeX* will be represented as `glb ("x")`.
+
+[[hat]]
+
+== Hat
+* **AsciiMath**
+```
+hat(x)
+```
+* **LaTeX**
+```
+\hat{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mover>
+      <mi>x</mi>
+      <mo>^</mo>
+    </mover>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:limUpp>
+      <m:limUppPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:limUppPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>&#x302;</m:t>
+        </m:r>
+      </m:lim>
+    </m:limUpp>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[hom]]
+
+== Hom
+* **LaTeX**
+```
+\hom{( x )}
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `hom (x)`.
+
+[[italic]]
+
+== Italic
+* **AsciiMath**
+```
+ii(x)
+```
+* **LaTeX**
+```
+\mathit{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="mathit">
+      <mi>x</mi>
+    </mstyle>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="i"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[ker]]
+
+== Ker
+* **LaTeX**
+```
+\ker{( x )}
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `ker(x)`.
+
+[[lcm]]
+
+== Lcm
+* **AsciiMath**
+```
+lcm(x)
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>lcm</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *LaTeX* will be represented as `lcm{( x )}`.
+
+[[lg]]
+
+== Lg
+* **LaTeX**
+```
+\lg{( x )}
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `lg(x)`.
+
+[[liminf]]
+
+== Liminf
+* **LaTeX**
+```
+\liminf{( x )}
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `liminf(x)`.
+
+[[limsup]]
+
+== Limsup
+* **LaTeX**
+```
+\limsup{( x )}
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `limsup(x)`.
+
+[[ln]]
+
+== Ln
+* **AsciiMath**
+```
+ln(x)
+```
+* **LaTeX**
+```
+\ln{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>ln</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the presentation of this example in *OMML* will be represented as `ln ("x")`.
+
+[[longdiv]]
+
+== Longdiv
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mlongdiv>
+      <mo>(</mo>
+      <mi>x</mi>
+      <mo>)</mo>
+    </mlongdiv>
+  </mstyle>
+</math>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `(x)`.
+
+[[lub]]
+
+== Lub
+* **AsciiMath**
+```
+lub(x)
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>lub</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *LaTeX* will be represented as `lub (x)`.
+
+[[max]]
+
+== Max
+* **AsciiMath**
+```
+max(x)
+```
+* **LaTeX**
+```
+\max{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>max</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the *presentation* of this example in *OMML*  will be `max ("x")`.
+
+[[matrix]]
+
+== Matrix
+* **LaTeX**
+```
+\begin{matrix}x \\ y \\ z\end{matrix}
+```
+
+NOTE: In other conversions, the generated output will resemble the content in the link:#table[Table class]
+
+[[mbox]]
+
+== Mbox
+* **LaTeX**
+```
+\mbox{( x )}
+```
+
+NOTE: In other conversions, the generated output will resemble the content in the link:#text[Text class]
+
+[[min]]
+
+== Min
+* **AsciiMath**
+```
+min(x)
+```
+* **LaTeX**
+```
+\min{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>min</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the *presentation* of this example in *OMML*  will be `min ("x")`.
+
+[[menclose]]
+
+== Menclose
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <menclose notation="box">
+      <mi>x</mi>
+    </menclose>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:borderBox>
+      <m:borderBoxPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:borderBoxPr>
+      <m:e>
+        <m:r>
+          <m:t>n</m:t>
+        </m:r>
+      </m:e>
+    </m:borderBox>
+  </m:oMath>
+</m:oMathPara>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `(x)`.
+
+[[merror]]
+
+== Merror
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <merror>
+      <mi>x</mi>
+    </merror>
+  </mstyle>
+</math>
+```
+
+NOTE: In other conversions, the value of the class will not be processed at all.
+
+[[msgroup]]
+
+== Msgroup
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <msgroup>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </msgroup>
+    </mrow>
+  </mstyle>
+</math>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `(x)`.
+
+[[monospace]]
+
+== Monospace
+* **AsciiMath**
+```
+mathtt(x)
+```
+* **LaTeX**
+```
+\mathtt{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="monospace">
+      <mi>x</mi>
+    </mstyle>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:scr m:val="monospace"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[multline]]
+
+== Multline
+* **LaTeX**
+```
+\begin{multline}x \\ y \\ z\end{multline}
+```
+
+NOTE: In other conversions, the generated output will resemble the content in the link:#table[Table class]
+
+[[normal]]
+
+== Normal
+* **AsciiMath**
+```
+rm(x)
+```
+* **LaTeX**
+```
+\mathrm{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="normal">
+      <mi>x</mi>
+    </mstyle>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[norm]]
+
+== Norm
+* **AsciiMath**
+```
+norm(x)
+```
+
+NOTE: In other conversions, This class will be handled as link:#fenced[fenced]. For example, the output of this example in *LaTeX* will be `{\lVert x \rVert}`.
+
+[[obrace]]
+
+== Obrace
+* **AsciiMath**
+```
+obrace(x)
+```
+* **LaTeX**
+```
+\overbrace{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mover>
+      <mi>x</mi>
+      <mo>&#x23de;</mo>
+    </mover>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:limUpp>
+      <m:limUppPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:limUppPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>⏞</m:t>
+        </m:r>
+      </m:lim>
+    </m:limUpp>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[phantom]]
+
+== Phantom
+* **LaTeX**
+```
+\phantom{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mphantom>
+      <mi>x</mi>
+    </mphantom>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:phant>
+      <m:phant>
+        <m:show val="m:off"/>
+      </m:phant>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:phant>
+  </m:oMath>
+</m:oMathPara>
+```
+
+NOTE: In AsciiMath conversion, it will add `\ ` replacing all the letters as value of the object. For example, the output of this example in *AsciiMath* will be `\ `.
+
+[[pmatrix]]
+
+== Pmatrix
+* **LaTeX**
+```
+\begin{pmatrix}x \\ y \\ z\end{pmatrix}
+```
+
+NOTE: In other conversions, the generated output will resemble the content in the link:#table[Table class]
+
+[[script]]
+
+== Script
+* **AsciiMath**
+```
+mathcal(x)
+```
+* **LaTeX**
+```
+\mathcal{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="script">
+      <mi>x</mi>
+    </mstyle>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:scr m:val="script"/>
+        <m:sty m:val="p"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[scarries]]
+
+== Scarries
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mscarries>
+      <mo>(</mo>
+      <mi>x</mi>
+      <mo>)</mo>
+    </mscarries>
+  </mstyle>
+</math>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `(x)`.
+
+[[sec]]
+
+== Sec
+* **AsciiMath**
+```
+sec(x)
+```
+* **LaTeX**
+```
+\sec{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>sec</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:func>
+      <m:funcPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:funcPr>
+      <m:fName>
+        <m:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+          </w:rPr>
+          <m:t>sec</m:t>
+        </m:r>
+      </m:fName>
+      <m:e>
+        <m:d>
+          <m:dPr>
+            <m:begChr m:val="("/>
+            <m:endChr m:val=")"/>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:dPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+        </m:d>
+      </m:e>
+    </m:func>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[sech]]
+
+== Sech
+* **AsciiMath**
+```
+sech(x)
+```
+* **LaTeX**
+```
+\sech{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>sech</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:func>
+      <m:funcPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:funcPr>
+      <m:fName>
+        <m:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+          </w:rPr>
+          <m:t>sech</m:t>
+        </m:r>
+      </m:fName>
+      <m:e>
+        <m:d>
+          <m:dPr>
+            <m:begChr m:val="("/>
+            <m:endChr m:val=")"/>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:dPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+        </m:d>
+      </m:e>
+    </m:func>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[sin]]
+
+== Sin
+* **AsciiMath**
+```
+sin(x)
+```
+* **LaTeX**
+```
+\sin{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>sin</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:func>
+      <m:funcPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:funcPr>
+      <m:fName>
+        <m:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+          </w:rPr>
+          <m:t>sin</m:t>
+        </m:r>
+      </m:fName>
+      <m:e>
+        <m:d>
+          <m:dPr>
+            <m:begChr m:val="("/>
+            <m:endChr m:val=")"/>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:dPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+        </m:d>
+      </m:e>
+    </m:func>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[sinh]]
+
+== Sinh
+* **AsciiMath**
+```
+sinh(x)
+```
+* **LaTeX**
+```
+\sinh{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>sinh</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:func>
+      <m:funcPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:funcPr>
+      <m:fName>
+        <m:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+          </w:rPr>
+          <m:t>sinh</m:t>
+        </m:r>
+      </m:fName>
+      <m:e>
+        <m:d>
+          <m:dPr>
+            <m:begChr m:val="("/>
+            <m:endChr m:val=")"/>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:dPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+        </m:d>
+      </m:e>
+    </m:func>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[sqrt]]
+
+== Sqrt
+* **AsciiMath**
+```
+sqrt(x)
+```
+* **LaTeX**
+```
+\sqrt{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <msqrt>
+      <mi>x</mi>
+    </msqrt>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:rad>
+      <m:radPr>
+        <m:degHide m:val="1"/>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:radPr>
+      <m:deg/>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:rad>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[sup]]
+
+== Sup
+* **LaTeX**
+```
+\sup{( x )}
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `sup(x)`.
+
+[[sansserif]]
+
+== Sansserif
+* **AsciiMath**
+```
+mathsf(x)
+```
+* **LaTeX**
+```
+\mathsf{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="sans-serif">
+      <mi>x</mi>
+    </mstyle>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:scr m:val="sans-serif"/>
+        <m:sty m:val="p"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[sansserifbolditalic]]
+
+== Sansserifbolditalic
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="sans-serif-bold-italic">
+      <mtext>x</mtext>
+    </mstyle>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:scr m:val="sans-serif"/>
+        <m:sty m:val="bi"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `x`.
+
+[[sansserifitalic]]
+
+== Sansserifitalic
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="sans-serif-italic">
+      <mtext>a</mtext>
+    </mstyle>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:scr m:val="sans-serif"/>
+        <m:sty m:val="i"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+```
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `x`.
+
+[[substack]]
+
+== Substack
+* **LaTeX**
+```
+\substack{x & x \\ y & z}
+```
+
+NOTE: In other conversions, the generated output will resemble the content in the link:#table[Table class]
+
+[[table]]
+
+== Table
+* **AsciiMath**
+```
+[[x], [y]]
+```
+* **LaTeX**
+```
+\left [\begin{matrix}x \\ y\end{matrix}\right ]
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mo>[</mo>
+      <mtable>
+        <mtr>
+          <mtd>
+            <mi>x</mi>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <mi>y</mi>
+          </mtd>
+        </mtr>
+      </mtable>
+      <mo>]</mo>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="["/>
+        <m:endChr m:val="]"/>
+        <m:sepChr m:val=""/>
+        <m:grow/>
+      </m:dPr>
+      <m:e>
+        <m:eqArr>
+          <m:eqArrPr>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:eqArrPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+          <m:e>
+            <m:r>
+              <m:t>y</m:t>
+            </m:r>
+          </m:e>
+        </m:eqArr>
+      </m:e>
+    </m:d>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[tan]]
+
+== Tan
+* **AsciiMath**
+```
+tan(x)
+```
+* **LaTeX**
+```
+\tan{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>tan</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:func>
+      <m:funcPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:funcPr>
+      <m:fName>
+        <m:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+          </w:rPr>
+          <m:t>tan</m:t>
+        </m:r>
+      </m:fName>
+      <m:e>
+        <m:d>
+          <m:dPr>
+            <m:begChr m:val="("/>
+            <m:endChr m:val=")"/>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:dPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+        </m:d>
+      </m:e>
+    </m:func>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[tanh]]
+
+== Tanh
+* **AsciiMath**
+```
+tanh(x)
+```
+* **LaTeX**
+```
+\tanh{( x )}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>tanh</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:func>
+      <m:funcPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:funcPr>
+      <m:fName>
+        <m:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+          </w:rPr>
+          <m:t>tanh</m:t>
+        </m:r>
+      </m:fName>
+      <m:e>
+        <m:d>
+          <m:dPr>
+            <m:begChr m:val="("/>
+            <m:endChr m:val=")"/>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:dPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+        </m:d>
+      </m:e>
+    </m:func>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[text]]
+
+== Text
+* **AsciiMath**
+```
+"x"
+```
+* **LaTeX**
+```
+\text{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mtext>x</mtext>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[tilde]]
+
+== Tilde
+* **AsciiMath**
+```
+tilde(x)
+```
+* **LaTeX**
+```
+\tilde{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mover>
+      <mi>x</mi>
+      <mo>~</mo>
+    </mover>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:limUpp>
+      <m:limUppPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:limUppPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>~</m:t>
+        </m:r>
+      </m:lim>
+    </m:limUpp>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[ubrace]]
+
+== Ubrace
+* **AsciiMath**
+```
+ubrace(x)
+```
+* **LaTeX**
+```
+\underbrace{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <munder>
+      <mi>x</mi>
+      <mo>&#x23df;</mo>
+    </munder>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:limLow>
+      <m:limLowPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:limLowPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>⏟</m:t>
+        </m:r>
+      </m:lim>
+    </m:limLow>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[ul]]
+
+== Ul
+* **AsciiMath**
+```
+ul(x)
+```
+* **LaTeX**
+```
+\underline{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <munder>
+      <mi>x</mi>
+      <mo>&#x332;</mo>
+    </munder>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:limLow>
+      <m:limLowPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:limLowPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>&#x332;</m:t>
+        </m:r>
+      </m:lim>
+    </m:limLow>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[vec]]
+
+== Vec
+* **AsciiMath**
+```
+vec(x)
+```
+* **LaTeX**
+```
+\vec{x}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mover>
+      <mi>x</mi>
+      <mo>&#x2192;</mo>
+    </mover>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:limUpp>
+      <m:limUppPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:limUppPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>→</m:t>
+        </m:r>
+      </m:lim>
+    </m:limUpp>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[split]]
+
+== Split
+* **LaTeX**
+```
+\begin{split}x \\ y \\ z\end{split}
+```
+
+NOTE: In other conversions, the generated output will resemble the content in the link:#table[Table class]
+
+[[vmatrix]]
+
+== vmatrix
+* **LaTeX**
+```
+\begin{vmatrix}x \\ y \\ z\end{vmatrix}
+```
+
+[[Vmatrix]]
+
+== Vmatrix
+* **LaTeX**
+```
+\begin{Vmatrix}x \\ y \\ z\end{Vmatrix}
+```
+
+NOTE: In other conversions, the generated output will resemble the content in the link:#table[Table class]
