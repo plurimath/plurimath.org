@@ -1,0 +1,415 @@
+= Ternary functions examples
+
+[[fenced]]
+
+== Fenced
+* **AsciiMath**
+```
+(x)
+```
+* **LaTeX**
+```
+( x )
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mo>(</mo>
+      <mi>x</mi>
+      <mo>)</mo>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="("/>
+        <m:endChr m:val=")"/>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:dPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:d>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[int]]
+
+== Int
+* **AsciiMath**
+```
+int_(x)^(y) z
+```
+* **LaTeX**
+```
+\int_{x}^{y} z
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <msubsup>
+        <mo>&#x222b;</mo>
+        <mi>x</mi>
+        <mi>y</mi>
+      </msubsup>
+      <mi>z</mi>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="∫"/>
+        <m:limLoc m:val="subSup"/>
+        <m:subHide m:val="0"/>
+        <m:supHide m:val="0"/>
+      </m:naryPr>
+      <m:sub>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:t>y</m:t>
+        </m:r>
+      </m:sup>
+      <m:e>
+        <m:r>
+          <m:t>z</m:t>
+        </m:r>
+      </m:e>
+    </m:nary>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[limits]]
+
+== Limits
+* **LaTeX**
+```
+\int\limits_{x}^{y}
+```
+
+NOTE: In other conversions, the generated output will resemble the content in the link:#underover[underover class]
+
+[[oint]]
+
+== Oint
+* **AsciiMath**
+```
+oint_(x)^(y) z
+```
+* **LaTeX**
+```
+\oint_{x}^{y} z
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <msubsup>
+        <mo>&#x222e;</mo>
+        <mi>x</mi>
+        <mi>y</mi>
+      </msubsup>
+      <mi>z</mi>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="∮"/>
+        <m:limLoc m:val="subSup"/>
+        <m:subHide m:val="0"/>
+        <m:supHide m:val="0"/>
+      </m:naryPr>
+      <m:sub>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:t>y</m:t>
+        </m:r>
+      </m:sup>
+      <m:e>
+        <m:r>
+          <m:t>z</m:t>
+        </m:r>
+      </m:e>
+    </m:nary>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[powerbase]]
+
+== Powerbase
+* **AsciiMath**
+```
+x_(y)^(z)
+```
+* **LaTeX**
+```
+x_{y}^{z}
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <msubsup>
+      <mi>x</mi>
+      <mi>y</mi>
+      <mi>z</mi>
+    </msubsup>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:sSubSup>
+      <m:sSubSupPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:sSubSupPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:t>y</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:t>z</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSubSup>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[prod]]
+
+== Prod
+* **AsciiMath**
+```
+prod_(x)^(y) z
+```
+* **LaTeX**
+```
+\prod_{x}^{y} z
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <munderover>
+        <mo>&#x220f;</mo>
+        <mi>x</mi>
+        <mi>y</mi>
+      </munderover>
+      <mi>z</mi>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="∏"/>
+        <m:limLoc m:val="undOvr"/>
+        <m:subHide m:val="0"/>
+        <m:supHide m:val="0"/>
+      </m:naryPr>
+      <m:sub>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:t>y</m:t>
+        </m:r>
+      </m:sup>
+      <m:e>
+        <m:r>
+          <m:t>z</m:t>
+        </m:r>
+      </m:e>
+    </m:nary>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[rule]]
+
+== Rule
+* **LaTeX**
+```
+\rule[5pt]{5pt}{5pt}
+```
+
+NOTE: In other conversion, this class will not return any presentational output.
+
+[[sum]]
+
+== Sum
+* **AsciiMath**
+```
+sum_(x)^(y) z
+```
+* **LaTeX**
+```
+\sum_{x}^{y} z
+```
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <munderover>
+        <mo>&#x2211;</mo>
+        <mi>x</mi>
+        <mi>y</mi>
+      </munderover>
+      <mi>z</mi>
+    </mrow>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="∑"/>
+        <m:limLoc m:val="undOvr"/>
+        <m:subHide m:val="0"/>
+        <m:supHide m:val="0"/>
+      </m:naryPr>
+      <m:sub>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:t>y</m:t>
+        </m:r>
+      </m:sup>
+      <m:e>
+        <m:r>
+          <m:t>z</m:t>
+        </m:r>
+      </m:e>
+    </m:nary>
+  </m:oMath>
+</m:oMathPara>
+```
+
+[[underover]]
+
+== Underover
+* **MathML**
+```
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <munderover>
+      <mi>x</mi>
+      <mi>y</mi>
+      <mi>z</mi>
+    </munderover>
+  </mstyle>
+</math>
+```
+* **OMML**
+```
+<m:oMathPara>
+  <m:oMath>
+    <m:limLow>
+      <m:limLowPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:limLowPr>
+      <m:e>
+        <m:limUpp>
+          <m:limUppPr>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:limUppPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+          <m:lim>
+            <m:r>
+              <m:t>z</m:t>
+            </m:r>
+          </m:lim>
+        </m:limUpp>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>y</m:t>
+        </m:r>
+      </m:lim>
+    </m:limLow>
+  </m:oMath>
+</m:oMathPara>
+```
+
+NOTE: In other conversions, the generated output will resemble the content in the link:#powerbase[PowerBase class]
