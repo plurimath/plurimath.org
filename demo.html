@@ -21,6 +21,7 @@ description: Plurimath JS Emulator.
       form>div>* { flex: 1; }
       textarea { min-height: 45vh; }
       button { flex: 1; width: 30%; height: 3rem;}
+      div#preview { font-size: large; padding: 1rem 0}
     </style>
   </head>
   <body>
@@ -28,6 +29,8 @@ description: Plurimath JS Emulator.
       <div>
         <textarea id="from"></textarea>
         <textarea id="to"></textarea>
+      </div>
+      <div id="preview">
       </div>
       <div>
         <select id="fromfmt">
@@ -64,6 +67,7 @@ description: Plurimath JS Emulator.
 
         var pm = new Plurimath(from, fromfmt);
         to.value = pm["to"+tofmt]();
+        document.getElementById("preview").innerHTML=to.value
       });
     </script>
   </body>
