@@ -1,13 +1,13 @@
 ---
-title: Emulator
-description: Plurimath JS Emulator.
+title: Demo
+description: Demo.
 ---
 
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Plurimath demo</title>
+    <title>Demo</title>
 
     <style>
       form {
@@ -67,7 +67,9 @@ description: Plurimath JS Emulator.
 
         var pm = new Plurimath(from, fromfmt);
         to.value = pm["to"+tofmt]();
-        document.getElementById("preview").innerHTML=to.value
+
+        var preview = pm["toMathml"]();
+        document.getElementById("preview").innerHTML=preview
       });
     </script>
   </body>
