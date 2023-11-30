@@ -1,0 +1,70 @@
+---
+title: Emulator
+description: Plurimath JS Emulator.
+---
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Plurimath demo</title>
+
+    <style>
+      form {
+        display: flex;
+        width: 80%;
+        flex-direction: column;
+        row-gap: 1em;
+        padding: 3em 1em;
+      }
+      form>div { display: flex; flex-direction: row; column-gap: 1em; align-items: center; }
+      form>div>* { flex: 1; }
+      textarea { min-height: 45vh; }
+      button { flex: 1; width: 30%; height: 3rem;}
+    </style>
+  </head>
+  <body>
+    <form>
+      <div>
+        <textarea id="from"></textarea>
+        <textarea id="to"></textarea>
+      </div>
+      <div>
+        <select id="fromfmt">
+          <option>asciimath</option>
+          <option>omml</option>
+          <option>html</option>
+          <option>mathml</option>
+          <option>latex</option>
+        </select>
+        <select id="tofmt">
+          <option>Asciimath</option>
+          <option>Omml</option>
+          <option>Html</option>
+          <option>Mathml</option>
+          <option>Latex</option>
+        </select>
+      </div>
+      <div>
+        <button>Convert</button>
+      </div>
+    </form>
+
+    <script type="module">
+      import Plurimath from "https://www.plurimath.org/plurimath-js/dist/index.js";
+
+      document.querySelector("form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        var from = document.getElementById("from").value;
+        var fromfmt = document.getElementById("fromfmt").value;
+        var tofmt = document.getElementById("tofmt").value;
+
+        var to = document.getElementById("to");
+
+        var pm = new Plurimath(from, fromfmt);
+        to.value = pm["to"+tofmt]();
+      });
+    </script>
+  </body>
+</html>
