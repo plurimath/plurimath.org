@@ -12,27 +12,26 @@ description: Demo.
     <style>
       form {
         display: flex;
-        width: 80%;
+        width: 70%;
         flex-direction: column;
         row-gap: 1em;
-        padding: 3em 1em;
+        padding: 1em 1em;
+        background-color: white;
       }
-      form>div { display: flex; flex-direction: row; column-gap: 1em; align-items: center; }
+      form>* {
+        color: black;
+      }
       form>div>* { flex: 1; }
-      textarea { min-height: 45vh; }
-      button { flex: 1; width: 30%; height: 3rem;}
-      div#preview { font-size: large; padding: 1rem 0}
+      textarea { min-height: 20vh; padding: 1rem; font-size: x-large; }
+      div#preview { font-size: x-large; padding: 1rem; border: 1px solid; }
+      form>label { margin-bottom: -1em; }
+      textarea#math_tree { font-size: small; }
     </style>
   </head>
   <body>
     <form>
-      <div>
-        <textarea id="from"></textarea>
-        <textarea id="to"></textarea>
-      </div>
-      <div id="preview">
-      </div>
-      <div>
+      <h2>Live Demo</h2>
+      <div><label>Input</label>&nbsp&nbsp
         <select id="fromfmt">
           <option value="asciimath">Asciimath</option>
           <option value="omml">Omml</option>
@@ -40,37 +39,52 @@ description: Demo.
           <option value="mathml">Mathml</option>
           <option value="latex">Latex</option>
         </select>
-        <select id="tofmt">
-          <option value="Asciimath">Asciimath</option>
-          <option value="Omml">Omml</option>
-          <option value="Html">Html</option>
-          <option value="Mathml">Mathml</option>
-          <option value="Latex">Latex</option>
-        </select>
       </div>
-      <div>
-        <button>Convert</button>
+      <textarea id="from">sum_(i=1)^n i^3=((n(n+1))/2)^2</textarea>
+      <label>Rendering</label>
+      <div id="preview">
       </div>
+      <div><label>Output</label>&nbsp&nbsp<select id="tofmt">
+        <option value="Asciimath">Asciimath</option>
+        <option value="Omml">Omml</option>
+        <option value="Html">Html</option>
+        <option value="Mathml">Mathml</option>
+        <option value="Latex">Latex</option>
+      </select></div>
+      <textarea id="to" readonly></textarea>
+      <label>Rendering Tree</label>
+      <textarea id="math_tree" wrap="off" readonly></textarea>
     </form>
 
     <script type="module">
       import Plurimath from "https://www.plurimath.org/plurimath-js/dist/index.js";
 
-      document.querySelector("form").addEventListener("submit", function(e) {
-        e.preventDefault();
+      document.addEventListener("DOMContentLoaded", convert);
+      document.querySelector("#from").addEventListener("input", convert);
+      document.querySelector("#fromfmt").addEventListener("change", convert);
+      document.querySelector("#tofmt").addEventListener("change", convert);
 
+      function convert(){
         var from = document.getElementById("from").value;
         var fromfmt = document.getElementById("fromfmt").value;
         var tofmt = document.getElementById("tofmt").value;
-
         var to = document.getElementById("to");
+        var pre_render = document.getElementById("preview");
+        var math_tree = document.getElementById("math_tree");
+
+        // empty result
+        to.value = "";
+        pre_render.innerText = "";
+        math_tree.value = "";
+
+        if(from.trim() == "") return;
 
         var pm = new Plurimath(from, fromfmt);
         to.value = pm["to"+tofmt]();
 
-        var preview = pm["toMathml"]();
-        document.getElementById("preview").innerHTML=preview
-      });
+        pre_render.innerHTML=pm["toMathml"]();
+        math_tree.value=pm.toDisplay(tofmt.toLowerCase());
+      }
     </script>
   </body>
 </html>
