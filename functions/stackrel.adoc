@@ -1,0 +1,27 @@
+---
+title: "`stackrel` (binary)"
+layout: function
+function-name: stackrel
+function-type: binary
+---
+
+[[stackrel]]
+== Stackrel
+
+=== AsciiMath
+
+[source,asciimath]
+----
+stackrel(x)(y)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\stackrel{x}{y}
+----
+
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../overset[Overset class]

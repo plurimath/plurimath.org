@@ -1,0 +1,67 @@
+---
+title: "`bar` (unary)"
+layout: function
+function-name: bar
+function-type: unary
+---
+
+[[bar]]
+== Bar
+
+=== AsciiMath
+
+[source,asciimath]
+----
+bar(x)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\overline{x}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mover>
+      <mi>x</mi>
+      <mo>&#xaf;</mo>
+    </mover>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:bar>
+      <m:barPr>
+        <m:pos m:val="top"/>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:barPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:bar>
+  </m:oMath>
+</m:oMathPara>
+----
+

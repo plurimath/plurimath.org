@@ -1,0 +1,71 @@
+---
+title: "`obrace` (unary)"
+layout: function
+function-name: obrace
+function-type: unary
+---
+
+[[obrace]]
+== Obrace
+
+=== AsciiMath
+
+[source,asciimath]
+----
+obrace(x)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\overbrace{x}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mover>
+      <mi>x</mi>
+      <mo>&#x23de;</mo>
+    </mover>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:limUpp>
+      <m:limUppPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:limUppPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>⏞</m:t>
+        </m:r>
+      </m:lim>
+    </m:limUpp>
+  </m:oMath>
+</m:oMathPara>
+----
+

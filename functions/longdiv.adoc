@@ -1,0 +1,27 @@
+---
+title: "`longdiv` (unary)"
+layout: function
+function-name: longdiv
+function-type: unary
+---
+
+[[longdiv]]
+== Longdiv
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mlongdiv>
+      <mo>(</mo>
+      <mi>x</mi>
+      <mo>)</mo>
+    </mlongdiv>
+  </mstyle>
+</math>
+----
+
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `(x)`.

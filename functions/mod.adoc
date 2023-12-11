@@ -1,0 +1,43 @@
+---
+title: "`log` (binary)"
+layout: function
+function-name: log
+function-type: binary
+---
+
+[[log]]
+== Mod
+
+=== AsciiMath
+
+[source,asciimath]
+----
+x mod y
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+{x} \mod {y}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>x</mi>
+      <mi>mod</mi>
+      <mi>y</mi>
+    </mrow>
+  </mstyle>
+</math>
+----
+
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the *presentation* of this example in *OMML*  will be `"x" rm( mod ) "y"`.

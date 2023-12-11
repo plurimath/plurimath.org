@@ -1,0 +1,68 @@
+---
+title: "`ceil` (unary)"
+layout: function
+function-name: ceil
+function-type: unary
+---
+
+[[ceil]]
+== Ceil
+
+=== AsciiMath
+
+[source,asciimath]
+----
+ceil(x)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+{\lceil x \rceil}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mo>&#x2308;</mo>
+      <mi>x</mi>
+      <mo>&#x2309;</mo>
+    </mrow>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="⌈"/>
+        <m:endChr m:val="⌉"/>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:dPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:d>
+  </m:oMath>
+</m:oMathPara>
+----

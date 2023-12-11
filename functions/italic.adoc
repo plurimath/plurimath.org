@@ -1,0 +1,55 @@
+---
+title: "`italic` (unary)"
+layout: function
+function-name: italic
+function-type: unary
+---
+
+[[italic]]
+== Italic
+
+=== AsciiMath
+
+[source,asciimath]
+----
+ii(x)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\mathit{x}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="mathit">
+      <mi>x</mi>
+    </mstyle>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="i"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+----

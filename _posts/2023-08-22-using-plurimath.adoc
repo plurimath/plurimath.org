@@ -19,7 +19,7 @@ authors:
       - https://www.linkedin.com/in/rhtse/
       - https://github.com/ronaldtse
 excerpt: >-
-  Conversions across multiple representational languages is a core feature of Plurimath.
+  Conversions across multiple math representational languages is a core feature of Plurimath.
   To make it even more accessible, you can easily perform conversions by specifying the input string's type.
 ---
 
@@ -27,142 +27,152 @@ excerpt: >-
 
 == What is Plurimath?
 
-*Plurimath* is a comprehensive and efficient tool that enhances the way mathematical content is converted between different formats.
-It is designed to work with various markup languages such as *MathML*, *LaTeX*, *AsciiMath*, and *OMML*, making it a versatile and adaptable tool.
+*Plurimath* is a comprehensive and efficient tool that enhances the way
+mathematical content is converted between different formats. It is designed to
+work with various markup languages such as *MathML*, *LaTeX*, *AsciiMath*, and
+*OMML*, making it a versatile and adaptable tool.
 
-One significant advantage is that users don't have to deal with the inconvenience of installing and managing multiple libraries for these different languages. *Plurimath* encompasses them all within a single solution.
+Pluyri
 
-This approach simplifies and improves the process of converting mathematical content between markup languages, making it easier and more reliable.
+One significant advantage is that users don't have to deal with the
+inconvenience of installing and managing multiple libraries for these different
+languages. *Plurimath* encompasses them all within a single solution.
 
-== 1. How to use Plurimath?
+This approach simplifies and improves the process of converting mathematical
+content between markup languages, making it easier and more reliable.
 
-Using *Plurimath* is straightforward and user-friendly, whether you're working on a *Ruby* application, a *Ruby on Rails* project, or any other framework based on *Ruby*.
-To get started, add this line into your applications gemfile.
-add this line into your applications gemfile
+== How to use Plurimath?
 
-```ruby
-  gem "plurimath"
-```
-then run following command
-```ruby
-  bundle install
-```
-or run following command
-```ruby
-  gem install plurimath
-```
+Using *Plurimath* is straightforward and user-friendly, whether you're working
+on a *Ruby* application, a *Ruby on Rails* project, or any other framework based
+on *Ruby*.
 
-Once it's incorporated, you can seamlessly convert mathematical expressions between various markup languages.
+With Ruby installed on your system, simply run the following command to install Plurimath:
 
-=== 1.1 Understanding Plurimath
+[source,ruby]
+----
+gem install plurimath
+----
 
-*Plurimath* provides a range of conversion methods, allowing you to specify the input type and obtain the desired output format.
-With just a few lines of code, you can harness the power of *Plurimath* to ensure consistency and compatibility in mathematical presentations across different platforms and applications.
+
+If you wish to include Plurimath into a Ruby application, add this line into
+your Gemfile:
+
+[source,ruby]
+----
+gem "plurimath"
+----
+
+then run following command:
+
+[source,ruby]
+----
+bundle install
+----
+
+Once it's incorporated, you can seamlessly convert mathematical expressions
+between various markup languages.
+
+=== Understanding Plurimath
+
+*Plurimath* provides a range of conversion methods, allowing you to specify the
+input type and obtain the desired output format.
+
+With just a few lines of code, you can harness the power of *Plurimath* to
+ensure consistency and compatibility in mathematical presentations across
+different platforms and applications.
 
 Now let's discuss *how to use Plurimath?*.
 
-```ruby
-  formula = Plurimath::Math.parse(string, :type)
-```
+[source,ruby]
+----
+formula = Plurimath::Math.parse(string, :type)
+----
 
-You will have to provide input text replacing `string`, and the `type` field should specify the type of the provided text, choosing from one of the supported languages.
 
-The above example will generate a Formula object, something like this
+You will have to provide input text replacing `string`, and the `type` field
+should specify the type of the provided text, choosing from one of the supported
+languages.
 
-```ruby
-  Plurimath::Math::Formula.new([
-    ... # Others objects
-  ])
-```
+The above example will generate a `Formula` object, something like this
 
-Now the next step would be conversion (since you have parsed your string into a *Plurimath Formula*) to your desired output format. For conversion all you have to do is call the method name containing the format name with a leading `to_`.
+[source,ruby]
+----
+Plurimath::Math::Formula.new([
+  ... # Other objects
+])
+----
 
-```ruby
-  formula.to_<language-name>
-```
+
+Now the next step would be conversion (since you have parsed your string into a
+`Plurimath::Formula`) to your desired output format. For conversion all you have
+to do is call the method name containing the format name with a leading `to_`.
+
+[source,ruby]
+----
+formula.to_<language-name>
+----
+
 or you can do it directly,
-```ruby
-  Plurimath::Math.parse(string, :type).to_<language-name>
-```
+
+[source,ruby]
+----
+Plurimath::Math.parse(string, :type).to_<language-name>
+----
+
 
 NOTE: Some methods support explicit optional argument and some don't.
 
-The sections below will explain each supported languages conversion and parsing with an example
+The sections below will explain each supported languages conversion and parsing
+with an example.
 
-=== 1.2 Use of Plurimath, Explained
 
-The sections below will help you understand using *Plurimath* with a real worked example.
-We have an *AsciiMath* equation `sum_(i=1)^n i^3`, we will be using this equation in all the sections.
+=== Use of Plurimath, Explained
 
-==== 1.2.1 AsciiMath to Formula
+The sections below will help you understand using *Plurimath* with a real worked
+example.
 
-```ruby
-  input_string = 'sum_(i=1)^n i^3'
-  formula = Plurimath::Math.parse(input_string, :asciimath)
-```
+We have an *AsciiMath* equation `sum_(i=1)^n i^3`, we will be using this
+equation in all the sections.
+
+
+==== AsciiMath to Formula
+
+[source,ruby]
+----
+input_string = 'sum_(i=1)^n i^3'
+formula = Plurimath::Math.parse(input_string, :asciimath)
+----
+
 Parsing the equation will generate the following formula.
-```ruby
-  Plurimath::Math::Formula.new([
-    Plurimath::Math::Function::Sum.new(
-      Plurimath::Math::Formula.new([
-        Plurimath::Math::Symbol.new("i"),
-        Plurimath::Math::Symbol.new("="),
-        Plurimath::Math::Number.new("1")
-      ]),
-      Plurimath::Math::Symbol.new("n"),
-      Plurimath::Math::Function::Power.new(
-        Plurimath::Math::Symbol.new("i"),
-        Plurimath::Math::Number.new("3")
-      )
+
+[source,ruby]
+----
+Plurimath::Math::Formula.new([
+  Plurimath::Math::Function::Sum.new(
+    Plurimath::Math::Formula.new([
+      Plurimath::Math::Symbol.new("i"),
+      Plurimath::Math::Symbol.new("="),
+      Plurimath::Math::Number.new("1")
+    ]),
+    Plurimath::Math::Symbol.new("n"),
+    Plurimath::Math::Function::Power.new(
+      Plurimath::Math::Symbol.new("i"),
+      Plurimath::Math::Number.new("3")
     )
-  ])
-```
+  )
+])
+----
 
-==== 1.2.2 Formula to AsciiMath
 
-The following example follows the same steps we have before for *AsciiMath* as well.
+==== Formula to AsciiMath
 
-```ruby
-  input_string = <<~MATHML
-    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-      <mstyle displaystyle="true">
-        <mrow>
-          <munderover>
-            <mo>&#x2211;</mo>
-            <mrow>
-              <mi>i</mi>
-              <mo>=</mo>
-              <mn>1</mn>
-            </mrow>
-            <mi>n</mi>
-          </munderover>
-          <msup>
-            <mi>i</mi>
-            <mn>3</mn>
-          </msup>
-        </mrow>
-      </mstyle>
-    </math>
-  MATHML
-  formula = Plurimath::Math.parse(input_string, :mathml)
-  formula.to_asciimath # >> "sum_(i=1)^n i^3"
-```
+The following example follows the same steps we have before for *AsciiMath* as
+well.
 
-*AsciiMath* grammar is different than other languages.
-The list of symbols and presentations available in *AsciiMath* is limited compared to other languages, and there is variability between different software in what symbols they support. Metanorma has drawn on Asciidoctor Asciimath in its implementation.
-
-You can see the list of symbols, classes and presentations available in Metanorma's version of *AsciiMath* at https://github.com/plurimath/plurimath/blob/main/MathML-Supported-Data.adoc[Supported *AsciiMath* Data].
-
-==== 1.2.3 Formula to MathML
-
-A Formula object can be converted to *MathML* using the `to_mathml` method.
-
-```ruby
-formula.to_mathml
-```
-This will generate following output of *MathML*
-
-```ruby
+[source,ruby]
+----
+input_string = <<~MATHML
   <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
     <mstyle displaystyle="true">
       <mrow>
@@ -182,115 +192,228 @@ This will generate following output of *MathML*
       </mrow>
     </mstyle>
   </math>
-```
+MATHML
+formula = Plurimath::Math.parse(input_string, :mathml)
+formula.to_asciimath # >> "sum_(i=1)^n i^3"
+----
 
-In *MathML* we have the *displaystyle* boolean attribute, making the equation `normal` or `compact`.
-By default we use `display_style` true, but you can explicitly change it by passing `display_style:` argument to `to_mathml` method, depending on what output you desire.
+
+*AsciiMath* grammar is different than other languages.
+
+The list of symbols and presentations available in *AsciiMath* is limited
+compared to other languages, and there is variability between different
+AsciiMath parser implementations in what symbols they support.
+
+Plurimath builds on top of the symbols supported by
+https://github.com/asciidoctor/asciimath[Asciidoctor asciimath] in its
+implementation.
+
+You can see the list of symbols, classes and presentations available in Metanorma's version of *AsciiMath* at https://github.com/plurimath/plurimath/blob/main/MathML-Supported-Data.adoc[Supported *AsciiMath* Data].
+
+
+==== Formula to MathML
+
+A Formula object can be converted to *MathML* using the `to_mathml` method.
+
+[source,ruby]
+----
+formula = Plurimath::Math.parse("sum_(i=1)^n i^3", :asciimath)
+formula.to_mathml
+----
+
+This will generate following output of *MathML*:
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <munderover>
+        <mo>&#x2211;</mo>
+        <mrow>
+          <mi>i</mi>
+          <mo>=</mo>
+          <mn>1</mn>
+        </mrow>
+        <mi>n</mi>
+      </munderover>
+      <msup>
+        <mi>i</mi>
+        <mn>3</mn>
+      </msup>
+    </mrow>
+  </mstyle>
+</math>
+----
+
+*MathML* provides the *displaystyle* boolean attribute, allowing the equation to
+be `normal` or `compact`.
+
+By default, Plurimath uses `display_style` true, but you can explicitly change it by
+passing `display_style:` argument to `to_mathml` method, depending on what
+output you desire.
+
 See examples below.
 
-```ruby
-  formula.to_mathml(display_style: false)
-  formula.to_mathml(display_style: true)
-```
-NOTE: *display_style* will affect the whole Formula equation and not any specific tag or part of the equation.
+[source,ruby]
+----
+formula.to_mathml(display_style: false)
+formula.to_mathml(display_style: true)
+----
 
-NOTE: You can pass *display_style* attribute within the string argument, but it has to be set at the top-level `mstyle` tag, as shown in the example above.
+NOTE: *display_style* will affect the whole `Formula` equation, and not any
+specific tag or part of the equation.
 
-You can see the list of https://github.com/plurimath/plurimath/blob/main/MathML-Supported-Data.adoc[*MathML* Supported Data] such as symbols, tags and functions.
+NOTE: You can pass *display_style* attribute within the string argument, but it
+has to be set at the top-level `mstyle` tag, as shown in the example above.
 
-==== 1.2.4 Latex to AsciiMath
+You can see the full list of
+https://github.com/plurimath/plurimath/blob/main/MathML-Supported-Data.adoc[*MathML* Supported Data]
+including symbols, tags and functions.
+
+==== Latex to AsciiMath
 
 Example of parsing and conversion for *LaTeX* below.
 
-```ruby
-  input_string = "\\prod_{\\theta}^{100}"
-  formula = Plurimath::Math.parse(input_string, :latex)
-  formula.to_asciimath # >> "sum_(i=1)^n i^3"
-```
+[source,ruby]
+----
+input_string = "\\prod_{\\theta}^{100}"
+formula = Plurimath::Math.parse(input_string, :latex)
+formula.to_asciimath # >> "sum_(i=1)^n i^3"
+----
 
-*LaTeX* encompasses an extensive array of symbols and functions, catering to various mathematical expressions.
+*LaTeX* encompasses an extensive array of symbols and functions, catering to
+various mathematical expressions.
 
-We support a comprehensive list of these functions and symbols, which you can see at https://github.com/plurimath/plurimath/blob/main/Latex-Supported-Data.adoc[Supported *LaTeX* Data].
+We support a comprehensive list of these functions and symbols, which you can
+see at
+https://github.com/plurimath/plurimath/blob/main/Latex-Supported-Data.adoc[Supported *LaTeX* Data].
 
 
-==== 1.2.5 OMML to AsciiMath
+==== OMML to AsciiMath
 
 Processing the OMML example below will also follow the same steps.
 
-```ruby
-  input_string = <<~OMML
-    <m:oMathPara xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mo="http://schemas.microsoft.com/office/mac/office/2008/main" xmlns:mv="urn:schemas-microsoft-com:mac:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
-      <m:oMath>
-        <m:nary>
-          <m:naryPr>
-            <m:chr m:val="∑"/>
-            <m:limLoc m:val="undOvr"/>
-            <m:subHide m:val="0"/>
-            <m:supHide m:val="0"/>
-          </m:naryPr>
-          <m:sub>
-            <m:r>
-              <m:t>i</m:t>
-            </m:r>
-            <m:r>
-              <m:t>=</m:t>
-            </m:r>
-            <m:r>
-              <m:t>1</m:t>
-            </m:r>
-          </m:sub>
-          <m:sup>
-            <m:r>
-              <m:t>n</m:t>
-            </m:r>
-          </m:sup>
-          <m:e>
-            <m:sSup>
-              <m:sSupPr>
-                <m:ctrlPr>
-                  <w:rPr>
-                    <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
-                    <w:i/>
-                  </w:rPr>
-                </m:ctrlPr>
-              </m:sSupPr>
-              <m:e>
-                <m:r>
-                  <m:t>i</m:t>
-                </m:r>
-              </m:e>
-              <m:sup>
-                <m:r>
-                  <m:t>3</m:t>
-                </m:r>
-              </m:sup>
-            </m:sSup>
-          </m:e>
-        </m:nary>
-      </m:oMath>
-    </m:oMathPara>
-  OMML
-  formula = Plurimath::Math.parse(input_string, :omml)
-  formula.to_asciimath # >> "sum_(\"i\" = 1)^(\"n\") \"i\"^(3)"
-```
+[source,ruby]
+----
+input_string = <<~OMML
+  <m:oMathPara
+    xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mo="http://schemas.microsoft.com/office/mac/office/2008/main"
+    xmlns:mv="urn:schemas-microsoft-com:mac:vml"
+    xmlns:o="urn:schemas-microsoft-com:office:office"
+    xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+    xmlns:v="urn:schemas-microsoft-com:vml"
+    xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+    xmlns:w10="urn:schemas-microsoft-com:office:word"
+    xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+    xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+    xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+    xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+    xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+    xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+    xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+    xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+    xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
+    <m:oMath>
+      <m:nary>
+        <m:naryPr>
+          <m:chr m:val="∑"/>
+          <m:limLoc m:val="undOvr"/>
+          <m:subHide m:val="0"/>
+          <m:supHide m:val="0"/>
+        </m:naryPr>
+        <m:sub>
+          <m:r>
+            <m:t>i</m:t>
+          </m:r>
+          <m:r>
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:t>1</m:t>
+          </m:r>
+        </m:sub>
+        <m:sup>
+          <m:r>
+            <m:t>n</m:t>
+          </m:r>
+        </m:sup>
+        <m:e>
+          <m:sSup>
+            <m:sSupPr>
+              <m:ctrlPr>
+                <w:rPr>
+                  <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                  <w:i/>
+                </w:rPr>
+              </m:ctrlPr>
+            </m:sSupPr>
+            <m:e>
+              <m:r>
+                <m:t>i</m:t>
+              </m:r>
+            </m:e>
+            <m:sup>
+              <m:r>
+                <m:t>3</m:t>
+              </m:r>
+            </m:sup>
+          </m:sSup>
+        </m:e>
+      </m:nary>
+    </m:oMath>
+  </m:oMathPara>
+OMML
+formula = Plurimath::Math.parse(input_string, :omml)
+formula.to_asciimath # >> "sum_(\"i\" = 1)^(\"n\") \"i\"^(3)"
+----
 
 We also support *OMML*, allowing you to work with mathematical content efficiently in *Office* documents.
 
-==== 1.2.6 Formula to OMML
 
-The Formula object can be converted to *OMML* using `to_omml` method.
+==== Formula to OMML
 
-`formula.to_omml(display_style: false)`
+The Formula object can be converted to *OMML* using the `to_omml` method.
 
-NOTE: `display_style: false` can be omitted in the above example because it 'false' by default. So, formula.to_omml is equivalent to above example
+[source,ruby]
+----
+formula.to_omml(display_style: false)
+----
 
-NOTE: *MathML* string supports *displaystyle* but *OMML* don't have any one attribute or tag corresponding to it. So in order to get the same effect of normal vs compact rendering of equations, you will have to pass the `display_value` argument explicitly to the *OMML* rendering request, as `to_omml(display_style: (true or false))`
+NOTE: `display_style: false` can be omitted in the above example because it
+'false' by default. So, `formula.to_omml` is equivalent to above example.
+
+NOTE: *MathML* string supports *displaystyle* but *OMML* does not offer a
+corresponding attribute or tag. In order to obtain the same effect of "normal"
+vs "compact" rendering of equations, you will have to pass the `display_value`
+argument explicitly to the *OMML* rendering request, as
+`to_omml(display_style: (true or false))`.
 
 
 This will generate following output of *OMML*
 
-```ruby
-<m:oMathPara xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mo="http://schemas.microsoft.com/office/mac/office/2008/main" xmlns:mv="urn:schemas-microsoft-com:mac:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
+[source,ruby]
+----
+<m:oMathPara xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:mo="http://schemas.microsoft.com/office/mac/office/2008/main"
+  xmlns:mv="urn:schemas-microsoft-com:mac:vml"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
   <m:oMath>
     <m:nary>
       <m:naryPr>
@@ -340,4 +463,5 @@ This will generate following output of *OMML*
     </m:nary>
   </m:oMath>
 </m:oMathPara>
-```
+----
+

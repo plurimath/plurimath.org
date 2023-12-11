@@ -1,0 +1,29 @@
+---
+title: "`msgroup` (unary)"
+layout: function
+function-name: msgroup
+function-type: unary
+---
+
+[[msgroup]]
+== Msgroup
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <msgroup>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </msgroup>
+    </mrow>
+  </mstyle>
+</math>
+----
+
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `(x)`.

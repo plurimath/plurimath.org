@@ -1,0 +1,19 @@
+---
+title: "`rule` (ternary)"
+layout: function
+function-name: rule
+function-type: ternary
+---
+
+[[rule]]
+== Rule
+
+=== LaTeX
+
+[source,latex]
+----
+\rule[5pt]{5pt}{5pt}
+----
+
+
+NOTE: In other conversion, this class will not return any presentational output.

@@ -1,0 +1,19 @@
+---
+title: "`floor` (unary)"
+layout: function
+function-name: floor
+function-type: unary
+---
+
+[[floor]]
+== Floor
+
+=== AsciiMath
+
+[source,asciimath]
+----
+floor(x)
+----
+
+
+NOTE: In other conversions, This class will be handled as link:../fenced[fenced]. For example, the output of this example in *LaTeX* will be `{\lfloor x \rfloor}`.

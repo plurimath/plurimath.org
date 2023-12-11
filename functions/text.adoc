@@ -1,0 +1,52 @@
+---
+title: "`text` (unary)"
+layout: function
+function-name: text
+function-type: unary
+---
+
+[[text]]
+== Text
+
+=== AsciiMath
+
+[source,asciimath]
+----
+"x"
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\text{x}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mtext>x</mtext>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+----
+
+

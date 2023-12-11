@@ -1,0 +1,19 @@
+---
+title: "`matrix` (unary)"
+layout: function
+function-name: matrix
+function-type: unary
+---
+
+[[matrix]]
+== Matrix
+
+=== LaTeX
+
+[source,latex]
+----
+\begin{matrix}x \\ y \\ z\end{matrix}
+----
+
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]

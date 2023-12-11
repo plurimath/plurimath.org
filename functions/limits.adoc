@@ -1,0 +1,19 @@
+---
+title: "`limits` (ternary)"
+layout: function
+function-name: limits
+function-type: ternary
+---
+
+[[limits]]
+== Limits
+
+=== LaTeX
+
+[source,latex]
+----
+\int\limits_{x}^{y}
+----
+
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../underover[underover class]

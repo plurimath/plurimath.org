@@ -1,0 +1,57 @@
+---
+title: "`script` (unary)"
+layout: function
+function-name: script
+function-type: unary
+---
+
+[[script]]
+== Script
+
+=== AsciiMath
+
+[source,asciimath]
+----
+mathcal(x)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\mathcal{x}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="script">
+      <mi>x</mi>
+    </mstyle>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:scr m:val="script"/>
+        <m:sty m:val="p"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+----
+

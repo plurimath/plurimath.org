@@ -1,0 +1,55 @@
+---
+title: "`doublestruck` (unary)"
+layout: function
+function-name: doublestruck
+function-type: unary
+---
+
+[[doublestruck]]
+== Doublestruck
+
+=== AsciiMath
+
+[source,asciimath]
+----
+mathbb(x)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\mathbb{x}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="double-struck">
+      <mi>x</mi>
+    </mstyle>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:scr m:val="double-struck"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+----

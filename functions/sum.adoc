@@ -1,0 +1,78 @@
+---
+title: "`sum` (ternary)"
+layout: function
+function-name: sum
+function-type: ternary
+---
+
+[[sum]]
+== Sum
+
+=== AsciiMath
+
+[source,asciimath]
+----
+sum_(x)^(y) z
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\sum_{x}^{y} z
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <munderover>
+        <mo>&#x2211;</mo>
+        <mi>x</mi>
+        <mi>y</mi>
+      </munderover>
+      <mi>z</mi>
+    </mrow>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="∑"/>
+        <m:limLoc m:val="undOvr"/>
+        <m:subHide m:val="0"/>
+        <m:supHide m:val="0"/>
+      </m:naryPr>
+      <m:sub>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:t>y</m:t>
+        </m:r>
+      </m:sup>
+      <m:e>
+        <m:r>
+          <m:t>z</m:t>
+        </m:r>
+      </m:e>
+    </m:nary>
+  </m:oMath>
+</m:oMathPara>
+----
+

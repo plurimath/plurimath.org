@@ -1,0 +1,38 @@
+---
+title: "`lcm` (unary)"
+layout: function
+function-name: lcm
+function-type: unary
+---
+
+[[lcm]]
+== Lcm
+
+=== AsciiMath
+
+[source,asciimath]
+----
+lcm(x)
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>lcm</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+----
+
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *LaTeX* will be represented as `lcm{( x )}`.

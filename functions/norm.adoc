@@ -1,0 +1,20 @@
+---
+title: "`norm` (unary)"
+layout: function
+function-name: norm
+function-type: unary
+---
+
+[[norm]]
+== Norm
+
+=== AsciiMath
+
+[source,asciimath]
+----
+norm(x)
+----
+
+
+NOTE: In other conversions, This class will be handled as link:../fenced[fenced]. For example, the output of this example in *LaTeX* will be `{\lVert x \rVert}`.
+

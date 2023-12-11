@@ -1,0 +1,71 @@
+---
+title: "`power` (binary)"
+layout: function
+function-name: power
+function-type: binary
+---
+
+[[power]]
+== Power
+
+=== AsciiMath
+
+[source,asciimath]
+----
+x^(y)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+x^{y}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <msup>
+      <mi>x</mi>
+      <mi>y</mi>
+    </msup>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:sSup>
+      <m:sSupPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:sSupPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:sup>
+        <m:r>
+          <m:t>y</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSup>
+  </m:oMath>
+</m:oMathPara>
+----
+

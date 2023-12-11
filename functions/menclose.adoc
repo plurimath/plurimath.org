@@ -1,0 +1,51 @@
+---
+title: "`menclose` (unary)"
+layout: function
+function-name: menclose
+function-type: unary
+---
+
+[[menclose]]
+== Menclose
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <menclose notation="box">
+      <mi>x</mi>
+    </menclose>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:borderBox>
+      <m:borderBoxPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:borderBoxPr>
+      <m:e>
+        <m:r>
+          <m:t>n</m:t>
+        </m:r>
+      </m:e>
+    </m:borderBox>
+  </m:oMath>
+</m:oMathPara>
+----
+
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `(x)`.

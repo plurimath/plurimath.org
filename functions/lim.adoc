@@ -1,0 +1,27 @@
+---
+title: "`lim` (binary)"
+layout: function
+function-name: lim
+function-type: binary
+---
+
+[[lim]]
+== Lim
+
+=== AsciiMath
+
+[source,asciimath]
+----
+lim_(x)^(y)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\lim_{x}^{y}
+----
+
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../underover[underover class]
