@@ -328,15 +328,15 @@ navigation:
 
 == Ternary
 
-* link:../ternary/fenced[fenced]
-* link:../ternary/int[int]
-* link:../ternary/limits[limits]
-* link:../ternary/oint[oint]
-* link:../ternary/powerbase[powerbase]
-* link:../ternary/prod[prod]
-* link:../ternary/rule[rule]
-* link:../ternary/sum[sum]
-* link:../ternary/undercover[undercover]
+* link:../functions/fenced[fenced]
+* link:../functions/int[int]
+* link:../functions/limits[limits]
+* link:../functions/oint[oint]
+* link:../functions/powerbase[powerbase]
+* link:../functions/prod[prod]
+* link:../functions/rule[rule]
+* link:../functions/sum[sum]
+* link:../functions/undercover[undercover]
 
 == N-ary
 
