@@ -1,0 +1,92 @@
+---
+title: "`arctan` (unary)"
+layout: function
+function-name: arctan
+function-type: unary
+---
+
+[[arctan]]
+== Arctan
+
+=== AsciiMath
+
+[source,asciimath]
+----
+arctan(x)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\arctan{( x )}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>arctan</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:func>
+      <m:funcPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:funcPr>
+      <m:fName>
+        <m:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+          </w:rPr>
+          <m:t>arctan</m:t>
+        </m:r>
+      </m:fName>
+      <m:e>
+        <m:d>
+          <m:dPr>
+            <m:begChr m:val="("/>
+            <m:endChr m:val=")"/>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+                <w:i/>
+              </w:rPr>
+            </m:ctrlPr>
+          </m:dPr>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+        </m:d>
+      </m:e>
+    </m:func>
+  </m:oMath>
+</m:oMathPara>
+----
+

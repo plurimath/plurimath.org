@@ -1,0 +1,19 @@
+---
+title: "`mbox` (unary)"
+layout: function
+function-name: mbox
+function-type: unary
+---
+
+[[mbox]]
+== Mbox
+
+=== LaTeX
+
+[source,latex]
+----
+\mbox{( x )}
+----
+
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../text[Text class]

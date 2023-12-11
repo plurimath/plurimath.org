@@ -1,0 +1,26 @@
+---
+title: "`merror` (unary)"
+layout: function
+function-name: merror
+function-type: unary
+---
+
+[[merror]]
+== Merror
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <merror>
+      <mi>x</mi>
+    </merror>
+  </mstyle>
+</math>
+----
+
+
+NOTE: In other conversions, the value of the class will not be processed at all.
+

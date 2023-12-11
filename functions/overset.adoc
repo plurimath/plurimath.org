@@ -1,0 +1,70 @@
+---
+title: "`overset` (binary)"
+layout: function
+function-name: overset
+function-type: binary
+---
+
+[[overset]]
+== Overset
+
+=== AsciiMath
+
+[source,asciimath]
+----
+overset(x)(y)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\overset{x}{y}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mover>
+      <mi>y</mi>
+      <mi>x</mi>
+    </mover>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:limUpp>
+      <m:limUppPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:limUppPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>y</m:t>
+        </m:r>
+      </m:lim>
+    </m:limUpp>
+  </m:oMath>
+</m:oMathPara>
+----

@@ -1,10 +1,17 @@
-= N-ary function Example
+---
+title: "`n-ary` (binary)"
+layout: function
+function-name: n-ary
+function-type: binary
+---
 
-[[nary]]
-
+[[n-ary]]
 == N-ary
-* **OMML**
-```
+
+=== OMML
+
+[source,xml]
+----
 <m:oMathPara>
   <m:oMath>
     <m:nary>
@@ -32,6 +39,8 @@
     </m:nary>
   </m:oMath>
 </m:oMathPara>
-```
+----
 
-NOTE: In other conversions, the generated output will resemble the content in the link:#powerbase[PowerBase class]
+
+NOTE: In other conversions, the generated output will resemble the content in
+the link:../powerbase[PowerBase class]

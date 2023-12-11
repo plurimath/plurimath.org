@@ -1,0 +1,20 @@
+---
+title: "`multline` (unary)"
+layout: function
+function-name: multline
+function-type: unary
+---
+
+[[multline]]
+== Multline
+
+=== LaTeX
+
+[source,latex]
+----
+\begin{multline}x \\ y \\ z\end{multline}
+----
+
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]
+

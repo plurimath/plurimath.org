@@ -1,0 +1,70 @@
+---
+title: "`frac` (binary)"
+layout: function
+function-name: frac
+function-type: binary
+---
+
+[[frac]]
+== Frac
+
+=== AsciiMath
+
+[source,asciimath]
+----
+frac(x)(y)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\frac{x}{y}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mfrac>
+      <mi>x</mi>
+      <mi>y</mi>
+    </mfrac>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:f>
+      <m:fPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:t>y</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+  </m:oMath>
+</m:oMathPara>
+----

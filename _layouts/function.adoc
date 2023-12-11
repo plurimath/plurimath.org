@@ -1,0 +1,232 @@
+---
+layout: docs-base
+html-class: docs-page
+docs_title: Plurimath functions
+
+navigation:
+  base_url: /functions
+  items:
+
+  - title: Unary
+    items:
+    - title: abs
+      path: /abs
+    - title: align
+      path: /align
+    - title: arccos
+      path: /arccos
+    - title: arcsin
+      path: /arcsin
+    - title: arctan
+      path: /arctan
+    - title: array
+      path: /array
+    - title: bar
+      path: /bar
+    - title: bmatrix / Bmatrix
+      path: /bmatrix
+    - title: bold
+      path: /bold
+    - title: boldfraktur
+      path: /boldfraktur
+    - title: bolditalic
+      path: /bolditalic
+    - title: boldsansserif
+      path: /boldsansserif
+    - title: boldscript
+      path: /boldscript
+    - title: cancel
+      path: /cancel
+    - title: ceil
+      path: /ceil
+    - title: cos
+      path: /cos
+    - title: cosh
+      path: /cosh
+    - title: cot
+      path: /cot
+    - title: coth
+      path: /coth
+    - title: csc
+      path: /csc
+    - title: csch
+      path: /csch
+    - title: ddot
+      path: /ddot
+    - title: deg
+      path: /deg
+    - title: det
+      path: /det
+    - title: dim
+      path: /dim
+    - title: dot
+      path: /dot
+    - title: doublestruck
+      path: /doublestruck
+    - title: exp
+      path: /exp
+    - title: floor
+      path: /floor
+    - title: fraktur
+      path: /fraktur
+    - title: gcd
+      path: /gcd
+    - title: glb
+      path: /glb
+    - title: hat
+      path: /hat
+    - title: hom
+      path: /hom
+    - title: italic
+      path: /italic
+    - title: ker
+      path: /ker
+    - title: lcm
+      path: /lcm
+    - title: lg
+      path: /lg
+    - title: liminf
+      path: /liminf
+    - title: limsup
+      path: /limsup
+    - title: ln
+      path: /ln
+    - title: longdiv
+      path: /longdiv
+    - title: lub
+      path: /lub
+    - title: matrix
+      path: /matrix
+    - title: max
+      path: /max
+    - title: mbox
+      path: /mbox
+    - title: menclose
+      path: /menclose
+    - title: merror
+      path: /merror
+    - title: min
+      path: /min
+    - title: monospace
+      path: /monospace
+    - title: msgroup
+      path: /msgroup
+    - title: multline
+      path: /multline
+    - title: norm
+      path: /norm
+    - title: normal
+      path: /normal
+    - title: obrace
+      path: /obrace
+    - title: phantom
+      path: /phantom
+    - title: sansserif
+      path: /sansserif
+    - title: sansserifbolditalic
+      path: /sansserifbolditalic
+    - title: sansserifitalic
+      path: /sansserifitalic
+    - title: scarries
+      path: /scarries
+    - title: script
+      path: /script
+    - title: sec
+      path: /sec
+    - title: sech
+      path: /sech
+    - title: sin
+      path: /sin
+    - title: sinh
+      path: /sinh
+    - title: split
+      path: /split
+    - title: sqrt
+      path: /sqrt
+    - title: substack
+      path: /substack
+    - title: sup
+      path: /sup
+    - title: table
+      path: /table
+    - title: tan
+      path: /tan
+    - title: tanh
+      path: /tanh
+    - title: text
+      path: /text
+    - title: tilde
+      path: /tilde
+    - title: ubrace
+      path: /ubrace
+    - title: ul
+      path: /ul
+    - title: vec
+      path: /vec
+    - title: vmatrix / Vmatrix
+      path: /vmatrix
+
+  - title: Binary
+    items:
+    - title: base
+      path: /base
+    - title: color
+      path: /color
+    - title: frac
+      path: /frac
+    - title: inf
+      path: /inf
+    - title: lim
+      path: /lim
+    - title: log
+      path: /log
+    - title: mod
+      path: /mod
+    - title: over
+      path: /over
+    - title: overset
+      path: /overset
+    - title: power
+      path: /power
+    - title: root
+      path: /root
+    - title: script
+      path: /script
+    - title: semantics
+      path: /semantics
+    - title: stackrel
+      path: /stackrel
+    - title: substack
+      path: /substack
+    - title: underset
+      path: /underset
+
+  - title: Ternary
+    items:
+    - title: fenced
+      path: /fenced
+    - title: int
+      path: /int
+    - title: limits
+      path: /limits
+    - title: oint
+      path: /oint
+    - title: powerbase
+      path: /powerbase
+    - title: prod
+      path: /prod
+    - title: rule
+      path: /rule
+    - title: sum
+      path: /sum
+    - title: undercover
+      path: /undercover
+
+  - title: N-ary
+    items:
+    - title: ary
+      path: /n-ary
+
+---
+
+{{ content }}

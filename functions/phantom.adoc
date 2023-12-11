@@ -1,0 +1,55 @@
+---
+title: "`phantom` (unary)"
+layout: function
+function-name: phantom
+function-type: unary
+---
+
+[[phantom]]
+== Phantom
+
+=== LaTeX
+
+[source,latex]
+----
+\phantom{x}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mphantom>
+      <mi>x</mi>
+    </mphantom>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:phant>
+      <m:phant>
+        <m:show val="m:off"/>
+      </m:phant>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:phant>
+  </m:oMath>
+</m:oMathPara>
+----
+
+
+NOTE: In AsciiMath conversion, it will add `\ ` replacing all the letters as value of the object. For example, the output of this example in *AsciiMath* will be `\ `.
+

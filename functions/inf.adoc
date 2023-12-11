@@ -1,0 +1,26 @@
+---
+title: "`inf` (binary)"
+layout: function
+function-name: inf
+function-type: binary
+---
+
+== Inf
+
+=== AsciiMath
+
+[source,asciimath]
+----
+inf_(x)^(y)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\inf_{x}^{y}
+----
+
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../underover[underover class]

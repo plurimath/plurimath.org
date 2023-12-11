@@ -1,0 +1,19 @@
+---
+title: "`align` (unary)"
+layout: function
+function-name: align
+function-type: unary
+---
+
+[[align]]
+== Align
+
+=== LaTeX
+
+[source,latex]
+----
+\begin{align}x \\ y \\ z\end{align}
+----
+
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]
