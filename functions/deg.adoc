@@ -1,0 +1,19 @@
+---
+title: "`deg` (unary)"
+layout: function
+function-name: deg
+function-type: unary
+---
+
+[[deg]]
+== Deg
+
+=== LaTeX
+
+[source,latex]
+----
+\deg{( x )}
+----
+
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the input of this example in *AsciiMath* will be processed as `d e g \(x\)`.

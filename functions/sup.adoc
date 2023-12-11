@@ -1,0 +1,19 @@
+---
+title: "`sup` (unary)"
+layout: function
+function-name: sup
+function-type: unary
+---
+
+[[sup]]
+== Sup
+
+=== LaTeX
+
+[source,latex]
+----
+\sup{( x )}
+----
+
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `sup(x)`.

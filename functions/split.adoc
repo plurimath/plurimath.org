@@ -1,0 +1,20 @@
+---
+title: "`split` (unary)"
+layout: function
+function-name: split
+function-type: unary
+---
+
+[[split]]
+== Split
+
+=== LaTeX
+
+[source,latex]
+----
+\begin{split}x \\ y \\ z\end{split}
+----
+
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]
+

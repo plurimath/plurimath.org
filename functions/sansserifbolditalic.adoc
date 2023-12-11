@@ -1,0 +1,44 @@
+---
+title: "`sansserifbolditalic` (unary)"
+layout: function
+function-name: sansserifbolditalic
+function-type: unary
+---
+
+[[sansserifbolditalic]]
+== Sansserifbolditalic
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="sans-serif-bold-italic">
+      <mtext>x</mtext>
+    </mstyle>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:scr m:val="sans-serif"/>
+        <m:sty m:val="bi"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+----
+
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `x`.
+

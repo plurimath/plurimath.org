@@ -1,0 +1,46 @@
+---
+title: "`det` (unary)"
+layout: function
+function-name: det
+function-type: unary
+---
+
+[[det]]
+== Det
+
+=== AsciiMath
+
+[source,asciimath]
+----
+det(x)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\det{( x )}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>det</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+----
+
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the *presentation* of this example in *OMML*  will be `det ("x")`.

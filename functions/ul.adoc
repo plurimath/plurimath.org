@@ -1,0 +1,72 @@
+---
+title: "`ul` (unary)"
+layout: function
+function-name: ul
+function-type: unary
+---
+
+[[ul]]
+== Ul
+
+=== AsciiMath
+
+[source,asciimath]
+----
+ul(x)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\underline{x}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <munder>
+      <mi>x</mi>
+      <mo>&#x332;</mo>
+    </munder>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:limLow>
+      <m:limLowPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:limLowPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>&#x332;</m:t>
+        </m:r>
+      </m:lim>
+    </m:limLow>
+  </m:oMath>
+</m:oMathPara>
+----
+
+

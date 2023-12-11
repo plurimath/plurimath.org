@@ -1,0 +1,32 @@
+---
+title: "`bmatrix` and `Bmatrix` (unary)"
+layout: function
+function-name: bmatrix
+function-type: unary
+---
+
+[[bmatrix]]
+== bmatrix
+
+=== LaTeX
+
+[source,latex]
+----
+\begin{bmatrix}x \\ y \\ z\end{bmatrix}
+----
+
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]
+
+[[Bmatrix]]
+== Bmatrix
+
+=== LaTeX
+
+[source,latex]
+----
+\begin{Bmatrix}x \\ y \\ z\end{Bmatrix}
+----
+
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]

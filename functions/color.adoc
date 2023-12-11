@@ -1,0 +1,44 @@
+---
+title: "`color` (binary)"
+layout: function
+function-name: color
+function-type: binary
+---
+
+[[color]]
+== Color
+
+
+=== AsciiMath
+
+[source,asciimath]
+----
+color(red)(y)
+----
+
+
+
+=== LaTeX
+
+[source,latex]
+----
+{\color{red} y}
+----
+
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathcolor="red">
+      <mi>x</mi>
+    </mstyle>
+  </mstyle>
+</math>
+----
+
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `x`.

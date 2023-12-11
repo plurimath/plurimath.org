@@ -1,0 +1,69 @@
+---
+title: "`fenced` (ternary)"
+layout: function
+function-name: fenced
+function-type: ternary
+---
+
+[[fenced]]
+== Fenced
+
+=== AsciiMath
+
+[source,asciimath]
+----
+(x)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+( x )
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mo>(</mo>
+      <mi>x</mi>
+      <mo>)</mo>
+    </mrow>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="("/>
+        <m:endChr m:val=")"/>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:dPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:d>
+  </m:oMath>
+</m:oMathPara>
+----
+

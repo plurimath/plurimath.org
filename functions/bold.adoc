@@ -1,0 +1,56 @@
+---
+title: "`bold` (unary)"
+layout: function
+function-name: bold
+function-type: unary
+---
+
+[[bold]]
+== Bold
+
+=== AsciiMath
+
+[source,asciimath]
+----
+bb(x)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\mathbf{x}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="bold">
+      <mi>x</mi>
+    </mstyle>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="b"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+----
+

@@ -1,0 +1,67 @@
+---
+title: "`sqrt` (unary)"
+layout: function
+function-name: sqrt
+function-type: unary
+---
+
+[[sqrt]]
+== Sqrt
+
+=== AsciiMath
+
+[source,asciimath]
+----
+sqrt(x)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\sqrt{x}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <msqrt>
+      <mi>x</mi>
+    </msqrt>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:rad>
+      <m:radPr>
+        <m:degHide m:val="1"/>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:radPr>
+      <m:deg/>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:rad>
+  </m:oMath>
+</m:oMathPara>
+----
+

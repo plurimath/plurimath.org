@@ -1,0 +1,31 @@
+---
+title: "`vmatrix` and `Vmatrix` (unary)"
+layout: function
+function-name: vmatrix
+function-type: unary
+---
+
+[[vmatrix]]
+== vmatrix
+
+=== LaTeX
+
+[source,latex]
+----
+\begin{vmatrix}x \\ y \\ z\end{vmatrix}
+----
+
+
+
+[[Vmatrix]]
+== Vmatrix
+
+=== LaTeX
+
+[source,latex]
+----
+\begin{Vmatrix}x \\ y \\ z\end{Vmatrix}
+----
+
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]

@@ -1,0 +1,19 @@
+---
+title: "`over` (binary)"
+layout: function
+function-name: over
+function-type: binary
+---
+
+[[over]]
+== Over
+
+=== LaTeX
+
+[source,latex]
+----
+{x \over y}
+----
+
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../frac[Frac class]

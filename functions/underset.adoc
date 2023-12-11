@@ -1,0 +1,70 @@
+---
+title: "`underset` (binary)"
+layout: function
+function-name: underset
+function-type: binary
+---
+
+[[underset]]
+== Underset
+
+=== AsciiMath
+
+[source,asciimath]
+----
+underset(x)(y)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\underset{x}{y}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <munder>
+      <mi>y</mi>
+      <mi>x</mi>
+    </munder>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:limLow>
+      <m:limLowPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:limLowPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>y</m:t>
+        </m:r>
+      </m:lim>
+    </m:limLow>
+  </m:oMath>
+</m:oMathPara>
+----

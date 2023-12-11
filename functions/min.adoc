@@ -1,0 +1,47 @@
+---
+title: "`min` (unary)"
+layout: function
+function-name: min
+function-type: unary
+---
+
+[[min]]
+== Min
+
+=== AsciiMath
+
+[source,asciimath]
+----
+min(x)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\min{( x )}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow>
+      <mi>min</mi>
+      <mrow>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+----
+
+
+NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the *presentation* of this example in *OMML*  will be `min ("x")`.
+

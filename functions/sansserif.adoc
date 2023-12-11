@@ -1,0 +1,58 @@
+---
+title: "`sansserif` (unary)"
+layout: function
+function-name: sansserif
+function-type: unary
+---
+
+[[sansserif]]
+== Sansserif
+
+=== AsciiMath
+
+[source,asciimath]
+----
+mathsf(x)
+----
+
+
+=== LaTeX
+
+[source,latex]
+----
+\mathsf{x}
+----
+
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mstyle mathvariant="sans-serif">
+      <mi>x</mi>
+    </mstyle>
+  </mstyle>
+</math>
+----
+
+
+=== OMML
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:scr m:val="sans-serif"/>
+        <m:sty m:val="p"/>
+      </m:rPr>
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+----
+
+

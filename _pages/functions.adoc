@@ -1,0 +1,343 @@
+---
+docs_title: Plurimath supported functions
+navigation:
+  base_url: /functions
+  items:
+
+  - title: Unary
+    items:
+    - title: abs
+      path: /abs
+    - title: align
+      path: /spec/functions/align
+    - title: arccos
+      path: /spec/functions/arccos
+    - title: arcsin
+      path: /spec/functions/arcsin
+    - title: arctan
+      path: /spec/functions/arctan
+    - title: array
+      path: /spec/functions/array
+    - title: bar
+      path: /spec/functions/bar
+    - title: bmatrix / Bmatrix
+      path: /spec/functions/bmatrix
+    - title: bold
+      path: /spec/functions/bold
+    - title: boldfraktur
+      path: /spec/functions/boldfraktur
+    - title: bolditalic
+      path: /spec/functions/bolditalic
+    - title: boldsansserif
+      path: /spec/functions/boldsansserif
+    - title: boldscript
+      path: /spec/functions/boldscript
+    - title: cancel
+      path: /spec/functions/cancel
+    - title: ceil
+      path: /spec/functions/ceil
+    - title: cos
+      path: /spec/functions/cos
+    - title: cosh
+      path: /spec/functions/cosh
+    - title: cot
+      path: /spec/functions/cot
+    - title: coth
+      path: /spec/functions/coth
+    - title: csc
+      path: /spec/functions/csc
+    - title: csch
+      path: /spec/functions/csch
+    - title: ddot
+      path: /spec/functions/ddot
+    - title: deg
+      path: /spec/functions/deg
+    - title: det
+      path: /spec/functions/det
+    - title: dim
+      path: /spec/functions/dim
+    - title: dot
+      path: /spec/functions/dot
+    - title: doublestruck
+      path: /spec/functions/doublestruck
+    - title: exp
+      path: /spec/functions/exp
+    - title: floor
+      path: /spec/functions/floor
+    - title: fraktur
+      path: /spec/functions/fraktur
+    - title: gcd
+      path: /spec/functions/gcd
+    - title: glb
+      path: /spec/functions/glb
+    - title: hat
+      path: /spec/functions/hat
+    - title: hom
+      path: /spec/functions/hom
+    - title: italic
+      path: /spec/functions/italic
+    - title: ker
+      path: /spec/functions/ker
+    - title: lcm
+      path: /spec/functions/lcm
+    - title: lg
+      path: /spec/functions/lg
+    - title: liminf
+      path: /spec/functions/liminf
+    - title: limsup
+      path: /spec/functions/limsup
+    - title: ln
+      path: /spec/functions/ln
+    - title: longdiv
+      path: /spec/functions/longdiv
+    - title: lub
+      path: /spec/functions/lub
+    - title: matrix
+      path: /spec/functions/matrix
+    - title: max
+      path: /spec/functions/max
+    - title: mbox
+      path: /spec/functions/mbox
+    - title: menclose
+      path: /spec/functions/menclose
+    - title: merror
+      path: /spec/functions/merror
+    - title: min
+      path: /spec/functions/min
+    - title: monospace
+      path: /spec/functions/monospace
+    - title: msgroup
+      path: /spec/functions/msgroup
+    - title: multline
+      path: /spec/functions/multline
+    - title: norm
+      path: /spec/functions/norm
+    - title: normal
+      path: /spec/functions/normal
+    - title: obrace
+      path: /spec/functions/obrace
+    - title: phantom
+      path: /spec/functions/phantom
+    - title: sansserif
+      path: /spec/functions/sansserif
+    - title: sansserifbolditalic
+      path: /spec/functions/sansserifbolditalic
+    - title: sansserifitalic
+      path: /spec/functions/sansserifitalic
+    - title: scarries
+      path: /spec/functions/scarries
+    - title: script
+      path: /spec/functions/script
+    - title: sec
+      path: /spec/functions/sec
+    - title: sech
+      path: /spec/functions/sech
+    - title: sin
+      path: /spec/functions/sin
+    - title: sinh
+      path: /spec/functions/sinh
+    - title: split
+      path: /spec/functions/split
+    - title: sqrt
+      path: /spec/functions/sqrt
+    - title: substack
+      path: /spec/functions/substack
+    - title: sup
+      path: /spec/functions/sup
+    - title: table
+      path: /spec/functions/table
+    - title: tan
+      path: /spec/functions/tan
+    - title: tanh
+      path: /spec/functions/tanh
+    - title: text
+      path: /spec/functions/text
+    - title: tilde
+      path: /spec/functions/tilde
+    - title: ubrace
+      path: /spec/functions/ubrace
+    - title: ul
+      path: /spec/functions/ul
+    - title: vec
+      path: /spec/functions/vec
+    - title: vmatrix / Vmatrix
+      path: /spec/functions/vmatrix
+
+  - title: Binary
+    items:
+    - title: base
+      path: /spec/functions/base
+    - title: color
+      path: /spec/functions/color
+    - title: frac
+      path: /spec/functions/frac
+    - title: inf
+      path: /spec/functions/inf
+    - title: lim
+      path: /spec/functions/lim
+    - title: log
+      path: /spec/functions/log
+    - title: mod
+      path: /spec/functions/mod
+    - title: over
+      path: /spec/functions/over
+    - title: overset
+      path: /spec/functions/overset
+    - title: power
+      path: /spec/functions/power
+    - title: root
+      path: /spec/functions/root
+    - title: script
+      path: /spec/functions/script
+    - title: semantics
+      path: /spec/functions/semantics
+    - title: stackrel
+      path: /spec/functions/stackrel
+    - title: substack
+      path: /spec/functions/substack
+    - title: underset
+      path: /spec/functions/underset
+
+  - title: Ternary
+    items:
+    - title: fenced
+      path: /spec/functions/fenced
+    - title: int
+      path: /spec/functions/int
+    - title: limits
+      path: /spec/functions/limits
+    - title: oint
+      path: /spec/functions/oint
+    - title: powerbase
+      path: /spec/functions/powerbase
+    - title: prod
+      path: /spec/functions/prod
+    - title: rule
+      path: /spec/functions/rule
+    - title: sum
+      path: /spec/functions/sum
+    - title: undercover
+      path: /spec/functions/undercover
+
+  - title: N-ary
+    items:
+    - title: ary
+      path: /spec/functions/n-ary
+
+---
+
+== Unary
+
+* link:../functions/abs[abs]
+* link:../functions/align[align]
+* link:../functions/arccos[arccos]
+* link:../functions/arcsin[arcsin]
+* link:../functions/arctan[arctan]
+* link:../functions/array[array]
+* link:../functions/bar[bar]
+* link:../functions/bmatrix[bmatrix / Bmatrix]
+* link:../functions/bold[bold]
+* link:../functions/boldfraktur[boldfraktur]
+* link:../functions/bolditalic[bolditalic]
+* link:../functions/boldsansserif[boldsansserif]
+* link:../functions/boldscript[boldscript]
+* link:../functions/cancel[cancel]
+* link:../functions/ceil[ceil]
+* link:../functions/cos[cos]
+* link:../functions/cosh[cosh]
+* link:../functions/cot[cot]
+* link:../functions/coth[coth]
+* link:../functions/csc[csc]
+* link:../functions/csch[csch]
+* link:../functions/ddot[ddot]
+* link:../functions/deg[deg]
+* link:../functions/det[det]
+* link:../functions/dim[dim]
+* link:../functions/dot[dot]
+* link:../functions/doublestruck[doublestruck]
+* link:../functions/exp[exp]
+* link:../functions/floor[floor]
+* link:../functions/fraktur[fraktur]
+* link:../functions/gcd[gcd]
+* link:../functions/glb[glb]
+* link:../functions/hat[hat]
+* link:../functions/hom[hom]
+* link:../functions/italic[italic]
+* link:../functions/ker[ker]
+* link:../functions/lcm[lcm]
+* link:../functions/lg[lg]
+* link:../functions/liminf[liminf]
+* link:../functions/limsup[limsup]
+* link:../functions/ln[ln]
+* link:../functions/longdiv[longdiv]
+* link:../functions/lub[lub]
+* link:../functions/matrix[matrix]
+* link:../functions/max[max]
+* link:../functions/mbox[mbox]
+* link:../functions/menclose[menclose]
+* link:../functions/merror[merror]
+* link:../functions/min[min]
+* link:../functions/monospace[monospace]
+* link:../functions/msgroup[msgroup]
+* link:../functions/multline[multline]
+* link:../functions/norm[norm]
+* link:../functions/normal[normal]
+* link:../functions/obrace[obrace]
+* link:../functions/phantom[phantom]
+* link:../functions/sansserif[sansserif]
+* link:../functions/sansserifbolditalic[sansserifbolditalic]
+* link:../functions/sansserifitalic[sansserifitalic]
+* link:../functions/scarries[scarries]
+* link:../functions/script[script]
+* link:../functions/sec[sec]
+* link:../functions/sech[sech]
+* link:../functions/sin[sin]
+* link:../functions/sinh[sinh]
+* link:../functions/split[split]
+* link:../functions/sqrt[sqrt]
+* link:../functions/substack[substack]
+* link:../functions/sup[sup]
+* link:../functions/table[table]
+* link:../functions/tan[tan]
+* link:../functions/tanh[tanh]
+* link:../functions/text[text]
+* link:../functions/tilde[tilde]
+* link:../functions/ubrace[ubrace]
+* link:../functions/ul[ul]
+* link:../functions/vec[vec]
+* link:../functions/vmatrix[vmatrix / Vmatrix]
+
+== Binary
+
+* link:../functions/base[base]
+* link:../functions/color[color]
+* link:../functions/frac[frac]
+* link:../functions/inf[inf]
+* link:../functions/lim[lim]
+* link:../functions/log[log]
+* link:../functions/mod[mod]
+* link:../functions/over[over]
+* link:../functions/overset[overset]
+* link:../functions/power[power]
+* link:../functions/root[root]
+* link:../functions/script[script]
+* link:../functions/semantics[semantics]
+* link:../functions/stackrel[stackrel]
+* link:../functions/substack[substack]
+* link:../functions/underset[underset]
+
+== Ternary
+
+* link:../ternary/fenced[fenced]
+* link:../ternary/int[int]
+* link:../ternary/limits[limits]
+* link:../ternary/oint[oint]
+* link:../ternary/powerbase[powerbase]
+* link:../ternary/prod[prod]
+* link:../ternary/rule[rule]
+* link:../ternary/sum[sum]
+* link:../ternary/undercover[undercover]
+
+== N-ary
+
+* link:../functions/n-ary[n-ary]

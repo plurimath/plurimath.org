@@ -1,0 +1,20 @@
+---
+title: "`substack` (unary)"
+layout: function
+function-name: substack
+function-type: unary
+---
+
+[[substack]]
+== Substack
+
+=== LaTeX
+
+[source,latex]
+----
+\substack{x & x \\ y & z}
+----
+
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]
+

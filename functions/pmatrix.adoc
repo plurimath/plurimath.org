@@ -1,0 +1,20 @@
+---
+title: "`pmatrix` (unary)"
+layout: function
+function-name: pmatrix
+function-type: unary
+---
+
+[[pmatrix]]
+== Pmatrix
+
+=== LaTeX
+
+[source,latex]
+----
+\begin{pmatrix}x \\ y \\ z\end{pmatrix}
+----
+
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]
+
