@@ -1,5 +1,6 @@
 ---
-docs_title: Plurimath supported functions
+title: Plurimath supported functions
+layout: post
 navigation:
   base_url: /functions
   items:

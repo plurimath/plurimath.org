@@ -1,0 +1,164 @@
+---
+title: Using Plurimath (Ruby or Javascript)
+description: Using Plurimath in Ruby or Javascript
+layout: post
+---
+== Ruby
+
+=== General
+
+Add this line to your application's `Gemfile`:
+
+[source,ruby]
+----
+gem "plurimath"
+----
+
+Then execute:
+
+[source,shell]
+----
+$ bundle install
+----
+
+Or install it:
+
+[source,shell]
+----
+$ gem install plurimath
+----
+
+=== Usage
+
+==== General
+
+The `Plurimath::Math.parse(string, type)` method parses a math formula of a
+`type` identifying the math language type and returns a
+`Plurimath::Math::Formula` representation of the string provided as output.
+
+The `Plurimath::Math::Formula` object allows generating any supported math
+language string from the formula object through conversion methods.
+
+
+==== AsciiMath
+
+From AsciiMath:
+
+[source,ruby]
+----
+> asciimath = "sin(1)"
+> formula = Plurimath::Math.parse(asciimath, :asciimath)
+----
+
+To AsciiMath:
+
+[source,ruby]
+----
+> formula.to_asciimath
+=> sin(1)
+----
+
+NOTE: Plurimath's AsciiMath provides extended support for additional symbols not
+included in AsciiMath but allowed in LaTeX. The full list of these symbols are
+listed
+https://github.com/plurimath/plurimath/blob/main/AsciiMath-Supported-Data.adoc#symbols-inherited-from-latex[here].
+
+
+==== LaTeX math
+
+From LaTeX math:
+
+[source,ruby]
+----
+> latex = "\\sin{1}"
+> formula = Plurimath::Math.parse(latex, :latex)
+----
+
+To LaTeX math:
+
+[source,ruby]
+----
+> formula.to_latex
+=> \\sin1
+----
+
+
+==== MathML
+
+From MathML:
+
+[source,ruby]
+----
+> mathml = <<~MATHML
+              <math xmlns='http://www.w3.org/1998/Math/MathML'>
+                <mstyle displaystyle='true'>
+                  <mi>sin</mi>
+                  <mn>1</mn>
+                </mstyle>
+              </math>
+            MATHML
+> formula = Plurimath::Math.parse(mathml, :mathml)
+----
+
+To MathML:
+
+[source,ruby]
+----
+> formula.to_mathml
+=> <math xmlns='http://www.w3.org/1998/Math/MathML'>
+     <mstyle displaystyle='true'>
+       <mi>sin</mi>
+       <mn>1</mn>
+     </mstyle>
+   </math>
+----
+
+== Javascript
+
+=== General
+
+Plurimath.js, the Javascript version of Plurimath is available at:
+
+* Javascript: https://www.plurimath.org/plurimath-js/dist/index.js[`index.js`]
+* NPM package: https://www.npmjs.com/package/@plurimath/plurimath[`@plurimath/plurimath`]
+
+=== Web applications
+
+[source,html]
+----
+<script type="module">
+  import Plurimath from "https://www.plurimath.org/plurimath-js/dist/index.js";
+
+  const formula = new Plurimath('ubrace(1+2+3+4)_("4 terms")', "asciimath");
+  console.log(formula.toLatex());
+</script>
+----
+
+=== Node.js
+
+==== Install
+
+[source,bash]
+----
+$ npm install -S @plurimath/plurimath
+----
+
+==== ES Modules (recommended)
+
+[source,javascript]
+----
+import Plurimath from "@plurimath/plurimath"
+
+const formula = new Plurimath('ubrace(1+2+3+4)_("4 terms")', "asciimath");
+console.log(formula.toLatex());
+----
+
+==== CommonJS
+
+[source,javascript]
+----
+const Plurimath = require("@plurimath/plurimath/index.cjs").default;
+
+const formula = new Plurimath('ubrace(1+2+3+4)_("4 terms")', "asciimath");
+console.log(formula.toLatex());
+----
