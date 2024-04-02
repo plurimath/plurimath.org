@@ -32,8 +32,6 @@ mathematical content is converted between different formats. It is designed to
 work with various markup languages such as *MathML*, *LaTeX*, *AsciiMath*, and
 *OMML*, making it a versatile and adaptable tool.
 
-Pluyri
-
 One significant advantage is that users don't have to deal with the
 inconvenience of installing and managing multiple libraries for these different
 languages. *Plurimath* encompasses them all within a single solution.
