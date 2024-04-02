@@ -29,8 +29,8 @@ excerpt: >-
 
 *Plurimath* is a comprehensive and efficient tool that enhances the way
 mathematical content is converted between different formats. It is designed to
-work with various markup languages such as *MathML*, *LaTeX*, *AsciiMath*, and
-*OMML*, making it a versatile and adaptable tool.
+work with various markup languages such as *MathML*, *LaTeX*, *AsciiMath*, *OMML*, and
+*UnicodeMath* making it a versatile and adaptable tool.
 
 One significant advantage is that users don't have to deal with the
 inconvenience of installing and managing multiple libraries for these different
@@ -463,3 +463,50 @@ This will generate following output of *OMML*
 </m:oMathPara>
 ----
 
+==== UnicodeMath to Formula
+
+Processing the UnicodeMath example below will also follow the same steps.
+
+For UnicodeMath, we have two syntaxes
+
+1. String with Unicode representation
+2. LaTeX alike syntax(for example, \sum, \prod, etc...)
+
+[source,ruby]
+----
+# Unicode representation string
+input_string = '∑_(i=1)^n i^3'
+# OR LaTeX alike syntax
+input_string = '\sum_(i=1)^n i^3'
+formula = Plurimath::Math.parse(input_string, :unicode)
+----
+
+As shown before, the above code will generate following **Formula** object.
+
+[source,ruby]
+----
+Plurimath::Math::Formula.new([
+  Plurimath::Math::Function::Sum.new(
+    Plurimath::Math::Formula.new([
+      Plurimath::Math::Symbol.new("i"),
+      Plurimath::Math::Symbol.new("="),
+      Plurimath::Math::Number.new("1")
+    ]),
+    Plurimath::Math::Symbol.new("n"),
+  ),
+  Plurimath::Math::Function::Power.new(
+    Plurimath::Math::Symbol.new("i"),
+    Plurimath::Math::Number.new("3")
+  )
+])
+----
+
+==== Formula to UnicodeMath
+
+Converting Formula to UnicodeMath will be the same as for the other languages.
+[source,ruby]
+----
+formula.to_unicodemath # >> ∑_(i = 1)^(n) i^(3)
+----
+
+NOTE: Input can be any of both, but the output will be in Unicode representation and not in LaTeX alike syntax.

@@ -1,0 +1,27 @@
+---
+title: "`arg` (binary)"
+layout: function
+function-name: arg
+function-type: binary
+---
+
+[[arg]]
+== arg
+
+=== MathML
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mi arg="d">&#x1d451;</mi>
+  </mstyle>
+</math>
+----
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+ⓐ(d 𝑑)
+----

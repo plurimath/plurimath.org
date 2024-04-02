@@ -17,6 +17,8 @@ navigation:
       path: /spec/functions/arcsin
     - title: arctan
       path: /spec/functions/arctan
+    - title: arg
+      path: /spec/functions/arg
     - title: array
       path: /spec/functions/array
     - title: bar
@@ -234,6 +236,7 @@ navigation:
 * link:../functions/arccos[arccos]
 * link:../functions/arcsin[arcsin]
 * link:../functions/arctan[arctan]
+* link:../functions/arg[arg]
 * link:../functions/array[array]
 * link:../functions/bar[bar]
 * link:../functions/bmatrix[bmatrix / Bmatrix]
