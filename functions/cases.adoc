@@ -1,0 +1,18 @@
+---
+title: "`cases` (unary)"
+layout: function
+function-name: cases
+function-type: unary
+---
+
+[[cases]]
+== cases
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+Ⓒ(1&2@3&4)
+----
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]

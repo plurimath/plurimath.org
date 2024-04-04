@@ -1,0 +1,18 @@
+---
+title: "`eqarray` (unary)"
+layout: function
+function-name: eqarray
+function-type: unary
+---
+
+[[eqarray]]
+== eqarray
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+█(1&2@3&4)
+----
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]
