@@ -465,18 +465,18 @@ This will generate following output of *OMML*
 
 ==== UnicodeMath to Formula
 
-Processing the UnicodeMath example below will also follow the same steps.
+Processing the **UnicodeMath** example below will also follow the same steps.
 
-For UnicodeMath, we have two syntaxes
+For **UnicodeMath**, we have two syntaxes
 
 1. String with Unicode representation
-2. LaTeX alike syntax(for example, \sum, \prod, etc...)
+2. *LaTeX* alike syntax(for example, `\sum`, `\prod`, etc...)
 
 [source,ruby]
 ----
 # Unicode representation string
 input_string = '∑_(i=1)^n i^3'
-# OR LaTeX alike syntax
+# OR **LaTeX** alike syntax
 input_string = '\sum_(i=1)^n i^3'
 formula = Plurimath::Math.parse(input_string, :unicode)
 ----
@@ -503,10 +503,10 @@ Plurimath::Math::Formula.new([
 
 ==== Formula to UnicodeMath
 
-Converting Formula to UnicodeMath will be the same as for the other languages.
+Converting **Formula** to **UnicodeMath** will be the same as for the other languages.
 [source,ruby]
 ----
 formula.to_unicodemath # >> ∑_(i = 1)^(n) i^(3)
 ----
 
-NOTE: Input can be any of both mentioned syntaxes, but the output will be in Unicode representation and not in LaTeX alike syntax.
+NOTE: Input can be any of the both mentioned syntaxes, but the output will be in Unicode representation and not in LaTeX alike syntax.
