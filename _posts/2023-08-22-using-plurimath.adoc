@@ -509,4 +509,4 @@ Converting Formula to UnicodeMath will be the same as for the other languages.
 formula.to_unicodemath # >> ∑_(i = 1)^(n) i^(3)
 ----
 
-NOTE: Input can be any of both, but the output will be in Unicode representation and not in LaTeX alike syntax.
+NOTE: Input can be any of both mentioned syntaxes, but the output will be in Unicode representation and not in LaTeX alike syntax.

@@ -1,16 +1,16 @@
 ---
-title: "`arg` (binary)"
+title: "`intent` (binary)"
 layout: function
-function-name: arg
+function-name: intent
 function-type: binary
 ---
 
-[[arg]]
-== arg
+[[intent]]
+== intent
 
 === UnicodeMath
 
 [source,unicodemath]
 ----
-ⓐ(d 𝑑)
+ⓘ("d" 𝑑)
 ----

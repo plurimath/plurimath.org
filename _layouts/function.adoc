@@ -35,6 +35,8 @@ navigation:
       path: /boldsansserif
     - title: boldscript
       path: /boldscript
+    - title: cases
+      path: /cases
     - title: cancel
       path: /cancel
     - title: ceil
@@ -65,6 +67,8 @@ navigation:
       path: /doublestruck
     - title: exp
       path: /exp
+    - title: eqarray
+      path: /eqarray
     - title: floor
       path: /floor
     - title: fraktur
@@ -168,6 +172,8 @@ navigation:
 
   - title: Binary
     items:
+    - title: arg
+      path: /arg
     - title: base
       path: /base
     - title: color
@@ -176,12 +182,16 @@ navigation:
       path: /frac
     - title: inf
       path: /inf
+    - title: intent
+      path: /intent
     - title: lim
       path: /lim
     - title: log
       path: /log
     - title: mod
       path: /mod
+    - title: mlabeledtr
+      path: /mlabeledtr
     - title: over
       path: /over
     - title: overset

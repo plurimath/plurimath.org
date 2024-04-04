@@ -1,16 +1,16 @@
 ---
-title: "`arg` (binary)"
+title: "`mlabeledtr` (binary)"
 layout: function
-function-name: arg
+function-name: mlabeledtr
 function-type: binary
 ---
 
-[[arg]]
-== arg
+[[mlabeledtr]]
+== mlabeledtr
 
 === UnicodeMath
 
 [source,unicodemath]
 ----
-ⓐ(d 𝑑)
+𝑑 #[2]
 ----
