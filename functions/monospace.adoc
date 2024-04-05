@@ -53,3 +53,11 @@ mathtt(x)
   </m:oMath>
 </m:oMathPara>
 ----
+
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+ￗ(x)
+----

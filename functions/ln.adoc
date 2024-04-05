@@ -43,4 +43,12 @@ ln(x)
 ----
 
 
+=== UnicodeMath
+
+[source,unicodemath]
+----
+ln(x)
+----
+
+
 NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the presentation of this example in *OMML* will be represented as `ln ("x")`.

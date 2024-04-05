@@ -23,4 +23,12 @@ inf_(x)^(y)
 ----
 
 
+=== UnicodeMath
+
+[source,unicodemath]
+----
+inf(x)
+----
+
+
 NOTE: In other conversions, the generated output will resemble the content in the link:../underover[underover class]

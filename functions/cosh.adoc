@@ -90,3 +90,10 @@ cosh(x)
 </m:oMathPara>
 ----
 
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+cos⁡h(x)
+----

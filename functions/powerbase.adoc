@@ -75,3 +75,10 @@ x_{y}^{z}
 </m:oMathPara>
 ----
 
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+x_(y)^(z)
+----

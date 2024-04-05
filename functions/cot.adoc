@@ -89,3 +89,12 @@ cot(x)
   </m:oMath>
 </m:oMathPara>
 ----
+
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+cost(x)
+----
+

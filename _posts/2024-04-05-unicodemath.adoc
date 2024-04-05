@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "UnicodeMath in Plurimath"
+date:   2023-08-22 00:00:00 +0800
+categories:
+  - plurimath
+  - using
+authors:
+  -
+    name: Suleman Uzair
+    email: sulemanuzair600@gmail.com
+    social_links:
+      - https://github.com/suleman-uzair/
+  -
+    name: Ronald Tse
+    email: tse@ribose.com
+    use_picture: assets
+    social_links:
+      - https://www.linkedin.com/in/rhtse/
+      - https://github.com/ronaldtse
+excerpt: >-
+  UnicodeMath support in Plurimath.
+---
+
+= UnicodeMath
+
+== Why UnicodeMath?
+
+**Plurimath**, a versatile tool for mathematical representation, has been addressing these challenges by providing conversion capabilities between different markup languages. In a recent development, **Plurimath** has integrated **UnicodeMath** support, further enhancing its capabilities and opening up new possibilities for mathematical expression representation.
+
+**UnicodeMath**, known for its unrestricted support of symbols and scenarios, brings a new level of flexibility to **Plurimath**. With **UnicodeMath** support, users can now express complex mathematical concepts using a wider range of symbols and notations, without being constrained by the limitations of traditional markup languages.
+

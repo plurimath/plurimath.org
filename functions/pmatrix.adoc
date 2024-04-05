@@ -16,5 +16,12 @@ function-type: unary
 ----
 
 
-NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]
+=== UnicodeMath
 
+[source,unicodemath]
+----
+⒨(𝑥&𝑦&𝑧)
+----
+
+
+NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]

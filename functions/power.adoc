@@ -69,3 +69,10 @@ x^{y}
 </m:oMathPara>
 ----
 
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+x^(y)
+----

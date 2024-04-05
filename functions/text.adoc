@@ -50,3 +50,9 @@ function-type: unary
 ----
 
 
+=== UnicodeMath
+
+[source,unicodemath]
+----
+"x"
+----

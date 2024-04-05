@@ -1,3 +1,4 @@
+
 ---
 title: "`normal` (unary)"
 layout: function
@@ -54,3 +55,10 @@ rm(x)
 </m:oMathPara>
 ----
 
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+\mupx
+----

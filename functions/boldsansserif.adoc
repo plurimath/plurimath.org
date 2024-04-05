@@ -40,4 +40,12 @@ function-type: unary
 ----
 
 
+=== UnicodeMath
+
+[source,unicodemath]
+----
+\mbfsansx
+----
+
+
 NOTE: In other conversions, the value of the class will be processed as a straightforward equation. For example, the output of this example in *AsciiMath* will be represented as `x`.

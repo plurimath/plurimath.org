@@ -76,3 +76,10 @@ prod_(x)^(y) z
 </m:oMathPara>
 ----
 
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+∏_(x)^(y)▒〖z〗
+----

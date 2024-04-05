@@ -56,3 +56,9 @@ mathsf(x)
 ----
 
 
+=== UnicodeMath
+
+[source,unicodemath]
+----
+\msans(x)
+----

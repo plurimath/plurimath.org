@@ -67,3 +67,10 @@ function-type: ternary
 </m:oMathPara>
 ----
 
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+(x)
+----

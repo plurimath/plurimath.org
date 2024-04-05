@@ -53,3 +53,11 @@ ii(x)
   </m:oMath>
 </m:oMathPara>
 ----
+
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+\mitx
+----

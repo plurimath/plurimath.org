@@ -91,3 +91,9 @@ sech(x)
 ----
 
 
+=== UnicodeMath
+
+[source,unicodemath]
+----
+sech(x)
+----
