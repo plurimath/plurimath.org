@@ -89,3 +89,11 @@ arcsin(x)
   </m:oMath>
 </m:oMathPara>
 ----
+
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+arcsin(x)
+----

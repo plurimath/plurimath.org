@@ -73,3 +73,11 @@ x_{y}
 </m:oMathPara>
 ----
 
+
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+x_(y)
+----

@@ -75,3 +75,11 @@ int_(x)^(y) z
   </m:oMath>
 </m:oMathPara>
 ----
+
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+∫_(x)^(y)▒〖z〗
+----

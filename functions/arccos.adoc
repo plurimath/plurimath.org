@@ -89,3 +89,11 @@ arccos(x)
   </m:oMath>
 </m:oMathPara>
 ----
+
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+arccos(x)
+----

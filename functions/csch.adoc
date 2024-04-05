@@ -89,3 +89,11 @@ csch(x)
   </m:oMath>
 </m:oMathPara>
 ----
+
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+csch(x)
+----

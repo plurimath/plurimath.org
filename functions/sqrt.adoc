@@ -65,3 +65,12 @@ sqrt(x)
 </m:oMathPara>
 ----
 
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+sqrt(x)
+----
+
+

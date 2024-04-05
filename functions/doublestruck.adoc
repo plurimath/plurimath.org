@@ -53,3 +53,11 @@ mathbb(x)
   </m:oMath>
 </m:oMathPara>
 ----
+
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+\Bbbx
+----

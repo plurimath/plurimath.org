@@ -89,3 +89,12 @@ coth(x)
   </m:oMath>
 </m:oMathPara>
 ----
+
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+coth(x)
+----
+

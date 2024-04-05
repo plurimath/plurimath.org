@@ -93,3 +93,10 @@ function-type: unary
 </m:oMathPara>
 ----
 
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+■(𝑥&𝑦&𝑧)
+----

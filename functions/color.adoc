@@ -41,4 +41,13 @@ color(red)(y)
 ----
 
 
+=== UnicodeMath
+
+[source,unicodemath]
+----
+✎(red&x)
+----
+
+
+
 NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `x`.

@@ -227,8 +227,8 @@ navigation:
       path: /spec/functions/rule
     - title: sum
       path: /spec/functions/sum
-    - title: undercover
-      path: /spec/functions/undercover
+    - title: underover
+      path: /spec/functions/underover
 
   - title: N-ary
     items:
@@ -352,7 +352,7 @@ navigation:
 * link:../functions/prod[prod]
 * link:../functions/rule[rule]
 * link:../functions/sum[sum]
-* link:../functions/undercover[undercover]
+* link:../functions/underover[underover]
 
 == N-ary
 

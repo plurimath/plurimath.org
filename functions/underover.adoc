@@ -72,4 +72,12 @@ function-type: ternary
 ----
 
 
+=== UnicodeMath
+
+[source,unicodemath]
+----
+x┬(z)┴(y)
+----
+
+
 NOTE: In other conversions, the generated output will resemble the content in the link:../powerbase[PowerBase class]

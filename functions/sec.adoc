@@ -90,3 +90,10 @@ sec(x)
 </m:oMathPara>
 ----
 
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+sec(x)
+----

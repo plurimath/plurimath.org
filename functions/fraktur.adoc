@@ -54,3 +54,11 @@ mathfrak(x)
   </m:oMath>
 </m:oMathPara>
 ----
+
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+\mfrakx
+----

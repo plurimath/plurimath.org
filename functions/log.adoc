@@ -77,3 +77,11 @@ log_(x)^(y)
   </m:oMath>
 </m:oMathPara>
 ----
+
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+log(x)
+----

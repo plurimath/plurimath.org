@@ -16,6 +16,14 @@ function-type: unary
 ----
 
 
+=== UnicodeMath
+
+[source,unicodemath]
+----
+⒱(x&y&z)
+----
+
+
 
 [[Vmatrix]]
 == Vmatrix
@@ -25,6 +33,14 @@ function-type: unary
 [source,latex]
 ----
 \begin{Vmatrix}x \\ y \\ z\end{Vmatrix}
+----
+
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+⒩(x&y&z)
 ----
 
 

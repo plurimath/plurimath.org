@@ -229,8 +229,8 @@ navigation:
       path: /rule
     - title: sum
       path: /sum
-    - title: undercover
-      path: /undercover
+    - title: underover
+      path: /underover
 
   - title: N-ary
     items:

@@ -68,3 +68,11 @@ frac(x)(y)
   </m:oMath>
 </m:oMathPara>
 ----
+
+
+=== UnicodeMath
+
+[source,unicodemath]
+----
+(x)/(y)
+----
