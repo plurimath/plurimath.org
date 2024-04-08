@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "UnicodeMath in Plurimath"
+title:  "UnicodeMath support in Plurimath"
 date:   2023-08-22 00:00:00 +0800
 categories:
   - plurimath
@@ -19,14 +19,38 @@ authors:
       - https://www.linkedin.com/in/rhtse/
       - https://github.com/ronaldtse
 excerpt: >-
-  UnicodeMath support in Plurimath.
+  **Plurimath** has long supported **AsciiMath**, **MathML**, **LaTeX**, and **OMML**. Now, it also supports **UnicodeMath**.
 ---
 
 = UnicodeMath
 
-== Why UnicodeMath?
+== Introduction
 
-**Plurimath**, a versatile tool for mathematical representation, has been addressing these challenges by providing conversion capabilities between different markup languages. In a recent development, **Plurimath** has integrated **UnicodeMath** support, further enhancing its capabilities and opening up new possibilities for mathematical expression representation.
+**Plurimath** has been able to handle **AsciiMath**, **MathML**, **LaTeX**, and **OMML** for a while. Now, it's added support for **UnicodeMath**, broadening its range of functionality.
 
-**UnicodeMath**, known for its unrestricted support of symbols and scenarios, brings a new level of flexibility to **Plurimath**. With **UnicodeMath** support, users can now express complex mathematical concepts using a wider range of symbols and notations, without being constrained by the limitations of traditional markup languages.
+== Using UnicodeMath
 
+Input string can be one of any of the following two types
+
+1. Unicode string `# String containing the representation of the symbol`
+2. Name syntax string `# String containing the names instead of the representation.`
+
+Let's start with the Unicode syntax,
+
+[source,ruby]
+----
+string = '∑_(i=1)^n i^3'
+formula = Plurimath::Math.parse(string, :unicode)
+formula.to_unicodemath # => '∑_(i = 1)^(n) i^(3)'
+----
+
+And now the named syntax example.
+
+[source,ruby]
+----
+string = '\sum_(i=1)^n i^3'
+formula = Plurimath::Math.parse(string, :unicode)
+string.to_unicodemath # => '∑_(i = 1)^(n) i^(3)'
+----
+
+NOTE: Input can be any of the both mentioned syntaxes, but the output will be in Unicode representation and not in named syntax.
