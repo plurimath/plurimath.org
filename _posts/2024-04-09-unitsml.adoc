@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "UnitsML support in Plurimath"
-date:   2023-08-22 00:00:00 +0800
+date:   2024-04-09 00:00:00 +0800
 categories:
   - plurimath
   - using
@@ -30,11 +30,29 @@ excerpt: >-
 
 == Using UnitsML
 
-There is no direct processing like other languages,
+We can process **UnitsML** using two types of syntaxes.
 
-`Plurimath::Math.parse(string, :<language>) # => NOT SUPPORTED FOR UNITSML`
+The first type of input will be the same syntax followed for the other languages.
 
-The input of **UnitsML** is restricted to a specific syntax inside of an **AsciiMath** string. See the syntax below,
+[source,ruby]
+----
+  string = '"unitsml(<unitsml string>)"' # => anything before after the double quotes will be ignored
+  string = 'unitsml(<unitsml string>)' # => OR anything before letters "unitsml" and after the closing parenthesis will be ignored
+  string = '<unitsml string>' # => OR
+  fomrula = Plurimath::Math.parse(string, :unitsml)
+----
+
+Only the `'<unitsml string>'` part of the string will be processed and the rest will be ignored. see the input examples below
+
+[source,ruby]
+----
+  string = '"unitsml(kg)" 1' # => 1 in this example will be ignored
+  string = '1 "unitsml(kg)"' # => Again, 1 in this example will be ignored
+  formula = Plurimath::Math.parse(string, :unitsml)
+  formula.to_asciimath # => 'rm(kg)'
+----
+
+The other input of **UnitsML** is restricted to a specific syntax inside of an **AsciiMath** string and nothing before or/and after will be ignored. See the syntax below.
 
 [source,ruby]
 ----
@@ -46,9 +64,12 @@ The output syntax will not be the same as the input, see the example below.
 
 [source,ruby]
 ----
-  string = '1 "unitsml(kg)"'
+  string = '"unitsml(kg)" 1' # => 1 will not be ignored
+  string = '1 "unitsml(kg)"' # => Again, 1 will not be ignored
   formula = Plurimath::Math.parse(string, :asciimath)
   formula.to_asciimath # => '1 rm(kg)'
 ----
 
 NOTE: In **AsciiMath** strings, **UnitsML** input must be enclosed within double quotes for clarity and specificity.
+
+NOTE: **UnitsML** in output will not be identifiable despite the input syntaxes and/or the output language.
