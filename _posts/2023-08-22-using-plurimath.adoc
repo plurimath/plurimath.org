@@ -29,8 +29,8 @@ excerpt: >-
 
 *Plurimath* is a comprehensive and efficient tool that enhances the way
 mathematical content is converted between different formats. It is designed to
-work with various markup languages such as *MathML*, *LaTeX*, *AsciiMath*, *OMML*, and
-*UnicodeMath* making it a versatile and adaptable tool.
+work with various markup languages such as *MathML*, *LaTeX*, *AsciiMath*, *OMML*,
+*UnicodeMath*, and *UnitsML* making it a versatile and adaptable tool.
 
 One significant advantage is that users don't have to deal with the
 inconvenience of installing and managing multiple libraries for these different
@@ -513,11 +513,29 @@ NOTE: Input can be any of the both mentioned syntaxes, but the output will be in
 
 ==== UnitsML to Formula
 
-There is no direct processing like other languages,
+We can process **UnitsML** using two types of syntaxes.
 
-`Plurimath::Math.parse(string, :<language>) # => NOT SUPPORTED FOR UNITSML`
+The first type of input will be the same syntax followed for the other languages.
 
-The input of **UnitsML** is restricted to a specific syntax inside of an **AsciiMath** string. See the syntax below,
+[source,ruby]
+----
+  string = '"unitsml(<unitsml string>)"' # => anything before after the double quotes will be ignored
+  string = 'unitsml(<unitsml string>)' # => OR anything before letters "unitsml" and after the closing parenthesis will be ignored
+  string = '<unitsml string>' # => OR
+  fomrula = Plurimath::Math.parse(string, :unitsml)
+----
+
+Only the `'<unitsml string>'` part of the string will be processed and the rest will be ignored. see the input examples below
+
+[source,ruby]
+----
+  string = '"unitsml(kg)" 1' # => 1 in this example will be ignored
+  string = '1 "unitsml(kg)"' # => Again, 1 in this example will be ignored
+  formula = Plurimath::Math.parse(string, :unitsml)
+  formula.to_asciimath # => 'rm(kg)'
+----
+
+The other input of **UnitsML** is restricted to a specific syntax inside of an **AsciiMath** string and nothing before or/and after will be ignored. See the syntax below.
 
 [source,ruby]
 ----
@@ -537,3 +555,5 @@ The output syntax will not be the same as the input, see the example below.
 ----
 
 NOTE: In **AsciiMath** strings, **UnitsML** input must be enclosed within double quotes for clarity and specificity.
+
+NOTE: **UnitsML** in output will not be identifiable despite the input syntaxes and/or the output language.
