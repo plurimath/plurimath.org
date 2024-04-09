@@ -510,3 +510,30 @@ formula.to_unicodemath # >> ∑_(i = 1)^(n) i^(3)
 ----
 
 NOTE: Input can be any of the both mentioned syntaxes, but the output will be in Unicode representation and not in LaTeX alike syntax.
+
+==== UnitsML to Formula
+
+There is no direct processing like other languages,
+
+`Plurimath::Math.parse(string, :<language>) # => NOT SUPPORTED FOR UNITSML`
+
+The input of **UnitsML** is restricted to a specific syntax inside of an **AsciiMath** string. See the syntax below,
+
+[source,ruby]
+----
+  string = '<optional asciimath string>"unitsml(<unitsml string>)"<optional asciimath string>'
+  fomrula = Plurimath::Math.parse(string, :asciimath)
+----
+
+==== Formula to UnitsML
+
+The output syntax will not be the same as the input, see the example below.
+
+[source,ruby]
+----
+  string = '1 "unitsml(kg)"'
+  formula = Plurimath::Math.parse(string, :asciimath)
+  formula.to_asciimath # => '1 rm(kg)'
+----
+
+NOTE: In **AsciiMath** strings, **UnitsML** input must be enclosed within double quotes for clarity and specificity.

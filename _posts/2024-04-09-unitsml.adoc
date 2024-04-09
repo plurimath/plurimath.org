@@ -1,0 +1,54 @@
+---
+layout: post
+title:  "UnitsML support in Plurimath"
+date:   2023-08-22 00:00:00 +0800
+categories:
+  - plurimath
+  - using
+authors:
+  -
+    name: Suleman Uzair
+    email: sulemanuzair600@gmail.com
+    social_links:
+      - https://github.com/suleman-uzair/
+  -
+    name: Ronald Tse
+    email: tse@ribose.com
+    use_picture: assets
+    social_links:
+      - https://www.linkedin.com/in/rhtse/
+      - https://github.com/ronaldtse
+excerpt: >-
+  Easily parse scientific units of measure with the recently added support of **UnitsML** in **Plurimath**.
+---
+
+= UnitsML
+
+== Introduction
+
+**Plurimath** has recently integrated **UnitsML**, empowering users with enhanced capabilities to process scientific units of measurement. This enhancement reflects **Plurimath**'s commitment to adapting to the evolving needs of users in mathematics and science.
+
+== Using UnitsML
+
+There is no direct processing like other languages,
+
+`Plurimath::Math.parse(string, :<language>) # => NOT SUPPORTED FOR UNITSML`
+
+The input of **UnitsML** is restricted to a specific syntax inside of an **AsciiMath** string. See the syntax below,
+
+[source,ruby]
+----
+  string = '<optional asciimath string>"unitsml(<unitsml string>)"<optional asciimath string>'
+  fomrula = Plurimath::Math.parse(string, :asciimath)
+----
+
+The output syntax will not be the same as the input, see the example below.
+
+[source,ruby]
+----
+  string = '1 "unitsml(kg)"'
+  formula = Plurimath::Math.parse(string, :asciimath)
+  formula.to_asciimath # => '1 rm(kg)'
+----
+
+NOTE: In **AsciiMath** strings, **UnitsML** input must be enclosed within double quotes for clarity and specificity.
