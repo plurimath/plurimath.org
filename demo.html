@@ -31,7 +31,8 @@ description: Demo.
   <body>
     <form>
       <h2>Live Demo</h2>
-      <div><label>Input</label>&nbsp&nbsp
+      <div>
+        <label>Input</label>&nbsp&nbsp
         <select id="fromfmt">
           <option value="asciimath">Asciimath</option>
           <option value="omml">Omml</option>
@@ -41,50 +42,28 @@ description: Demo.
         </select>
       </div>
       <textarea id="from">sum_(i=1)^n i^3=((n(n+1))/2)^2</textarea>
-      <label>Rendering</label>
-      <div id="preview">
+      <div id="renderer">
+        <label>Rendering</label>
+        <select id="mathmlEngine">
+          <option value="mathjax" selected>MathJax</option>
+          <option value="mathml">Browser native</option>
+        </select>
       </div>
-      <div><label>Output</label>&nbsp&nbsp<select id="tofmt">
-        <option value="Asciimath">Asciimath</option>
-        <option value="Omml">Omml</option>
-        <option value="Html">Html</option>
-        <option value="Mathml">Mathml</option>
-        <option value="Latex">Latex</option>
-      </select></div>
+      <div id="preview"></div>
+      <div>
+        <label>Output</label>&nbsp&nbsp
+        <select id="tofmt">
+          <option value="Asciimath">Asciimath</option>
+          <option value="Omml">Omml</option>
+          <option value="Html">Html</option>
+          <option value="Mathml">Mathml</option>
+          <option value="Latex">Latex</option>
+        </select>
+      </div>
       <textarea id="to" readonly></textarea>
       <label>Rendering Tree</label>
       <textarea id="math_tree" wrap="off" readonly></textarea>
     </form>
-
-    <script type="module">
-      import Plurimath from "https://www.plurimath.org/plurimath-js/dist/index.js";
-
-      document.addEventListener("DOMContentLoaded", convert);
-      document.querySelector("#from").addEventListener("input", convert);
-      document.querySelector("#fromfmt").addEventListener("change", convert);
-      document.querySelector("#tofmt").addEventListener("change", convert);
-
-      function convert(){
-        var from = document.getElementById("from").value;
-        var fromfmt = document.getElementById("fromfmt").value;
-        var tofmt = document.getElementById("tofmt").value;
-        var to = document.getElementById("to");
-        var pre_render = document.getElementById("preview");
-        var math_tree = document.getElementById("math_tree");
-
-        // empty result
-        to.value = "";
-        pre_render.innerText = "";
-        math_tree.value = "";
-
-        if(from.trim() == "") return;
-
-        var pm = new Plurimath(from, fromfmt);
-        to.value = pm["to"+tofmt]();
-
-        pre_render.innerHTML=pm["toMathml"]();
-        math_tree.value=pm.toDisplay(tofmt.toLowerCase());
-      }
-    </script>
+    <script src="./../renderer-script.js" type="module"></script>
   </body>
 </html>
