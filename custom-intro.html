@@ -82,24 +82,35 @@
     </style>
     <form>
       <h2>Live Demo</h2>
-      <div><label for="from">Input</label>&nbsp&nbsp<select id="fromfmt">
-        <option value="asciimath">Asciimath</option>
-        <option value="omml">Omml</option>
-        <option value="html">Html</option>
-        <option value="mathml">Mathml</option>
-        <option value="latex">Latex</option>
-      </select></div>
-      <textarea id="from">sum_(i=1)^n i^3=((n(n+1))/2)^2</textarea>
-      <label>Rendering</label>
-      <div id="preview">
+      <div>
+        <label for="from">Input</label>&nbsp&nbsp
+        <select id="fromfmt">
+          <option value="asciimath">Asciimath</option>
+          <option value="omml">Omml</option>
+          <option value="html">Html</option>
+          <option value="mathml">Mathml</option>
+          <option value="latex">Latex</option>
+        </select>
       </div>
-      <div><label>Output</label>&nbsp&nbsp<select id="tofmt">
-        <option value="Asciimath">Asciimath</option>
-        <option value="Omml">Omml</option>
-        <option value="Html">Html</option>
-        <option value="Mathml">Mathml</option>
-        <option value="Latex">Latex</option>
-      </select></div>
+      <textarea id="from">sum_(i=1)^n i^3=((n(n+1))/2)^2</textarea>
+      <div id="renderer">
+        <label>Rendering</label>
+        <select id="mathmlEngine">
+          <option value="mathjax" selected>MathJax</option>
+          <option value="mathml">Browser native</option>
+        </select>
+      </div>
+      <div id="preview"></div>
+      <div>
+        <label>Output</label>&nbsp&nbsp
+        <select id="tofmt">
+          <option value="Asciimath">Asciimath</option>
+          <option value="Omml">Omml</option>
+          <option value="Html">Html</option>
+          <option value="Mathml">Mathml</option>
+          <option value="Latex">Latex</option>
+        </select>
+      </div>
       <textarea id="to" readonly></textarea>
       <label>Rendering Tree</label>
       <textarea id="math_tree" wrap="off" readonly></textarea>
@@ -108,18 +119,21 @@
     <script type="module">
       import Plurimath from "https://www.plurimath.org/plurimath-js/dist/index.js";
 
+
       document.addEventListener("DOMContentLoaded", convert);
+      document.querySelector("#mathmlEngine").addEventListener("change", changeEngine);
       document.querySelector("#from").addEventListener("input", convert);
       document.querySelector("#fromfmt").addEventListener("change", convert);
       document.querySelector("#tofmt").addEventListener("change", convert);
 
       function convert(){
-        var from = document.getElementById("from").value;
-        var fromfmt = document.getElementById("fromfmt").value;
-        var tofmt = document.getElementById("tofmt").value;
-        var to = document.getElementById("to");
+        insertMathJax()
+        var from       = document.getElementById("from").value;
+        var fromfmt    = document.getElementById("fromfmt").value;
+        var tofmt      = document.getElementById("tofmt").value;
+        var to         = document.getElementById("to");
         var pre_render = document.getElementById("preview");
-        var math_tree = document.getElementById("math_tree");
+        var math_tree  = document.getElementById("math_tree");
 
         // empty result
         to.value = "";
@@ -131,8 +145,42 @@
         var pm = new Plurimath(from, fromfmt);
         to.value = pm["to"+tofmt]();
 
-        pre_render.innerHTML=pm["toMathml"]();
+        const mathml = pm["toMathml"]();
+        pre_render.setAttribute("math-content", mathml);
+        pre_render.innerHTML=mathml;
         math_tree.value=pm.toDisplay(tofmt.toLowerCase());
+      }
+
+      function changeEngine() {
+        const engine = document.getElementById("mathmlEngine");
+        const selectedValue = engine.selectedOptions[0].value
+        if (selectedValue == "mathjax") { return insertMathJax() }
+
+        const script = document.getElementById("MathJax-script");
+        const preview = document.getElementById("preview")
+        document.head.removeChild(script);
+
+        preview.innerHTML = preview.getAttribute("math-content")
+      }
+
+      function insertMathJax() {
+        if (document.getElementById("MathJax-script")) return;
+
+        const element = document.createElement("script");
+        element.id = "MathJax-script";
+        element.type = "text/javascript";
+        element.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js";
+        element.async = true;
+        element.onload = () => { MathJax.typesetPromise() };
+        document.head.appendChild(element);
+        window.MathJax = {
+          startup: {
+            ready: () => {
+              MathJax.startup.defaultReady();
+              console.info('MathJax is loaded, initialized, and the initial typeset is queued');
+            }
+          }
+        }
       }
     </script>
   </p>
