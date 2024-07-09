@@ -19,38 +19,377 @@ authors:
       - https://www.linkedin.com/in/rhtse/
       - https://github.com/ronaldtse
 excerpt: >-
-  **Plurimath** has long supported **AsciiMath**, **MathML**, **LaTeX**, and **OMML**. Now, it also supports **UnicodeMath**.
+  **Plurimath** now supports **UnicodeMath** as a math representation syntax.
 ---
-
-= UnicodeMath
+= UnicodeMath support in Plurimath
 
 == Introduction
 
-**Plurimath** has been able to handle **AsciiMath**, **MathML**, **LaTeX**, and **OMML** for a while. Now, it's added support for **UnicodeMath**, broadening its range of functionality.
+**Plurimath** has long been a versatile tool for handling various mathematical
+notation systems, including **AsciiMath**, **MathML**, **LaTeX**, and **OMML**.
 
-== Using UnicodeMath
+Plurimath now includes support for **UnicodeMath**, opening up new possibilities
+for mathematical expression and representation.
 
-Input string can be one of any of the following two types
+== UnicodeMath
 
-1. Unicode string `# String containing the representation of the symbol`
-2. Name syntax string `# String containing the names instead of the representation.`
+=== Expressing math in Unicode
 
-Let's start with the Unicode syntax,
+UnicodeMath is an innovative approach to encoding mathematical expressions using
+Unicode characters in a nearly plain-text format.
+
+Invented by https://www.linkedin.com/in/murraysargent[Murray Sargent III],
+long-time representative at the Unicode Consortium, retired physicist, and
+distinguished software engineer of Microsoft, UnicodeMath bridges the gap
+between human-readable mathematical notation and computer-encoded expressions.
+
+UnicodeMath's usefulness stems from the extensive availability of mathematical
+symbols in https://unicode.org[Unicode] (ISO/IEC 10646). Unicode provides a vast
+array of mathematical symbols, making it possible to represent complex
+mathematical expressions using direct character input rather than relying on
+specialized markup commands.
+
+Traditional mathematical typesetting systems often require users to memorize
+specific commands to represent mathematical symbols. For example, in LaTeX, one
+might need to use `\sum` for a summation symbol or `\int` for an integral. This
+approach burdens users with the task of memorizing these commands and
+understanding their visual characteristics.
+
+In contrast, UnicodeMath allows users to directly input the actual mathematical
+symbols as they appear visually.
+
+.Direct entry as Unicode instead of commands
+|===
+| UnicodeMath entry | LaTeX command
+
+| Direct input of `∑` (U+2211 N-ARY SUMMATION) | `\sum`
+| Direct input of `∫` (U+222B INTEGRAL) | `\int`
+| Direct input of `∞` (U+221E INFINITY) | `\infty`
+
+|===
+
+This direct symbol usage significantly reduces the cognitive load on users,
+especially those who are not professional mathematicians or frequent users of
+mathematical typesetting systems. It allows for a more intuitive and visual
+approach to inputting mathematical expressions, closely mimicking how one might
+write mathematics by hand.
+
+Similar to other math expression languages, UnicodeMath also takes advantage of
+the spatial relationships between characters to infer mathematical meaning.
+
+For example:
+
+* Superscripts can be denoted by using the `^` character: `x^2` represents x².
+* Subscripts can be indicated with `_`: `a_1` represents a₁.
+* Fractions can be written using `/`: `a/b` is interpreted as a fraction.
+
+This approach combines the visual intuitiveness of handwritten mathematics with
+the precision and standardization offered by Unicode, creating a powerful and
+user-friendly system for mathematical notation in digital environments.
+
+
+==== Name syntax string notation
+
+While UnicodeMath primarily leverages the extensive set of mathematical symbols
+available in Unicode, there are instances where a desired symbol or operator may
+not have a direct Unicode representation.
+
+To address this, UnicodeMath incorporates a "name syntax string notation" as an
+alternative input method.
+
+The name syntax string notation allows users to input mathematical symbols or
+operators using descriptive names enclosed in backslashes.
+
+There are actually two major reasons why the name syntax notation is necessary:
+
+. Allows commonly-used symbols beyond those directly available in Unicode;
+. Let's face it: Unicode entry, especially for symbols on the Unicode math
+  plane, is not always easiest on the keyboard. A named symbol provides an
+  intuitive way to input complex or less common symbols.
+
+Here are some examples of name syntax string notation in UnicodeMath:
+
+* `\lceil` represents the left ceiling bracket (⌈)
+* `\rceil` represents the right ceiling bracket (⌉)
+* `\lfloor` represents the left floor bracket (⌊)
+* `\rfloor` represents the right floor bracket (⌋)
+* `\naryand` represents the n-ary logical AND (⋀)
+* `\naryor` represents the n-ary logical OR (⋁)
+
+In practice, this notation seamlessly integrates with direct Unicode input.
+
+.UnicodeMath in name syntax string notation
+====
+This UnicodeMath expression:
+
+[source]
+----
+\lceil x \rceil + \lfloor y \rfloor = z
+----
+
+Is interpreted and displayed as: ⌈x⌉ + ⌊y⌋ = z
+====
+
+The name syntax string notation also extends to more complex mathematical structures.
+
+For instance:
+
+* `\matrix{a,b;c,d}` can be used to represent a 2x2 matrix
+* `\eqarray{a=b;c=d}` can create a system of equations
+
+This notation system strikes a balance between the direct visual input of
+Unicode symbols and the expressive power of named commands, providing users with
+a flexible and comprehensive tool for mathematical expression.
+
+It's worth noting that while Plurimath supports both Unicode string input and
+name syntax string input for UnicodeMath, the output is always in Unicode
+representation. This ensures consistency and leverages the full visual
+capabilities of UnicodeMath across different platforms and applications.
+
+=== Origins of UnicodeMath: Murray Sargent
+
+Murray Sargent's journey in developing UnicodeMath is rooted in his extensive
+experience with mathematical typesetting and software development. As a key
+figure in developing math support for Microsoft Office applications, Sargent
+recognized the need for a more intuitive, readable, and universally compatible
+mathematical notation system.
+
+His work on UnicodeMath has revolutionized how users can input mathematical
+expressions directly into programs like Microsoft Word, PowerPoint, and OneNote.
+This innovation has significantly enhanced the user experience for students,
+educators, and professionals working with mathematical content in digital
+environments.
+
+
+=== Implementations
+
+The two prominent implementations of UnicodeMath are:
+
+* UnicodeMathML
+* Microsoft Equation Editor
+
+https://github.com/doersino/UnicodeMathML[UnicodeMathML (original)] was
+originally created by https://github.com/doersino[Noah Doersing] in 2019
+as a JavaScript-based approach to allow easy entry of Unicode math symbols
+for UnicodeMath.
+
+https://github.com/MurrayIII/UnicodeMathML[UnicodeMathML (new)] is developed by
+Murray Sargent on top of Doersing's UnicodeMathML, in order to keep the
+implementation updated with the latest specification.
+
+The most popular implementation is likely the Microsoft Equation Editor, which
+is a component of Microsoft Office applications such as Word, PowerPoint, and
+OneNote offered on local installations and on Office 365.
+
+This integration, spearheaded by Murray Sargent himself, allows users to input
+mathematical expressions using UnicodeMath directly into their documents.
+
+The Microsoft Equation Editor interprets UnicodeMath in real-time, converting it
+into properly formatted mathematical expressions. This feature significantly
+enhances the user experience for anyone working with mathematical content in
+Microsoft Office, from students and educators to researchers and professionals.
+
+For example, typing `a^2 + b^2 = c^2` in the Equation Editor would automatically
+format it as a properly typeset mathematical equation, with superscripts and
+proper spacing.
+
+
+=== Advantages of UnicodeMath
+
+UnicodeMath offers compelling advantages over traditional mathematical notation
+systems:
+
+Enhanced readability:: UnicodeMath is encoded in a format that closely resembles
+displayed mathematics, making it intuitive to read and understand.
+
+Reduced learning curve:: For users new to mathematical typesetting, UnicodeMath
+presents a gentler learning curve compared to systems like LaTeX.
+
+Preserved semantics:: An equation encoded in UnicodeMath retains all semantics
+when it is copied and pasted across applications and platforms.
+
+Here are some examples that illustrate these advantages.
+
+In the first example, UnicodeMath and AsciiMath offer a more straightforward
+representation of simple fractions. While LaTeX provides more control over
+formatting, it requires learning specific commands, which can be a barrier for
+beginners.
+
+.Fractions represented in different math expression languages
+[cols="3*", options="header"]
+|===
+|Notation system |Expression |Explanation
+
+|UnicodeMath
+|`a/b`
+|Simple and intuitive, resembling handwritten fractions.
+
+|LaTeX
+|`\frac{a}{b}`
+|Requires specific command and braces.
+
+|AsciiMath
+|`a/b`
+|Similar to UnicodeMath.
+
+|===
+
+UnicodeMath shines in the following example by using the actual summation symbol
+(∑), making the expression more visually appealing and closer to traditional
+mathematical notation. LaTeX offers precise control but at the cost of
+readability in its raw form, while AsciiMath provides a middle ground.
+
+.Summation represented in different math expression languages
+[cols="3*", options="header"]
+|===
+|Notation system |Expression |Explanation
+
+|UnicodeMath
+|`∑_(i=1)^n i^2`
+|Uses actual Unicode symbols, visually resembling handwritten math.
+
+|LaTeX
+|`\sum_{i=1}^n i^2`
+|Requires knowledge of specific commands and syntax.
+
+|AsciiMath
+|`sum_(i=1)^n i^2`
+|Uses plain text approximations of mathematical symbols.
+|===
+
+In this complex expression involving integration, UnicodeMath's use of actual
+symbols (∞, √) makes it more compact and visually similar to handwritten
+mathematics. LaTeX provides the most control for professional typesetting but is
+less intuitive to read in its raw form. AsciiMath offers a good balance but
+lacks the visual appeal of actual mathematical symbols.
+
+.Complex expressions represented in different math expression languages
+[cols="3*", options="header"]
+|===
+|Notation system |Expression |Explanation
+
+|UnicodeMath
+|`∫_0^∞ e^(-x^2) dx = √(π)/2`
+|Compact and readable, using actual symbols for infinity and square root.
+
+|LaTeX
+|`\int_0^\infty e^{-x^2} dx = \sqrt{\pi}/2`
+|Precise but requires more specialized knowledge to interpret.
+
+|AsciiMath
+|`int_0^oo e^(-x^2) dx = sqrt(pi)/2`
+|Readable but uses text approximations for special symbols.
+|===
+
+
+== Leveraging UnicodeMath with Plurimath
+
+=== General
+
+With an understanding of the advantages of UnicodeMath, we explore how to
+utilize it in Plurimath.
+
+=== Parsing
+
+This code snippet demonstrates how to parse a UnicodeMath string into a
+Plurimath formula object.
 
 [source,ruby]
 ----
 string = '∑_(i=1)^n i^3'
-formula = Plurimath::Math.parse(string, :unicode)
-formula.to_unicodemath # => '∑_(i = 1)^(n) i^(3)'
+formula = Plurimath::Math.parse(string, :unicode) <1>
 ----
+<1> The `:unicode` parameter specifies that the input is in UnicodeMath format.
 
-And now the named syntax example.
+
+=== Generation and round-tripping
+
+Here, we convert the formula object back to a UnicodeMath string. In other
+words, it normalizes an input UnicodeMath expression into a "cleaned"
+UnicodeMath expression.
 
 [source,ruby]
 ----
-string = '\sum_(i=1)^n i^3'
-formula = Plurimath::Math.parse(string, :unicode)
-string.to_unicodemath # => '∑_(i = 1)^(n) i^(3)'
+formula.to_unicodemath # => '∑_(i = 1)^(n) i^(3)'
 ----
 
-NOTE: Input can be any of the both mentioned syntaxes, but the output will be in Unicode representation and not in named syntax.
+Notice how the Plurimath normalization process maintains the UnicodeMath format
+while potentially adjusting spacing for clarity.
+
+While Plurimath supports both Unicode string input and name syntax string input
+for UnicodeMath, the output will **always** be in Unicode representation to
+maintain consistency and leverage the full visual capabilities of UnicodeMath.
+
+
+=== Visualizing the parse tree
+
+This parse tree visualization helps understand how Plurimath interprets the
+UnicodeMath expression, breaking it down into its constituent parts.
+
+[source,ruby]
+----
+formula.to_display(:unicode) <1>
+# |_ Math zone
+#   |_ '∑_(i = 1)^(n) i^(3)'
+#      |_ '∑' summation
+#         |_ 'i = 1' lower limit
+#         |_ 'n' upper limit
+#         |_ 'i^(3)' expression
+----
+<1> The `to_display(:unicode)` method allows a `Plurimath::Math::Formula` object
+to be shown as a parse tree for UnicodeMath.
+
+
+=== Converting UnicodeMath to MathML
+
+This conversion to MathML showcases Plurimath's ability to transform UnicodeMath
+into a more structured, XML-based format suitable for web applications and other
+digital platforms.
+
+[source,ruby]
+----
+formula.to_mathml
+# => "<math xmlns='http://www.w3.org/1998/Math/MathML'>
+#       <mstyle displaystyle='true'>
+#         <munderover>
+#           <mo>∑</mo>
+#           <mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow>
+#           <mi>n</mi>
+#         </munderover>
+#         <msup><mi>i</mi><mn>3</mn></msup>
+#       </mstyle>
+#     </math>"
+----
+
+=== Converting UnicodeMath to AsciiMath
+
+This example demonstrates the conversion from UnicodeMath to AsciiMath,
+illustrating how Plurimath can bridge different mathematical notation systems.
+
+[source,ruby]
+----
+formula.to_asciimath
+# => "sum_(i=1)^n i^3"
+----
+
+== Conclusion
+
+The addition of UnicodeMath support to Plurimath represents a significant step
+forward in the realm of digital mathematical notation, and is a testament to
+Plurimath's commitment to UnicodeMath as a math expression language.
+
+NOTE: Plurimath is the third major implementation of UnicodeMath and the second
+open-source implementation.
+
+Support of UnicodeMath also demonstrates Plurimath's dedication to handle major
+flavors of formal math representation languages for the user's unhindered
+expressiveness:
+
+* Users can write math in the language of choice, and rely on Plurimath to
+automatically convert between representation languages with semantics preserved,
+purely according to their technical platform needs.
+
+* The mathematics expression models in Plurimath are demonstrably compliant
+to all supported math languages, including UnicodeMath and MathML.
+
+Until then!
