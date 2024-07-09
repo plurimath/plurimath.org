@@ -1,0 +1,62 @@
+---
+title: Plurimath supported symbols
+layout: docs-base
+html-class: docs-page
+---
+:page-liquid:
+
+[cols="a,a,a,a,a,a",options="header"]
+|===
+| Presentation | AsciiMath | LaTeX | UnicodeMath | MathML | OMML
+
+{% for symbols in site.data["symbols_list"] %}
+
+|
+++++
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>{{symbols["html"][0]}}</mo>
+</math>
+++++
+
+{% assign types = "asciimath latex unicodemath mathml omml" | split: " " %}
+{% for type in types %}
+|
+
+++++
+<ul>
+{% for symbol in symbols[type] %}
+<li><code>{{symbol | replace: "|", '\\|' | escape}}</code></li>
+{% endfor %}
+</ul>
+++++
+
+{% endfor %}
+{% endfor %}
+
+|===
+
+++++
+  <script type="text/javascript">
+    const element = document.createElement("script");
+    element.id = "MathJax-script";
+    element.type = "text/javascript";
+    element.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js";
+    element.async = true;
+    element.onload = () => { MathJax.typesetPromise() };
+    document.head.appendChild(element);
+    window.MathJax = {
+      startup: {
+        ready: () => {
+          MathJax.startup.defaultReady();
+          console.info('MathJax is loaded, initialized, and the initial typeset is queued');
+        }
+      }
+    }
+  </script>
+  <style type="text/css">
+    article > .body { overflow-x: auto; }
+    tr > td:first-child { text-align: center !important; }
+    tr > td { border: black solid 1px; }
+    tr > th { border: black solid 1px; }
+  </style>
+++++
