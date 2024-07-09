@@ -39,6 +39,9 @@ languages. *Plurimath* encompasses them all within a single solution.
 This approach simplifies and improves the process of converting mathematical
 content between markup languages, making it easier and more reliable.
 
+NOTE: 2024-04-17 update: Added UnicodeMath support.
+
+
 == How to use Plurimath?
 
 Using *Plurimath* is straightforward and user-friendly, whether you're working
@@ -392,7 +395,7 @@ argument explicitly to the *OMML* rendering request, as
 
 This will generate following output of *OMML*
 
-[source,ruby]
+[source,xml]
 ----
 <m:oMathPara xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -519,28 +522,28 @@ The first type of input will be the same syntax followed for the other languages
 
 [source,ruby]
 ----
-  string = '"unitsml(<unitsml string>)"' # => anything before after the double quotes will be ignored
-  string = 'unitsml(<unitsml string>)' # => OR anything before letters "unitsml" and after the closing parenthesis will be ignored
-  string = '<unitsml string>' # => OR
-  fomrula = Plurimath::Math.parse(string, :unitsml)
+string = '"unitsml(<unitsml string>)"' # => anything before after the double quotes will be ignored
+string = 'unitsml(<unitsml string>)' # => OR anything before letters "unitsml" and after the closing parenthesis will be ignored
+string = '<unitsml string>' # => OR
+fomrula = Plurimath::Math.parse(string, :unitsml)
 ----
 
 Only the `'<unitsml string>'` part of the string will be processed and the rest will be ignored. see the input examples below
 
 [source,ruby]
 ----
-  string = '"unitsml(kg)" 1' # => 1 in this example will be ignored
-  string = '1 "unitsml(kg)"' # => Again, 1 in this example will be ignored
-  formula = Plurimath::Math.parse(string, :unitsml)
-  formula.to_asciimath # => 'rm(kg)'
+string = '"unitsml(kg)" 1' # => 1 in this example will be ignored
+string = '1 "unitsml(kg)"' # => Again, 1 in this example will be ignored
+formula = Plurimath::Math.parse(string, :unitsml)
+formula.to_asciimath # => 'rm(kg)'
 ----
 
 The other input of **UnitsML** is restricted to a specific syntax inside of an **AsciiMath** string and nothing before or/and after will be ignored. See the syntax below.
 
 [source,ruby]
 ----
-  string = '<optional asciimath string>"unitsml(<unitsml string>)"<optional asciimath string>'
-  fomrula = Plurimath::Math.parse(string, :asciimath)
+string = '<optional asciimath string>"unitsml(<unitsml string>)"<optional asciimath string>'
+fomrula = Plurimath::Math.parse(string, :asciimath)
 ----
 
 ==== Formula to UnitsML
@@ -549,9 +552,9 @@ The output syntax will not be the same as the input, see the example below.
 
 [source,ruby]
 ----
-  string = '1 "unitsml(kg)"'
-  formula = Plurimath::Math.parse(string, :asciimath)
-  formula.to_asciimath # => '1 rm(kg)'
+string = '1 "unitsml(kg)"'
+formula = Plurimath::Math.parse(string, :asciimath)
+formula.to_asciimath # => '1 rm(kg)'
 ----
 
 NOTE: In **AsciiMath** strings, **UnitsML** input must be enclosed within double quotes for clarity and specificity.
