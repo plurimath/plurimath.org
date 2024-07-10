@@ -4,7 +4,8 @@ title:  "UnitsML support in Plurimath"
 date:   2024-04-09 00:00:00 +0800
 categories:
   - plurimath
-  - using
+  - units
+  - unitsml
 authors:
   -
     name: Suleman Uzair
@@ -19,57 +20,452 @@ authors:
       - https://www.linkedin.com/in/rhtse/
       - https://github.com/ronaldtse
 excerpt: >-
-  Easily parse scientific units of measure with the recently added support of **UnitsML** in **Plurimath**.
+  Easily work with scientific units of measure with the recently added support
+  of **UnitsML** in **Plurimath**.
 ---
-
-= UnitsML
+= UnitsML support in Plurimath
 
 == Introduction
 
-**Plurimath** has recently integrated **UnitsML**, empowering users with enhanced capabilities to process scientific units of measurement. This enhancement reflects **Plurimath**'s commitment to adapting to the evolving needs of users in mathematics and science.
+Plurimath now supports https://www.unitsml.org[UnitsML] (the Units Markup
+Language). This enables Plurimath users to process and represent scientific
+units of measurement in a manner adhering to the authoritative
+https://www.bipm.org[BIPM] SI system.
 
-== Using UnitsML
+// This integration marks a substantial step forward in Plurimath's evolution, reflecting its commitment to meeting the diverse and evolving needs of users in mathematics, science, and engineering fields.
 
-We can process **UnitsML** using two types of syntaxes.
+Math is used in many studies that apply math and many formulas in those places utilize units.
 
-The first type of input will be the same syntax followed for the other languages.
+
+== Interoperable units
+
+=== The need
+
+The ability to accurately represent and interchange units of measurement is
+paramount in today's increasingly interconnected scientific and engineering
+industries.
+
+=== When units are misunderstood...
+
+Misunderstandings or errors in unit conversion can lead to catastrophic
+consequences.
+
+In September 1999, NASA's Mars Climate Orbiter disintegrated in the Martian
+atmosphere due to a simple yet catastrophic unit conversion error.
+
+The root cause was a mismatch between metric and imperial units:
+
+* NASA's Jet Propulsion Laboratory used _metric units_ (newtons) for thrust
+calculations.
+* The spacecraft manufacturer, Lockheed Martin Astronautics, used
+_imperial units_ (pound-force) in their software.
+
+This discrepancy went unnoticed during ground tests and led to the spacecraft
+approaching Mars at an altitude much lower than intended. The result was a $125
+million loss and a significant setback to Mars exploration efforts.
+
+This incident underscores the critical need for standardized, unambiguous
+representation of units across different systems and organizations. It
+highlights why technologies for standardized unit representation are not just
+convenient, but essential for modern scientific and engineering endeavors.
+
+== UnitsML
+
+=== Introduction and history
+
+https://www.unitsml.org[UnitsML], originally developed at
+https://www.nist.gov[NIST], is the
+authoritative mechanism for encoding scientific units of measure.
+
+NOTE: The GitHub organization for the UnitsML effort is
+https://github.com/unitsml/[here].
+
+UnitsML provides a standardized XML-based format for representing and defining
+units, ensuring consistency and interoperability of digitally-encoded units
+across various platforms, applications, and scientific domains.
+
+UnitsML goes beyond simple unit notation; it encapsulates the full semantic
+meaning of units, including their relationships, conversions, and underlying
+physical principles.
+
+The journey of UnitsML began in 1998 with Frank Olken and John McCarthy of the
+Lawrence Berkeley National Laboratory (LBNL) initiated efforts to encode units
+in XML. In 2003, Bob Dragoset at NIST announced the "Units Markup Language
+(UnitsML)" at the Open Forum on Metadata Registries. In 2006, NIST proposed
+standardizing UnitsML at OASIS, with standardization efforts now continuing at
+https://www.calconnect.org[CalConnect] since 2020.
+
+=== Key features
+
+UnitsML provides the following critical features for units interoperability.
+
+XML-based syntax:: UnitsML is based on XML, making it easily legible for users,
+integrable with existing systems and parsable by standard XML tools.
+
+UnitsDB integration:: UnitsML incorporates
+https://github.com/unitsml/unitsdb[UnitsDB], a comprehensive database of
+scientific units, providing detailed definitions, relationships, and conversion
+factors for a wide range of units.
+
+Composite unit creation:: UnitsML allows for the dynamic creation of composite
+units by combining base units, enabling the representation of complex scientific
+measurements.
+
+Semantics preservation:: UnitsML encapsulates the full semantic meaning of units,
+including their relationships, conversions, and underlying physical principles.
+
+=== UnitsDB
+
+https://github.com/unitsml/unitsdb[UnitsDB] is a foundational component of the
+UnitsML ecosystem.
+
+UnitsDB serves as a comprehensive and authoritative database of scientific units
+of measure, providing detailed definitions, relationships, conversion factors,
+and historical context for units.
+
+UnitsDB is provided in YAML and JSON formats.
+
+=== UnitsML encoding examples
+
+==== General
+
+UnitsML encodes units, either through direct reference to a UnitsDB entry,
+or a definition in XML.
+
+==== Meter
+
+.Unit symbol for "meter"
+[source]
+----
+m
+----
+
+.Representation of "meter" defined in UnitsML
+[source,xml]
+----
+<Unit xmlns="https://schema.unitsml.org/unitsml/1.0" xml:id="U_NISTu1" dimensionURL="#NISTd1">
+  <UnitSystem name="SI" type="SI_derived" xml:lang="en-US"/>
+  <UnitName xml:lang="en">meter</UnitName>
+  <UnitSymbol type="HTML">m</UnitSymbol>
+  <UnitSymbol type="MathMl">
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mi mathvariant="normal">m</mi>
+    </math>
+  </UnitSymbol>
+</Unit>
+
+<Dimension xmlns="https://schema.unitsml.org/unitsml/1.0" xml:id="NISTd1">
+  <Length symbol="L" powerNumerator="1"/>
+</Dimension>
+----
+
+==== Micro meter
+
+This is a "prefixed" unit where the meter unit is altered through a prefix of
+stem:[10^{-6}].
+
+.Unit symbol for "micro meter"
+[source]
+----
+μm
+----
+
+.Representation of "micro meter" defined in UnitsML
+[source,xml]
+----
+<Unit xmlns="https://schema.unitsml.org/unitsml/1.0" xml:id="U_um" dimensionURL="#NISTd1">
+  <UnitSystem name="SI" type="SI_derived" xml:lang="en-US"/>
+  <UnitName xml:lang="en">um</UnitName>
+  <UnitSymbol type="HTML">&micro;m</UnitSymbol>
+  <UnitSymbol type="MathMl">
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mi mathvariant='normal'>µm</mi>
+    </math>
+  </UnitSymbol>
+  <RootUnits>
+    <EnumeratedRootUnit unit="meter" prefix="u"/>
+  </RootUnits>
+</Unit>
+
+<Prefix xmlns="https://schema.unitsml.org/unitsml/1.0" prefixBase="10" prefixPower="-6" xml:id="NISTp10_-6">
+  <PrefixName xml:lang="en">micro</PrefixName>
+  <PrefixSymbol type="ASCII">u</PrefixSymbol>
+  <PrefixSymbol type="unicode">μ</PrefixSymbol>
+  <PrefixSymbol type="LaTex">$mu$</PrefixSymbol>
+  <PrefixSymbol type="HTML">&micro;</PrefixSymbol>
+</Prefix>
+
+<Dimension xmlns="https://schema.unitsml.org/unitsml/1.0" xml:id="NISTd1">
+  <Length symbol="L" powerNumerator="1"/>
+</Dimension>
+----
+
+==== Composed units
+
+This is a composed unit for the unit of stem:["mm" * s^{-2}].
+
+You can see how the "m" unit is prefixed into "mm", and the unit symbol is
+represented in MathML.
+
+[source,xml]
+----
+<Unit xmlns="https://schema.unitsml.org/unitsml/1.0" xml:id="U_mm.s-2" dimensionURL="#NISTd28">
+  <UnitSystem name="SI" type="SI_derived" xml:lang="en-US"/>
+  <UnitName xml:lang="en">mm*s^-2</UnitName>
+  <UnitSymbol type="HTML">mm&#x22c5;s<sup>&#x2212;2</sup></UnitSymbol>
+  <UnitSymbol type="MathMl">
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mi mathvariant='normal'>mm</mi>
+      <mo>&#x22c5;</mo>
+      <msup>
+        <mrow><mi mathvariant='normal'>s</mi></mrow>
+        <mrow><mo>&#x2212;</mo><mn>2</mn></mrow>
+      </msup>
+    </math>
+  </UnitSymbol>
+  <RootUnits>
+    <EnumeratedRootUnit unit="meter" prefix="m"/>
+    <EnumeratedRootUnit unit="second" powerNumerator="-2"/>
+  </RootUnits>
+</Unit>
+
+<Prefix xmlns="https://schema.unitsml.org/unitsml/1.0" prefixBase="10" prefixPower="-3" xml:id="NISTp10_-3">
+  <PrefixName xml:lang="en">milli</PrefixName>
+  <PrefixSymbol type="ASCII">m</PrefixSymbol>
+  <PrefixSymbol type="unicode">m</PrefixSymbol>
+  <PrefixSymbol type="LaTex">m</PrefixSymbol>
+  <PrefixSymbol type="HTML">m</PrefixSymbol>
+</Prefix>
+
+<Dimension xmlns="https://schema.unitsml.org/unitsml/1.0" xml:id="NISTd28">
+  <Length symbol="L" powerNumerator="1"/>
+  <Time symbol="T" powerNumerator="-2"/>
+</Dimension>
+----
+
+
+== AsciiUnits: ASCII encoding of units
+
+While UnitsML provides a comprehensive XML-based representation, there's often a
+need for a more concise, ASCII-based syntax for everyday use.
+
+This approach is similar to other efforts, like https://ucum.org[UCUM], which
+uses ASCII encoding for units, but being faithfully based on BIPM's SI system 7
+base units through UnitsML.
+
+The UnitsML group defines AsciiUnits as a simplified, text-based representation
+of units that's easier to type and read, while still capturing essential
+information for encoding into XML.
+
+In AsciiUnits, the examples presented above would simply be these:
+
+.AsciiUnits representation for "meter"
+[source]
+----
+m
+----
+
+.AsciiUnits representation for "micro meter"
+[source]
+----
+um
+----
+
+For composed units, AsciiUnits adopts (somewhat) the AsciiMath repertoire
+in composing expressions that define the unit itself.
+
+The composed unit for the unit of stem:["mm" * s^{-2}] would be just:
+
+.AsciiUnits representation for mm * s^{-2}
+[source]
+----
+mm * s^{-2}
+----
+
+Behind the scenes, AsciiUnit parses these expressions and generates the
+corresponding UnitsML XML definitions as shown above.
+
+This enables the user to type in (nearly) what comes to mind, and easily
+create units without a strong need to manually look up syntax.
+
+
+== Mixing units into math
+
+Units are meant to be used with quantities, often inside formulas, and this is
+where Plurimath makes things simple.
+
+Since UnitsML is in XML, and math expressions are commonly expressed digitally
+in MathML, the following examples will convert the combination of
+AsciiMath/AsciiUnits into MathML/UnitsML.
+
+Starting with a quantity expression of "1 μm".
+
+The AsciiMath with AsciiUnits representation is as follows.
+
+.AsciiMath with AsciiUnits representation of "1 μm"
+[source]
+----
+1 "unitsml(um)"
+----
+
+The corresponding MathML generated by Plurimath becomes the following,
+accompanying with the UnitsML definitions:
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mn>1</mn>
+    <mo rspace="thickmathspace">&#x2062;</mo>
+    <mrow>
+      <mstyle mathvariant="normal">
+        <mi>&#xb5;m</mi>
+      </mstyle>
+    </mrow>
+  </mstyle>
+</math>
+----
+
+
+== Using Plurimath to handle UnitsML
+
+=== General
+
+Plurimath offers two main approaches to processing UnitsML.
+
+. AsciiUnits parsing
+. AsciiMath with embedded AsciiUnits parsing
+
+=== AsciiUnits parsing
 
 [source,ruby]
 ----
-  string = '"unitsml(<unitsml string>)"' # => anything before after the double quotes will be ignored
-  string = 'unitsml(<unitsml string>)' # => OR anything before letters "unitsml" and after the closing parenthesis will be ignored
-  string = '<unitsml string>' # => OR
-  fomrula = Plurimath::Math.parse(string, :unitsml)
-----
+string = '<unitsml string>'
+# or
+string = '"unitsml(<unitsml string>)"' <1>
+# or
+string = 'unitsml(<unitsml string>)' <2>
 
-Only the `'<unitsml string>'` part of the string will be processed and the rest will be ignored. see the input examples below
+formula = Plurimath::Math.parse(string, :unitsml)
+----
+<1> Text before or after the double-quoted string will be ignored.
+<2> Test before the string "unitsml", and after the closing parenthesis, will be ignored.
+
+.Plurimath parsing a simple unit in AsciiUnits
+[example]
+====
+[source,ruby]
+--
+string = '"unitsml(kg)" 1' <1>
+string = '1 "unitsml(kg)"' <2>
+formula = Plurimath::Math.parse(string, :unitsml)
+formula.to_asciimath # => 'rm(kg)'
+formula.to_mathml # =>
+# '<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+#   <mi mathvariant='normal'>kg</mi>
+# </math>'
+--
+<1> 1 in this example will be ignored.
+<2> 1 in this example is also ignored.
+====
+
+.Plurimath parsing a composed unit in AsciiUnits
+[example]
+====
+[source,ruby]
+--
+formula = Plurimath::Math.parse("unitsml(kg*m^2*s^(-1))", :unitsml)
+formula.to_mathml # =>
+# '<math xmlns='http://www.w3.org/1998/Math/MathML'>
+#   <mrow>
+#     <mtext>kg·m²·s⁻¹</mtext>
+#   </mrow>
+# </math>'
+--
+====
+
+
+=== AsciiMath with embedded AsciiUnits parsing
+
+In this type the AsciiUnits expression is embedded within AsciiMath using the
+prefix `unitsml`.
+
+In *AsciiMath* strings, *AsciiUnits* input must be enclosed within double quotes
+for clarity and specificity.
+
+The output of this AsciiMath expression is converted into pure math syntax, and
+no longer contains UnitsML output.
 
 [source,ruby]
 ----
-  string = '"unitsml(kg)" 1' # => 1 in this example will be ignored
-  string = '1 "unitsml(kg)"' # => Again, 1 in this example will be ignored
-  formula = Plurimath::Math.parse(string, :unitsml)
-  formula.to_asciimath # => 'rm(kg)'
+string = '<optional asciimath>"unitsml(<unitsml string>)"<optional asciimath>'
+formula = Plurimath::Math.parse(string, :asciimath)
 ----
 
-The other input of **UnitsML** is restricted to a specific syntax inside of an **AsciiMath** string and nothing before or/and after will be ignored. See the syntax below.
-
+.Plurimath parsing an AsciiMath formula with embedded AsciiUnits
+[example]
+====
 [source,ruby]
-----
-  string = '<optional asciimath string>"unitsml(<unitsml string>)"<optional asciimath string>'
-  fomrula = Plurimath::Math.parse(string, :asciimath)
-----
+--
+string = '"unitsml(kg)" 1' <1>
+string = '1 "unitsml(kg)"' <2>
+formula = Plurimath::Math.parse(string, :asciimath)
+formula.to_asciimath # => '1 rm(kg)'
+formula.to_mathml # => '
+# <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+#   <mstyle displaystyle="true">
+#     <mn>1</mn>
+#     <mo rspace="thickmathspace">&#x2062;</mo>
+#     <mrow>
+#       <mstyle mathvariant="normal">
+#         <mi>kg</mi>
+#       </mstyle>
+#     </mrow>
+#   </mstyle>
+# </math>
+# '
+--
+<1> 1 is not ignored.
+<2> 1 is also not ignored.
+====
 
-The output syntax will not be the same as the input, see the example below.
-
+.Plurimath parsing an AsciiMath formula with embedded AsciiUnits
+[example]
+====
 [source,ruby]
-----
-  string = '"unitsml(kg)" 1' # => 1 will not be ignored
-  string = '1 "unitsml(kg)"' # => Again, 1 will not be ignored
-  formula = Plurimath::Math.parse(string, :asciimath)
-  formula.to_asciimath # => '1 rm(kg)'
-----
+--
+asciimath_unitsml = 'h = 6.62607015 xx 10^(-34) "unitsml(kg*m^2*s^(-1))"'
+formula = Plurimath::Math.parse(asciimath_unitsml, :asciimath)
+formula.to_mathml # =>
+# '<math xmlns='http://www.w3.org/1998/Math/MathML'>
+#   <mrow>
+#     <mi>h</mi>
+#     <mo>=</mo>
+#     <mn>6.62607015</mn>
+#     <mo>×</mo>
+#     <msup>
+#       <mn>10</mn>
+#       <mrow>
+#         <mo>−</mo>
+#         <mn>34</mn>
+#       </mrow>
+#     </msup>
+#     <mtext>kg·m²·s⁻¹</mtext>
+#   </mrow>
+# </math>'
+--
+====
 
-NOTE: In **AsciiMath** strings, **UnitsML** input must be enclosed within double quotes for clarity and specificity.
 
-NOTE: **UnitsML** in output will not be identifiable despite the input syntaxes and/or the output language.
+== Conclusion
+
+The integration of UnitsML support in Plurimath represents a significant
+advancement in the ease of encoding scientific math in standardization
+content.
+
+By providing robust support for both XML-based UnitsML and ASCII-based
+AsciiUnits unit representation, Plurimath offers a versatile solution for
+encoding and presentation of scientific math.
+
+We look forward to your feedback at our
+https://github.com/plurimath/plurimath[Issues] page!
