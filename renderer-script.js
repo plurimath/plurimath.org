@@ -7,7 +7,7 @@ document.querySelector("#fromfmt").addEventListener("change", inputTimeouts);
 document.querySelector("#tofmt").addEventListener("change", inputTimeouts);
 
 function convert(){
-  insertMathJax()
+  changeEngine()
   const from       = document.getElementById("from").value;
   const fromfmt    = document.getElementById("fromfmt").value;
   const tofmt      = document.getElementById("tofmt").value;
@@ -40,6 +40,8 @@ function changeEngine() {
   if (selectedValue == "mathjax") { return insertMathJax() }
 
   const script = document.getElementById("MathJax-script");
+  if (selectedValue !== "mathjax" && !script) return;
+
   const preview = document.getElementById("preview")
   document.head.removeChild(script);
 
@@ -54,7 +56,6 @@ function insertMathJax() {
   element.type = "text/javascript";
   element.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js";
   element.async = true;
-  element.onload = () => { MathJax.typesetPromise() };
   document.head.appendChild(element);
   window.MathJax = {
     startup: {
