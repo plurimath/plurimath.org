@@ -2,18 +2,20 @@ import Plurimath from "https://www.plurimath.org/plurimath-js/dist/index.js";
 
 document.addEventListener("DOMContentLoaded", convert);
 document.querySelector("#mathmlEngine").addEventListener("change", changeEngine);
-document.querySelector("#from").addEventListener("input", convert);
-document.querySelector("#fromfmt").addEventListener("change", convert);
-document.querySelector("#tofmt").addEventListener("change", convert);
+document.querySelector("#from").addEventListener("input", inputTimeouts);
+document.querySelector("#fromfmt").addEventListener("change", inputTimeouts);
+document.querySelector("#tofmt").addEventListener("change", inputTimeouts);
 
 function convert(){
-  insertMathJax()
-  var from       = document.getElementById("from").value;
-  var fromfmt    = document.getElementById("fromfmt").value;
-  var tofmt      = document.getElementById("tofmt").value;
-  var to         = document.getElementById("to");
-  var pre_render = document.getElementById("preview");
-  var math_tree  = document.getElementById("math_tree");
+  changeEngine()
+  const from       = document.getElementById("from").value;
+  const fromfmt    = document.getElementById("fromfmt").value;
+  const tofmt      = document.getElementById("tofmt").value;
+  const to         = document.getElementById("to");
+  const pre_render = document.getElementById("preview");
+  const math_tree  = document.getElementById("math_tree");
+  const engine = document.getElementById("mathmlEngine");
+  const selectedValue = engine.selectedOptions[0].value;
 
   // empty result
   to.value = "";
@@ -22,13 +24,14 @@ function convert(){
 
   if(from.trim() == "") return;
 
-  var pm = new Plurimath(from, fromfmt);
+  const pm = new Plurimath(from, fromfmt);
   to.value = pm["to"+tofmt]();
 
   const mathml = pm["toMathml"]();
   pre_render.setAttribute("math-content", mathml);
   pre_render.innerHTML=mathml;
   math_tree.value=pm.toDisplay(tofmt.toLowerCase());
+  if (selectedValue === "mathjax" && MathJax.hasOwnProperty("typeset")) { MathJax.typeset() }
 }
 
 function changeEngine() {
@@ -37,6 +40,8 @@ function changeEngine() {
   if (selectedValue == "mathjax") { return insertMathJax() }
 
   const script = document.getElementById("MathJax-script");
+  if (selectedValue !== "mathjax" && !script) return;
+
   const preview = document.getElementById("preview")
   document.head.removeChild(script);
 
@@ -51,7 +56,6 @@ function insertMathJax() {
   element.type = "text/javascript";
   element.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js";
   element.async = true;
-  element.onload = () => { MathJax.typesetPromise() };
   document.head.appendChild(element);
   window.MathJax = {
     startup: {
@@ -61,4 +65,9 @@ function insertMathJax() {
       }
     }
   }
+}
+
+function inputTimeouts() {
+  if (this.timeout) { clearTimeout(this.timeout) };
+  this.timeout = setTimeout(convert, 1000);
 }
