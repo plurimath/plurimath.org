@@ -45,7 +45,32 @@ formatter.localized_number(
 )
 ----
 
-=== LocalizeNumber option
+The supported configuration input is in 4 different ways, it's important to clarify the structural hierarchy.
+The input will be prioritized in the following hierarchy.
+
+1. `format`
+2. `localize_number`
+3. `localizer_symbols`
+4. **default configuration**
+
+=== Format
+
+The `format` option expects a hash containing the relevant options. see the example below.
+----
+  formatter = Plurimath::NumberFormatter.new(:en)
+  formatter.localized_number(
+    "1234.56789",
+    format: {
+      decimal: "x",
+      # ... other supported options
+    }
+  )
+=> "1234.56789"
+----
+
+NOTE: The supported arguments in `format` hash are listed link:Formatting-supported-options[here].
+
+=== LocalizeNumber
 
 The option `localize_number` expects string input containing a specific sequence of characters.
 
@@ -57,19 +82,11 @@ Let's breakdown how `localize_number` example `"\#,\##0.\### \###"` will be inte
 4. `fraction_group_digits` count of all the hashes right next to decimal, '\###' in our example, which will be 3. Minimum 1 hash required
 5. `fraction_group` first character after `fraction_group_digits`, in our example ' '(a space). Nil if there is no non-hash after `fraction_group_digits`
 
-=== LocalizerSymbols option
+=== LocalizerSymbols
 
-The option `localizer_symbols` same as `format` does but with a slight difference.
+The option `localizer_symbols` is same as `format` but with a slight difference.
 The values passed to `localizer_symbols` will be used until the initialized object is accessible, it is useful in the scenarios when configuration will be static or changes are not required very often.
 On the other hand, `format` options are required each time you call `localized_number`.
-
-Since we are supporting the configuration input in 4 different ways, it's important to clarify the structural hierarchy.
-The input will be prioritized in the following hierarchy.
-
-1. `format`
-2. `localize_number`
-3. `localizer_symbols`
-4. **default configuration**
 
 Use following examples to understand the `localized_number` method and it's options.
 [source, ruby]
@@ -106,6 +123,18 @@ formatter.localized_number("1234.56789", locale: :de, precision: 6)
 => "1.234,567890"
 ----
 
+=== Default Configuration
+
+List of default locales and their default options values are available in file `lib/plurimath/formatter/supported_locales.rb`.
+Access the locales and their relevant options following below code.
+
+[source, ruby]
+----
+Plurimath::Formatter::SupportedLocales::LOCALES[:en]
+=> { decimal: ".", group: "," }
+----
+
+[[Formatting-supported-options]]
 === Formatting supported options
 
 Options are explained in detail below.
@@ -125,6 +154,4 @@ Options are explained in detail below.
 * *times*: `String` value for engineering notation.
 * *exponent_sign*: `String` value for scientific notation.
 
-NOTE: Source of locale's and relevant default settings is https://github.com/twitter/twitter-cldr-rb[twitter-cldr-rb].
-
-NOTE: The input type is specified for all the options. Using an input type other than the defined type could result in errors or incorrect output.
+NOTE: The input type(`String`, `Numeric`) is specified for all the options. Using an input type other than the defined type could result in errors or incorrect output.
