@@ -56,6 +56,8 @@ The input will be prioritized in the following hierarchy.
 === Format
 
 The `format` option expects a hash containing the relevant options. see the example below.
+
+[source, ruby]
 ----
   formatter = Plurimath::NumberFormatter.new(:en)
   formatter.localized_number(
@@ -68,7 +70,7 @@ The `format` option expects a hash containing the relevant options. see the exam
 => "1234.56789"
 ----
 
-NOTE: The supported arguments in `format` hash are listed link:Formatting-supported-options[here].
+NOTE: The supported arguments in `format` hash are listed <<Formatting-supported-options, here>>.
 
 === LocalizeNumber
 
