@@ -58,7 +58,7 @@ function inputTimeouts(event) {
   event.timeout = setTimeout(convert, 1000);
 }
 
-function converter(from_fmt, to_fmt = undefined) {
+function converter(from_fmt) {
   const to = document.getElementById("to");
   const from = document.getElementById("from");
   const tofmt = document.getElementById("tofmt").value;
@@ -72,12 +72,12 @@ function converter(from_fmt, to_fmt = undefined) {
   pre_render.innerHTML = mathml;
   pre_render.setAttribute("math-content", mathml);
   math_tree.value = pm.toDisplay(tofmt.toLowerCase());
-  if (to_fmt !== undefined) { from.value = pm["to"+capitalize(to_fmt)](); }
   if (selectedValue === "mathjax" && MathJax.hasOwnProperty("typeset")) { MathJax.typeset(); }
+  return [from, pm]
 }
 
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-export { Plurimath, Initialize, converter, inputTimeouts }
+export { Initialize, converter, inputTimeouts, capitalize }
