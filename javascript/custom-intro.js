@@ -1,7 +1,6 @@
 import { Initialize, inputTimeouts } from "./core.js";
 
-Initialize();
-
 (() => {
+  Initialize();
   document.querySelector("#fromfmt").addEventListener("change", inputTimeouts);
 })();
