@@ -8,16 +8,8 @@ function Initialize() {
 }
 
 function convert(){
-  changeEngine()
-  const from       = document.getElementById("from").value;
-  const fromfmt    = document.getElementById("fromfmt").value;
-  const pre_render = document.getElementById("preview");
-
-  // empty result
-  pre_render.innerText = "";
-
-  if(from.trim() == "") return;
-  converter(fromfmt)
+  changeEngine();
+  converter(document.getElementById("fromfmt").value);
 }
 
 function changeEngine() {
@@ -65,9 +57,16 @@ function converter(from_fmt) {
   const pre_render = document.getElementById("preview");
   const math_tree  = document.getElementById("math_tree");
   const selectedValue = document.getElementById("mathmlEngine").selectedOptions[0].value;
+
+  // empty result
+  to.value = "";
+  pre_render.innerText = "";
+  math_tree.value = "";
+
+  if(from.value.trim() == "") return;
+
   const pm = new Plurimath(from.value, from_fmt);
   const mathml = pm.toMathml();
-
   to.value = pm["to"+tofmt]();
   pre_render.innerHTML = mathml;
   pre_render.setAttribute("math-content", mathml);
