@@ -1,0 +1,78 @@
+---
+layout: post
+title:  "Enhanced Symbol Compatibility in Plurimath"
+date:   2024-08-26 00:00:00 +0800
+categories:
+  - plurimath
+  - using
+authors:
+  -
+    name: Suleman Uzair
+    email: sulemanuzair600@gmail.com
+    social_links:
+      - https://github.com/suleman-uzair/
+  -
+    name: Ronald Tse
+    email: tse@ribose.com
+    use_picture: assets
+    social_links:
+      - https://www.linkedin.com/in/rhtse/
+      - https://github.com/ronaldtse
+excerpt: >-
+  **Plurimath** now offers more control and customization over how symbols are used across different languages, using compatibility wrappers.
+---
+
+== Introduction
+
+In our continuous effort to improve **Plurimath**'s versatility and usability, we are excited to announce a significant update that enhances how symbols are handled across different mathematical representation languages. This update introduces compatibility wrappers that provide more control and customization options for users.
+
+== What are Compatibility Wrappers?
+
+Compatibility wrappers are a new feature in **Plurimath** that allow users to define how specific symbols should be interpreted and displayed across various formats such as **UnicodeMath**, **LaTeX**, and **AsciiMath**. This feature is crucial for maintaining the integrity and intended meaning of mathematical expressions when they are converted between different formats.
+
+== Benefits of Compatibility Wrappers
+
+The introduction of compatibility wrappers offers following benefits:
+
+- **Consistency Across Formats:** Ensures that symbols retain their meaning and appearance across different mathematical notation systems.
+- **Enhanced Readability:** Improves the readability and clarity of mathematical expressions, especially in educational and research contexts where precise symbol representation is critical.
+
+== How to Use Compatibility Wrappers
+
+To utilize compatibility wrappers in **Plurimath**, Here is a simple example of how to use a symbol not supported in **AsciiMath** and **LaTeX** but supported in **UnicodeMath**:
+
+[source,ruby]
+----
+formula = Plurimath::Math.parse("\\dashrightarrow", :unicode)
+> Plurimath::Math::Formula.new([
+  Plurimath::Math::Symbols::Dashrightarrow.new
+])
+----
+
+The compatibility wrapper will convert the symbol to **AsciiMath** and **LaTeX** inside the **Plurimath only wrapper**.
+
+[source,ruby]
+----
+formula.to_asciimath
+> "\"P{dashrightarrow}\""
+formula.to_latex
+> "\\latex{P[dashrightarrow]}"
+----
+
+Compatibility wrappers are supported as input as well as output. Let's see an example below.
+
+[source,ruby]
+----
+formula = Plurimath::Math.parse("\"P{updownharpoonleftleft}\"", :unicode)
+> Plurimath::Math::Formula.new([
+  Plurimath::Math::Symbols::Leftupdownharpoon.new
+])
+formula.to_latex
+> "\\updownharpoonleftleft"
+formula.to_asciimath
+> "\"P{leftupdownharpoon}\""
+----
+
+NOTE: **LaTeX** compatibility wrapper syntax is different than **AsciiMath** and **UnicodeMath**.
+
+NOTE: The output of **UnicodeMath**, **MathML**, and **OMML** doesn't have a wrapper since `\sum` will be converted to `∑` or `\&#x2211;` which doesn't need a wrapper.
