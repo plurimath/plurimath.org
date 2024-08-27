@@ -30,6 +30,14 @@ In our continuous effort to improve **Plurimath**'s versatility and usability, w
 
 Compatibility wrappers are a new feature in **Plurimath** that allow users to define how specific symbols should be interpreted and displayed across various formats such as **UnicodeMath**, **LaTeX**, and **AsciiMath**. This feature is crucial for maintaining the integrity and intended meaning of mathematical expressions when they are converted between different formats.
 
+Compatibility wrappers syntax for each language is as follows:
+
+* **LaTeX** syntax: `\latex{P[<symbol>]}`
+* **AsciiMath** syntax: `"P{<symbol>}"`
+* **UnicodeMath** syntax: `"P{<symbol>}"`
+
+NOTE: The output of **UnicodeMath**, **MathML**, and **OMML** doesn't have a wrapper since `\sum` will be converted to `∑` or `\&#x2211;` which doesn't need a wrapper.
+
 == Benefits of Compatibility Wrappers
 
 The introduction of compatibility wrappers offers following benefits:
@@ -72,7 +80,3 @@ formula.to_latex
 formula.to_asciimath
 > "\"P{leftupdownharpoon}\""
 ----
-
-NOTE: **LaTeX** compatibility wrapper syntax is different than **AsciiMath** and **UnicodeMath**.
-
-NOTE: The output of **UnicodeMath**, **MathML**, and **OMML** doesn't have a wrapper since `\sum` will be converted to `∑` or `\&#x2211;` which doesn't need a wrapper.
