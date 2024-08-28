@@ -19,7 +19,7 @@ authors:
       - https://www.linkedin.com/in/rhtse/
       - https://github.com/ronaldtse
 excerpt: >-
-  **Plurimath** now supports **UnicodeMath** as a math representation syntax.
+  Plurimath now supports **UnicodeMath** as a math representation syntax.
 ---
 = UnicodeMath support in Plurimath
 
