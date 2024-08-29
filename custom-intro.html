@@ -1,11 +1,15 @@
 <section class="summary">
   <p>
-    Convert between <strong>MathML</strong>, <strong>OMML</strong>,
-    <strong>LaTeX</strong> math and <strong>Asciimath</strong> using
+    Convert between
+    <a href="https://www.w3.org/Math/"><strong>MathML</strong></a>,
+    <a href="https://devblogs.microsoft.com/math-in-office/officemath/"><strong>OMML</strong></a>,
+    <a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics"><strong>LaTeX</strong> math</a>,
+    <a href="https://www.asciimath.org"><strong>AsciiMath</strong></a> and
+    <a href="https://unicodemath.org"><strong>UnicodeMath</strong></a> using
     <strong>Plurimath</strong>
   </p>
   <p>
-    New! Plurimath has been ported to JavaScript and can be embedded on any website! See the <a href="/demo" target="_blank"><strong>online demo</strong></a>!
+    Plurimath is now available on JavaScript and can be embedded on any website: see demo below!
     <br>
     <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
       <mstyle displaystyle="true">
@@ -90,6 +94,7 @@
           <option value="html">HTML</option>
           <option value="mathml">MathML</option>
           <option value="latex">LaTeX</option>
+          <option value="unicodemath">UnicodeMath</option>
         </select>
       </div>
       <textarea id="from">sum_(i=1)^n i^3=((n(n+1))/2)^2</textarea>
@@ -109,6 +114,7 @@
           <option value="Html">HTML</option>
           <option value="Mathml">MathML</option>
           <option value="Latex">LaTeX</option>
+          <option value="Unicodemath">UnicodeMath</option>
         </select>
       </div>
       <textarea id="to" readonly></textarea>
