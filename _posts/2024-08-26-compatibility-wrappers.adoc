@@ -19,45 +19,143 @@ authors:
       - https://www.linkedin.com/in/rhtse/
       - https://github.com/ronaldtse
 excerpt: >-
-  **Plurimath** now offers more control and customization over how symbols are used across different languages, using compatibility wrappers.
+  Plurimath now offers math compatibility wrappers, allowing the complete
+  superset of all symbols across all supported languages.
 ---
-
 == Introduction
 
-In our continuous effort to improve **Plurimath**'s versatility and usability, we are excited to announce a significant update that enhances how symbols are handled across different mathematical representation languages. This update introduces compatibility wrappers that provide more control and customization options for users.
+Plurimath now offers math compatibility wrappers, allowing the complete
+superset of all symbols across all supported math represented languages.
 
-== What are Compatibility Wrappers?
 
-Compatibility wrappers are a new feature in **Plurimath** that allow users to define how specific symbols should be interpreted and displayed across various formats such as **UnicodeMath**, **LaTeX**, and **AsciiMath**. This feature is crucial for maintaining the integrity and intended meaning of mathematical expressions when they are converted between different formats.
+== Differentiated symbol sets in different math languages
 
-Compatibility wrappers syntax for each language is as follows:
+There are a multitude of math representation languages in use today, including
+MathML, LaTeX, AsciiMath, and UnicodeMath. Each of these languages supports a
+set of symbols and syntax for representing mathematical expressions.
+
+However, not all these languages support the same set of symbols. For example:
+
+* the LaTeX symbol `backepsilon` is not supported in AsciiMath
+* the symbol `dashrightarrow` is supported in UnicodeMath but not supported in
+LaTeX or AsciiMath.
+
+This means that a mathematical symbol like `backepsilon` from LaTeX math means
+that it cannot be represented or round-tripped to AsciiMath or any other math
+language.
+
+Previously, the lack of support for certain symbols in specific languages has
+not been a significant concern since users can simply switch to another language
+that supports that particular symbol. However, with developers increasingly
+using Plurimath as a bridge between different math languages, this limitation
+has become more apparent.
+
+== Enter compatibility wrappers
+
+Compatibility wrappers are a new feature in **Plurimath** that allow users to
+define how specific symbols should be interpreted and displayed across various
+formats such as **UnicodeMath**, **LaTeX**, and **AsciiMath**.
+
+This feature is crucial for maintaining the integrity and intended meaning of
+mathematical expressions when they are converted between different formats.
+
+It is so named because Plurimath can wrap an unsupported symbol in a language
+with a compatibility wrapper that is supported in that particular languages.
+
+This allows the symbol to be represented in a way that is compatible with the
+target language, ensuring that the symbol retains its meaning across different
+mathematical notation systems.
+
+In addition, compatibility wrappers enable the round-tripping of mathematical
+expressions between different formats without losing any information or
+introducing errors. This means that when the math representation language
+can finally support a new symbol, the new symbol will be converted properly in
+that language.
+
+The introduction of compatibility wrappers offers following benefits:
+
+* **Consistency across formats:** Ensures that symbols retain their meaning and
+appearance across different mathematical notation systems.
+
+* **Retained semantics:** Preserves the intended meaning of mathematical
+expressions when they are converted between different formats.
+
+* **Enhanced readability:** Improves the readability and clarity of mathematical
+expressions, especially in educational and research contexts where precise
+symbol representation is critical.
+
+
+== Syntax of compatibility wrappers
+
+The goal of a compatibility wrapper is introduce no side effects to the original
+language that represents the symbol. This means that the compatibility wrapper
+is easiest implemented as a text object that is not interpreted by the original
+language.
+
+The compatibility wrapper is only used when the symbol is not supported in the
+original language.
+
+The compatibility wrapper syntax for each language is defined as follows:
 
 * **LaTeX** syntax: `\latex{P[<symbol>]}`
 * **AsciiMath** syntax: `"P{<symbol>}"`
 * **UnicodeMath** syntax: `"P{<symbol>}"`
 
-NOTE: The output of **UnicodeMath**, **MathML**, and **OMML** doesn't have a wrapper since `\sum` will be converted to `∑` or `\&#x2211;` which doesn't need a wrapper.
+The outputs of **UnicodeMath**, **MathML**, and **OMML** do not require wrapping
+since the symbol designated (e.g. `\sum`) will be converted to the Unicode
+equivalent (e.g. `∑`) or the XML entity form (e.g. `\&#x2211;`), that do not
+need any wrapping.
 
-== Benefits of Compatibility Wrappers
 
-The introduction of compatibility wrappers offers following benefits:
+== Using compatibility wrappers
 
-- **Consistency Across Formats:** Ensures that symbols retain their meaning and appearance across different mathematical notation systems.
-- **Enhanced Readability:** Improves the readability and clarity of mathematical expressions, especially in educational and research contexts where precise symbol representation is critical.
+Compatibility wrappers are automatically applied when a symbol is not supported
+in a particular language. This means that users do not need to manually specify
+which symbols should be wrapped in a compatibility wrapper.
 
-== How to Use Compatibility Wrappers
+The examples below illustrate how compatibility wrappers work.
 
-To utilize compatibility wrappers in **Plurimath**, Here is a simple example of how to use a symbol not supported in **AsciiMath** and **LaTeX** but supported in **UnicodeMath**:
+.Converting `backepsilon` to AsciiMath from LaTeX using compatibility wrappers
+[example]
+====
+The `backepsilon` is a symbol not supported in **AsciiMath** but recognized in
+**LaTeX**.
+
+The compatibility wrapper will convert the symbol to **AsciiMath** inside a
+compatibility wrapper, but the LaTeX output is unchanged.
+
+[source,ruby]
+----
+> formula = Plurimath::Math.parse("\\backepsilon", :latex)
+# or
+# Plurimath::Math::Formula.new([
+#   Plurimath::Math::Symbols::Backepsilon.new
+# ])
+> formula.to_asciimath
+# => "\"P{backepsilon}\""
+> formula.to_latex
+# => "\\backepsilon"
+----
+====
+
+
+.Converting `dashrightarrow` to AsciiMath and LaTeX using compatibility wrappers
+[example]
+====
+The `dashrightarrow` is a symbol not supported in both **AsciiMath** and
+**LaTeX**, but supported in **UnicodeMath**.
 
 [source,ruby]
 ----
 formula = Plurimath::Math.parse("\\dashrightarrow", :unicode)
-> Plurimath::Math::Formula.new([
-  Plurimath::Math::Symbols::Dashrightarrow.new
-])
+# or
+# Plurimath::Math::Formula.new([
+#   Plurimath::Math::Symbols::Dashrightarrow.new
+# ])
 ----
 
-The compatibility wrapper will convert the symbol to **AsciiMath** and **LaTeX** inside the **Plurimath only wrapper**.
+The compatibility wrapper will convert the symbol to **AsciiMath** and **LaTeX**
+inside the **Plurimath wrapper**, and allow round-trip of the symbol.
 
 [source,ruby]
 ----
@@ -66,17 +164,63 @@ formula.to_asciimath
 formula.to_latex
 > "\\latex{P[dashrightarrow]}"
 ----
+====
 
-Compatibility wrappers are supported as input as well as output. Let's see an example below.
+Compatibility wrappers are also supported as input.
+
+.Converting `updownharpoonleftleft` to LaTeX and AsciiMath using compatibility wrappers
+[example]
+====
+The `updownharpoonleftleft` symbol is supported in **LaTeX** but not
+**UnicodeMath** and **AsciiMath**.
 
 [source,ruby]
 ----
 formula = Plurimath::Math.parse("\"P{updownharpoonleftleft}\"", :unicode)
 > Plurimath::Math::Formula.new([
-  Plurimath::Math::Symbols::Leftupdownharpoon.new
-])
+    Plurimath::Math::Symbols::Leftupdownharpoon.new
+  ])
 formula.to_latex
 > "\\updownharpoonleftleft"
 formula.to_asciimath
 > "\"P{leftupdownharpoon}\""
 ----
+====
+
+With compatibility wrappers, a formula containing a symbol that is not supported
+in an intermediary language can still be converted and round-tripped back to the
+original language.
+
+[example]
+====
+The `backepsilon` symbol is not supported in **AsciiMath** but recognized in
+**LaTeX**.
+
+[source,ruby]
+----
+formula = Plurimath::Math.parse('\([u_0, u_1, u_2, u_3, ... , u_n] \backepsilon [[0 \leq u_i \leq 1] \wedge \sum u_i = 1.0]\)', :latex)
+asciimath = formula.to_asciimath
+> "[u_(0), u_(1), u_(2), u_(3), \"...\", u_(n)] \"P{backepsilon}\" [[0 le u_(i) le 1] ^^ sum u_(i) = 1.0]"
+formula_am = Plurimath::Math.parse(asciimath, :asciimath)
+formula_am.to_latex
+> "\\([u_0, u_1, u_2, u_3, ... , u_n] \\backepsilon [[0 \\leq u_i \\leq 1] \\wedge \\sum u_i = 1.0]\\)"
+formula == formula_am
+> true
+----
+====
+
+
+== Conclusion
+
+The introduction of compatibility wrappers in **Plurimath** enables the seamless
+conversion between all math representation languages regardless of their
+inherent limitations in handling certain math symbols.
+
+This gives users the confidence that their mathematical expressions will be
+accurately represented and interpreted across different formats, ensuring that
+the intended meaning of the symbols is preserved.
+
+For bug reports and feature requests, please report them at the
+https://github.com/plurimath/plurimath/issues[Plurimath Issues page] on GitHub.
+
+With Plurimath, we make math look good -- one feature at a time!
