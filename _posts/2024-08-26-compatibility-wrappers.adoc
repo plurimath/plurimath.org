@@ -28,7 +28,7 @@ Plurimath now offers math compatibility wrappers, allowing the complete
 superset of all symbols across all supported math represented languages.
 
 
-== Differentiated symbol sets in different math languages
+== Not all math languages support all math symbols
 
 There are a multitude of math representation languages in use today, including
 MathML, LaTeX, AsciiMath, and UnicodeMath. Each of these languages supports a
@@ -191,6 +191,7 @@ With compatibility wrappers, a formula containing a symbol that is not supported
 in an intermediary language can still be converted and round-tripped back to the
 original language.
 
+.Round-tripping a formula containing unsupported symbols between AsciiMath and LaTeX
 [example]
 ====
 The `backepsilon` symbol is not supported in **AsciiMath** but recognized in
