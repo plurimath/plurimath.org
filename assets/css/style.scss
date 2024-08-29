@@ -17,6 +17,11 @@ $main-background: linear-gradient(135deg, $primary-color 0%, $accent-color 100%)
 
 @import 'site';
 @import 'code';
+
+.exampleblock {
+  background-color: #eeeeee;
+}
+
 // body.layout--home > .underlay > .hero {
 //   .illustration {
 //     bottom: -100px !important;
