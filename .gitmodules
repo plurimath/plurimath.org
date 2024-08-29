@@ -1,3 +1,3 @@
 [submodule "plurimath-js"]
-	path = plurimath-js
+	path = javascript/plurimath-js
 	url = git@github.com:plurimath/plurimath-js.git
