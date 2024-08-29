@@ -18,9 +18,22 @@ $main-background: linear-gradient(135deg, $primary-color 0%, $accent-color 100%)
 @import 'site';
 @import 'code';
 
+body.site--project.layout--home > main {
+
+  > .custom-intro .summary {
+    a:link, a:visited, a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
+}
+
 .exampleblock {
   background-color: #eeeeee;
 }
+
+// .summary a:link, body.site--project.layout--home > main > .custom-intro .summary a:hover, body.site--project.layout--home > main > .custom-intro .summary a:visited
 
 // body.layout--home > .underlay > .hero {
 //   .illustration {
