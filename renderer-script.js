@@ -1,4 +1,4 @@
-import Plurimath from "https://www.plurimath.org/plurimath-js/dist/index.js";
+import Plurimath from "./plurimath-js/dist/index.js";
 
 document.addEventListener("DOMContentLoaded", convert);
 document.querySelector("#mathmlEngine").addEventListener("change", changeEngine);
