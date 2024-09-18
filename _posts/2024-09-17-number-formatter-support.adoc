@@ -41,7 +41,8 @@ Formatting configuration can be changed by:
 
 === 1. Creating a Custom Formatter
 
-Having a custom formatter is useful when you want to apply a specific formatting configuration to the numbers or need multiple formatting configurations for different parts of your document.
+Having a custom formatter is useful when you want to apply formatting configuration different than the standard one to the numbers or need multiple formatting configurations for different parts of your document.
+
 Let's create an `fr` locale formatter as an example.
 
 .Syntax of creating a custom formatter
