@@ -36,10 +36,7 @@ body.site--project.layout--home > main {
 .colist {
   ol {
     li:has(:nth-child(2)) {
-      counter-increment: item;
-      display: flex;
       flex-flow: column nowrap !important;
-      align-items: flex-start;
     }
   }
 }
