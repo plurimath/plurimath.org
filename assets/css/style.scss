@@ -33,6 +33,17 @@ body.site--project.layout--home > main {
   background-color: #eeeeee;
 }
 
+.colist {
+  ol {
+    li:has(:nth-child(2)) {
+      counter-increment: item;
+      display: flex;
+      flex-flow: column nowrap !important;
+      align-items: flex-start;
+    }
+  }
+}
+
 // .summary a:link, body.site--project.layout--home > main > .custom-intro .summary a:hover, body.site--project.layout--home > main > .custom-intro .summary a:visited
 
 // body.layout--home > .underlay > .hero {
