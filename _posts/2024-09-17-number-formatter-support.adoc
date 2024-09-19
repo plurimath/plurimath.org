@@ -41,9 +41,9 @@ Formatting configuration can be changed by:
 
 === 1. Creating a Custom Formatter
 
-Having a custom formatter is useful when you want to apply formatting configuration different than the standard one to the numbers or need multiple formatting configurations for different parts of your document.
+Having a custom formatter is useful when you want to apply formatting configuration different than the **Standard** class to the numbers or need multiple formatting configurations for different parts of your document.
 
-Let's create an `fr` locale formatter as an example.
+Let's create a formatter `Plurimath::Formatter::CustomFrFormatter` with `fr` locale as an example.
 
 .Syntax of creating a custom formatter
 [source,ruby]
@@ -55,9 +55,9 @@ class CustomFrFormatter < Plurimath::Formatter::Standard
 end
 ----
 
-NOTE: If locale is not specified, the `en` locale will be used as the default.
+NOTE: The `en` locale will be used as the default if it's not specified or supported.
 
-Set the `DEFAULT_OPTIONS` constant with the desired configuration in the `CustomFrFormatter` class.
+Add the `DEFAULT_OPTIONS` constant with the desired configuration in the `CustomFrFormatter` class.
 
 .Syntax to set the `DEFAULT_OPTIONS` constant in the `CustomFrFormatter` class
 [source,ruby]
@@ -67,16 +67,24 @@ class CustomFrFormatter < Plurimath::Formatter::Standard
     fraction_group_digits: 2,
     fraction_group: ".",
     ...
-  }
+  }.freeze
+
+  def initialize(locale: :fr)
+    super
+  end
 end
 ----
 
-Creating custom class also allow us to override the `set_default_options` method to set the default options.
+Or just override the `set_default_options` method to set the default options.
 
-.Syntax to override the `set_default_options` method in the `CustomFrFormatter` class
+.Syntax to override the `set_default_options` method
 [source,ruby]
 ----
 class CustomFrFormatter < Plurimath::Formatter::Standard
+  def initialize(locale: :fr)
+    super
+  end
+
   def set_default_options(options = {})
     options = {
       fraction_group_digits: 2,
@@ -85,6 +93,10 @@ class CustomFrFormatter < Plurimath::Formatter::Standard
   end
 end
 ----
+
+NOTE: The `initialize` method is used to set the locale only in our example.
+
+TIP: You can configure the formatter by either using the `set_default_options` method or defining the `DEFAULT_OPTIONS` constant. Both approaches allow you to set the necessary values for the formatter.
 
 .Creating a `CustomFormatter` object and using it to format numbers in a formula
 [example]
@@ -112,15 +124,15 @@ formula.to_latex(formatter: formatter) # => '\sum_{i = 1}^{10,00;00.1} i^{2,12,1
 
 === 2. Changing Standard Configuration
 
-`Plurimath::Formatter::Standard` class initializer accepts a few options to set the default options values.
-Options are:
+`Plurimath::Formatter::Standard` class initializer accepts four arguments to set the options values.
+Arguments are:
 
 * `locale: # a symbol or string value`
-* `options: # a hash of options`
-* `format_string: # a string value`
+* `options: # a hash of options (localizer_symbols)`
+* `format_string: # a string value (localize_number)`
 * `precision: # an integer value`
 
-.Passing options to the `Plurimath::Formatter::Standard` class initializer
+.Passing arguments to the `Plurimath::Formatter::Standard` class initializer
 [source,ruby]
 ----
 options = {
@@ -130,8 +142,8 @@ options = {
   decimal: ";",
   group: ",",
 }
-formatter = Plurimath::Formatter::Standard.new(locale: :hy, options: options, precision: 2)
-Plurimath::Math.parse('2121221.3434', :latex).to_latex(formatter: formatter)
+formatter = Plurimath::Formatter::Standard.new(locale: :hy, options: options, precision: 2) # format_string: <string value> if provided
+Plurimath::Math.parse('2121221.3434', :latex).to_latex(formatter: formatter) # => '2,12,12,21;34'
 ----
 
 NOTE: Precision option in the initializer overrides it's value specified in the constant.
@@ -141,7 +153,7 @@ NOTE: Precision option in the initializer overrides it's value specified in the 
 
 The `Plurimath::Formatter::Standard` class contains the standard configuration for formatting numbers.
 
-.Default options of `Plurimath::Formatter::Standard` class
+.Default values of options in `Plurimath::Formatter::Standard` class
 [source,ruby]
 ----
   fraction_group_digits = 3
@@ -156,4 +168,13 @@ The `Plurimath::Formatter::Standard` class contains the standard configuration f
   group = ","
   times = "x"
   e = "e"
+----
+
+.Default values of arguments in `Plurimath::Formatter::Standard` class
+[source,ruby]
+----
+  locale = :en
+  options = {}
+  format_string = nil
+  precision = nil
 ----
