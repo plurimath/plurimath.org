@@ -1,0 +1,129 @@
+---
+layout: post
+title: "Intent support in Plurimath"
+date: 2024-09-19 00:00:00 +0800
+categories:
+  - plurimath
+  - mathml
+author:
+  name: Ronald Tse
+  email: tse@ribose.com
+  use_picture: assets
+  social_links:
+    - https://www.linkedin.com/in/rhtse/
+    - https://github.com/ronaldtse
+excerpt: >-
+  Semantic math and intent encoding in MathML 4.
+---
+
+== What is Semantic Math?
+
+Semantic math is the method of encoding mathematical expressions to reflect their meaning and structure, not just how they look. This means that instead of just seeing symbols and numbers, software can understand what those symbols and numbers represent. For example, it can recognize that `"x^2 + y^2 = z^2"`` is the Pythagorean theorem, where x, y, and z are the sides of a right triangle. This deeper understanding allows software to better interpret and work with mathematical content, making it more useful for tasks in education, research, and digital publishing.
+
+For example, consider the mathematical expression "x^2 + y^2 = z^2". In traditional math notation, this expression is simply a visual representation. However, in semantic math, this expression would be encoded to capture the meaning that it represents the Pythagorean theorem, where x, y, and z are the sides of a right triangle.
+
+Another example is the integral symbol ∫. In visual notation, it is just a symbol, but in semantic math, it can be encoded to indicate that it represents the operation of integration over a specified range, providing additional context such as the function being integrated and the limits of integration.
+
+== How Does Intent Work in MathML 4?
+
+MathML 4 introduces a new feature called "intent" to help explain what different parts of a math expression mean. Think of it like adding a note to a math symbol to tell others (or software) what it represents. This is super helpful for tools that need to understand math, like screen readers for visually impaired users or search engines.
+
+In MathML 4, you use the `intent` attribute to add these notes. For example, if you have a symbol that represents a specific math function, you can use the `intent` attribute to say exactly what that function is. This way, anyone (or any software) reading the MathML knows the exact purpose of that symbol.
+
+For example:
+
+.Using intent in MathML 4 to represent the absolute value of x
+[example]
+====
+[source,xml]
+----
+<mrow intent="absolute-value($x)">
+  <mo>|</mo>
+  <mi arg="x">x</mi>
+  <mo>|</mo>
+</mrow>
+----
+====
+
+The above MathML 4 code uses the `intent` attribute to represent the absolute value of x. The `intent` attribute will help readers understand that the expression is the absolute value of x.
+
+TIP: For more detailed information about the `intent` attribute, visit the link:https://w3c.github.io/mathml-docs/intent-explainer/#intent[MathML 4 intent-explainer].
+
+== How Can We Encode Intent Using UnicodeMath?
+
+UnicodeMath is a plain text representation of mathematical notation that leverages Unicode characters to encode mathematical symbols and structures. To encode intent using UnicodeMath, a special character `ⓘ` (U+24D8) is used.
+
+For example:
+
+.Using intent in UnicodeMath to represent the absolute value of x
+[example]
+====
+[source,plain]
+----
+ⓘ("absolute-value(x)" |𝑥|)
+----
+====
+
+In the example above, the `ⓘ` character is used to denote the intent of the expression. The intent expression is composed of two elements:
+
+* the intent string
+* the expression to which the intent is applied
+
+== Can We Encode Intent Using Other Math Languages, e.g., AsciiMath?
+
+No, not all math languages support intent encoding. For example, AsciiMath does not support intent encoding.
+
+== How to Encode Intent in Plurimath?
+
+Input syntax of `intent` is supported for **MathML** and **UnicodeMath** in **Plurimath**.
+In **Plurimath**, `intent` encoding is available only for specific **Plurimath** classes when converting to **MathML**.
+`Intent` encoding is not supported by default, you need to specify the `intent` option when converting to **MathML**.
+
+For example:
+
+.Using intent in Plurimath to represent the absolute value of x
+[example]
+====
+[source,ruby]
+----
+math = Plurimath::Math.parse("abs(x)", :asciimath)
+puts math.to_mathml(intent: true)
+> <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+>   <mstyle displaystyle="true">
+>     <mrow intent="absolute-value(x)">
+>       <mo>|</mo>
+>       <mi>x</mi>
+>       <mo>|</mo>
+>     </mrow>
+>   </mstyle>
+> </math>
+----
+====
+
+If value of `abs` exceeds one word, an `arg` attribute will be used to reference the value of `abs`.
+
+For example:
+
+.Using intent in Plurimath to represent the absolute value of x
+[example]
+====
+[source,ruby]
+----
+math = Plurimath::Math.parse("abs(xy)", :asciimath)
+puts math.to_mathml(intent: true)
+> <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+>   <mstyle displaystyle="true">
+>     <mrow intent="absolute-value(a)">
+>       <mo>|</mo>
+>       <mrow arg="a">
+>         <mi>x</mi>
+>         <mi>y</mi>
+>       </mrow>
+>       <mo>|</mo>
+>     </mrow>
+>   </mstyle>
+> </math>
+----
+====
+
+NOTE: The `intent` encoding is not supported in any language other than **MathML**.
