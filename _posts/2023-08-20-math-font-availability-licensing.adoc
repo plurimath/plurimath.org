@@ -16,8 +16,8 @@ authors:
 excerpt: >-
   Accurate rendering of math depends on the underlying font providing
   full coverage and accurate representation of math symbols. However, not
-  all dedicated math fonts are offered under an open license. So which font
-  should we use?
+  all dedicated math fonts are offered under an open license. The choice of a
+  math font is not trivial.
 ---
 = Licensing and availability of math fonts
 
