@@ -1,0 +1,315 @@
+---
+layout: post
+title:  "Number formatting now supported in formulas across all math representation languages"
+date:   2024-09-17 00:00:00 +0800
+categories:
+  - plurimath
+  - introduction
+authors:
+  -
+    name: Suleman Uzair
+    email: sulemanuzair600@gmail.com
+    social_links:
+      - https://github.com/suleman-uzair/
+  -
+    name: Ronald Tse
+    email: tse@ribose.com
+    use_picture: assets
+    social_links:
+      - https://www.linkedin.com/in/rhtse/
+      - https://github.com/ronaldtse
+excerpt: >-
+  Plurimath now supports number formatting in formulas for all supported math
+  representation languages, including MathML, OMML, LaTeX, AsciiMath, and
+  UnicodeMath.
+---
+
+== Introduction
+
+The ability to present numbers in formats suitable for its audiences is
+important in internationalization, localization and for adherence to
+standardization and publication policies.
+
+Plurimath began supporting number formatting features
+in July 2024, detailed in our blog post on
+link:/blog/2024-07-09-number-formatter[number formatter support].
+
+Previously, Plurimath's number formatting support was only available for users
+who work with numbers exclusively. Number formatting was not available in
+Plurimath formulas (`Plurimath::Formula`), where math representation languages
+like MathML, OMML, AsciiMath and UnicodeMath. That means that formulas generated
+by Plurimath in math representation languages have numbers that cannot be
+formatted correctly.
+
+We are excited to announce that number formatting is now supported in Plurimath
+formulas (`Plurimath::Formula`) for all math representation languages. This
+allows users to handle numbers more efficiently and effortlessly within math
+representation languages.
+
+The languages Plurimath supports include:
+
+* MathML
+* OMML
+* LaTeX
+* AsciiMath
+* UnicodeMath
+
+NOTE: Effectively use number formatting features by referencing our
+link:/blog/2024-07-09-number-formatter[number formatting post].
+
+
+== Formatting numbers in a formula
+
+=== General
+
+The steps to format a number in a formula are:
+
+. Create a number formatter that can be configured;
+
+. Apply the number formatter to a formula through the `Formula.to_{format}`
+method which serializes the formula into an math representation language.
+
+The quick example below demonstrates how to format a number in a formula.
+
+.Syntax of formatting a number in a formula
+====
+The following code applies number formatting to a LaTeX math formula.
+
+[source,ruby]
+----
+> formula = Plurimath::Math.parse('\sum_{i=1}^{10000} i^2121221', :latex) <1>
+> formatter = Plurimath::Formatter::Standard.new <2>
+> formula.to_latex(formatter: formatter) <3>
+# => '\sum_{i = 1}^{10,000} i^{2,121,221}'
+----
+<1> The formula is parsed into a `Formula` object using the
+`Plurimath::Math.parse` method.
+<2> A `Plurimath::Formatter` is created.
+<3> The `Formula.to_latex` method is called with the `formatter` option to
+format the formula.
+====
+
+We will look at how to create a number formatter and how to change the standard
+configuration in the following sections.
+
+
+=== Defining a number formatter
+
+A "number formatter" is a class that formats numbers in a specific way. It
+contains the configuration for formatting numbers, such as the number of digits
+in a group, the decimal separator, and the group separator.
+
+Plurimath offers a standard formatter class called
+`Plurimath::Formatter::Standard` that includes a comprehensive
+link:#standard_configuration[standard configuration].
+
+.Creating a standard `Plurimath::Formatter::Standard` object
+[source,ruby]
+----
+> formatter = Plurimath::Formatter::Standard.new <1>
+----
+<1> Creates a `Plurimath::Formatter` object that uses standard configuration.
+
+
+The number formatting configuration can be changed in these ways:
+
+. Pass options to the `Plurimath::Formatter::Standard` class initializer
+(with options explained in the
+link:/blog/2024-07-09-number-formatter[number formatter blog post]).
+
+. Create a custom formatter inheriting from the `Plurimath::Formatter::Standard` class.
+
+
+
+=== Changing number formatting configuration
+
+The typical way to change the number formatting configuration is to create a
+`Plurimath::Formatter::Standard` object with the desired configuration options.
+
+There are two types of number formatting configuration to change:
+
+. Arguments passed to the `Plurimath::Formatter::Standard` class initializer.
+
+. Overriding options through the `options` argument.
+
+The arguments are:
+
+`locale`:: (default: `:en` for English) a symbol or string value. The supported
+locales are listed in the link:/blog/2024-07-09-number-formatter[number formatter blog post].
+
+`options`:: (default: empty) a hash of options (`localizer_symbols`). The options
+are listed in the link:/blog/2024-07-09-number-formatter[number formatter blog post].
+
+`format_string`:: (default: `nil`, disabled) a string value (localize_number)
+
+`precision`:: (default: `nil`, disabled) an integer value.
+
+
+[example]
+.Passing arguments to the `Plurimath::Formatter::Standard` class initializer
+====
+[source,ruby]
+----
+> options = {
+  fraction_group_digits: 2,
+  fraction_group: ".",
+  group_digits: 2,
+  decimal: ";",
+  group: ",",
+}
+
+> formatter = Plurimath::Formatter::Standard.new(locale: :hy, options: options, precision: 2)
+# format_string: <string value> if provided
+
+> Plurimath::Math.parse('2121221.3434', :latex).to_latex(formatter: formatter)
+# => '2,12,12,21;34'
+----
+
+The `precision = 2` option in the initializer causes the formatted value to have
+decimal places truncated from 4 to 2.
+====
+
+
+
+=== Creating a custom formatter
+
+In cases where the standard formatter's available options do not meet the needs
+for number presentation, a custom formatter can be created to apply new
+mechanisms of formatting numbers.
+
+The custom formatter is to be subclassed from `Plurimath::Formatter::Standard`.
+
+.Creating a custom formatter
+[source,ruby]
+----
+class MyCustomFormatter < Plurimath::Formatter::Standard <1>
+  def initialize(locale:, precision:, options:, format_string:) <2>
+    super
+  end
+end
+----
+<1> The custom formatter class inherits from `Plurimath::Formatter::Standard`.
+<2> The arguments can be overridden in the `initialize` method.
+
+The default options of the custom formatter are set using the
+`set_default_options` method.
+
+.Syntax to override the `set_default_options` method
+[source,ruby]
+----
+class MyCustomFormatter < Plurimath::Formatter::Standard
+  def initialize(locale:, precision:, options:, format_string:)
+    super
+  end
+
+  def set_default_options(options = {}) <1>
+    options = {
+      fraction_group_digits: 2,
+      fraction_group: ".",
+      ...
+    }
+  end
+end
+----
+<1> The `set_default_options` method is overridden to set the default options.
+The shown options are ones inherited from the `Plurimath::Formatter::Standard`
+class, but additional ones understood by the class can be set.
+
+It is used in the following manner.
+
+.Creating a `CustomFormatter` object and using it to format numbers in a formula
+[example]
+====
+[source,ruby]
+----
+class MyCustomFormatter < Plurimath::Formatter::Standard
+  def initialize(locale: :fr)
+    super
+  end
+
+  def set_default_options(options = {})
+    {
+      fraction_group_digits: 2,
+      fraction_group: ".",
+      group_digits: 2,
+      decimal: ";",
+      group: ",",
+      ...
+    }
+  end
+end
+
+> formula = Plurimath::Math.parse('\sum_{i=1}^{1000.001} i^2121221.3434', :latex)
+# => Plurimath::Math::Formula...
+> formula.to_latex(formatter: formatter)
+# => '\sum_{i = 1}^{10,00;00.1} i^{2,12,12,21;34.34}'
+> formula.to_asciimath(formatter: formatter)
+# => 'sum_(i = 1)^(10,00;00.1) i^(2,12,12,21;34.34)'
+----
+====
+
+
+[[standard_configuration]]
+== Default number formatting configuration
+
+The default configuration for formatting numbers is as follows, set in the
+`Plurimath::Formatter::Standard` class.
+
+|===
+|Option key |Description |Value
+
+|`locale`
+|The locale used for number formatting
+|`:en`
+
+|`fraction_group_digits`
+|The number of digits in each group of the fraction part
+|`3`
+
+|`exponent_sign`
+|The sign used for the exponent part of the number
+|`"plus"`
+
+|`fraction_group`
+|The character used to separate groups of digits in the fraction part
+|`"'"`
+
+|`notation`
+|The notation used for the number formatting
+|`:basic`
+
+|`group_digits`
+|The number of digits in each group of the integer part
+|`3`
+
+|`significant`
+|The number of significant digits to display
+|`0`
+
+|`digit_count`
+|The number of digits to display
+|`0`
+
+|`precision`
+|The number of decimal places to display
+|`0`
+
+|`decimal`
+|The character used as the decimal separator
+|`"."`
+
+|`group`
+|The character used to separate groups of digits in the integer part
+|`","`
+
+|`times`
+|The character used for multiplication
+|`"x"`
+
+|`e`
+|The character used for exponentiation
+|`"e"`
+
+|===
+
+
