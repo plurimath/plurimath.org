@@ -19,8 +19,9 @@ authors:
       - https://www.linkedin.com/in/rhtse/
       - https://github.com/ronaldtse
 excerpt: >-
-  Conversions across multiple math representational languages is a core feature of Plurimath.
-  To make it even more accessible, you can easily perform conversions by specifying the input string's type.
+  Conversions across multiple math representational languages is a core feature
+  of Plurimath. To make it even more accessible, you can easily perform
+  conversions by specifying the input string's type.
 ---
 
 = Using Plurimath
