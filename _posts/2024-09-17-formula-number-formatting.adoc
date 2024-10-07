@@ -313,3 +313,12 @@ The default configuration for formatting numbers is as follows, set in the
 |===
 
 
+== Conclusion
+
+Plurimath now supports number formatting in formulas across all math
+representation languages, including MathML, OMML, LaTeX, AsciiMath, and
+UnicodeMath.
+
+For more information on number formatting, refer to our
+link:/blog/2024-07-09-number-formatter[number formatter blog post].
+
