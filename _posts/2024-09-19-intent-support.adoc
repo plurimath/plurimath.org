@@ -130,9 +130,9 @@ https://openmath.org/about/[OpenMath Society] for representing formal
 mathematical objects and semantics through the use of extensible Content
 Dictionaries.
 
-Content MathML is meant to be used in "Parallel Markup" with Presentation MathML,
-which is to say that Content MathML is to be used alongside Presentation MathML
-to provide both visual and semantic representation of math.
+Content MathML is meant to be used in "Parallel Markup" with Presentation
+MathML, which is to say that Content MathML is to be used alongside Presentation
+MathML to provide both visual and semantic representation of math.
 
 Unfortunately, the complexity and verbosity of Content MathML and OpenMath have
 limited their adoption -- it is already difficult enough to encode expressions
@@ -209,10 +209,10 @@ the MathML Working Group and has been involved in the development of MathML 4.
 He has extended UnicodeMath to work with MathML 4, in particular support for the
 `intent` attribute.
 
-MathML, being an XML format, is today primarily used as a canonical representation of
-a math expression, instead of an input format. Economical math representation
-languages, such as UnicodeMath and AsciiMath, are used as input formats for math
-expressions for translation into MathML.
+MathML, being an XML format, is today primarily used as a canonical
+representation of a math expression, instead of an input format. Economical math
+representation languages, such as UnicodeMath and AsciiMath, are used as input
+formats for math expressions for translation into MathML.
 
 The latest version of UnicodeMath supports the `intent` attribute, allowing
 UnicodeMath to encode semantic math expressions in MathML 4.
@@ -254,9 +254,9 @@ UnicodeMath using the `ⓘ` operator.
 ----
 ====
 
-NOTE: Encoding of `intent` is not supported in **UnicodeMath**. The `ⓘ` is used
-in **UnicodeMath** for the input and output of the `intent`(as a syntax of
-**UnicodeMath**).
+NOTE: Currently, Plurimath supports encoding of intent in **UnicodeMath** via
+the ⓘ syntax, but not the output of intent-enabled expressions in UnicodeMath
+with the ⓘ syntax.
 
 
 == Encoding intent in Plurimath
@@ -290,11 +290,42 @@ xml <~HERE
 </math>
 HERE
 formula = Plurimath::Math.parse(xml, :mathml)
+formula.to_mathml(intent: true)
+# =>
+# <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+#   <mstyle displaystyle="true">
+#     <mrow intent="absolute-value(x)">
+#       <mo>|</mo>
+#       <mi>x</mi>
+#       <mo>|</mo>
+#     </mrow>
+#   </mstyle>
+# </math>
+----
+====
+
+////
+.Encoding explicit intent in Plurimath and outputting UnicodeMath
+[example]
+====
+[source,ruby]
+----
+xml <~HERE
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mrow intent="absolute-value(x)">
+      <mo>|</mo>
+      <mi>x</mi>
+      <mo>|</mo>
+    </mrow>
+  </mstyle>
+</math>
+HERE
 formula.to_asciimath(intent: true)
 # => "ⓘ("absolute-value(x)" |𝑥|)"
 ----
 ====
-
+////
 
 .Encoding explicit intent in Plurimath using UnicodeMath
 [example]
@@ -390,10 +421,14 @@ other than **MathML**.
 
 == Operations that support intent encoding
 
-The full list of **Plurimath** classes that support `intent` encoding can be
-found at:
+The full list of intent concepts are found at:
 
-* link:https://github.com/plurimath/plurimath/blob/main/intent_supported_classes.adoc[Intent supported classes]
+* https://w3c.github.io/mathml-docs/intent-core-concepts/[MathML 4 intent core concepts]
+
+The full list of **Plurimath** classes that support intent encoding are found
+at:
+
+* https://github.com/plurimath/plurimath/blob/main/intent_supported_classes.adoc[Plurimath intent supported classes]
 
 
 == Support for intent in other math languages
@@ -415,7 +450,7 @@ to encode the meaning and structure of mathematical expressions in a way that
 can be understood by software.
 
 Plurimath is one of the first math libraries that provide full support for
-`intent`, including in the understanding of intent in both MathML and
+intent encoding, including in the understanding of intent in both MathML and
 UnicodeMath.
 
 By leveraging the power of semantic math, Plurimath makes math more accessible
