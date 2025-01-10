@@ -331,6 +331,19 @@ are:
 ----
 ====
 
+`number_sign`:: (`Symbol` value)
+Specify whether to use a plus sign to explicitly denote positive numbers. Legal values are:
+
+`plus`::: The `+` symbol is used.
++
+.Using the plus sign to indicate positive numbers
+[example]
+====
+----
++32.232232
+----
+====
+
 These options are to be grouped under a single Hash object.
 
 .Format options Hash for `localizer_symbols`
