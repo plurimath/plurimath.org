@@ -270,6 +270,10 @@ The default configuration for formatting numbers is as follows, set in the
 |The sign used for the exponent part of the number
 |`"plus"`
 
+|`number_sign`
+|The prefix for the positive numbers only.
+|`"plus"`
+
 |`fraction_group`
 |The character used to separate groups of digits in the fraction part
 |`"'"`
