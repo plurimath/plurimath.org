@@ -13,8 +13,7 @@ function convert(){
 }
 
 function changeEngine() {
-  const engine = document.getElementById("mathmlEngine");
-  const selectedValue = engine.selectedOptions[0].value
+  const selectedValue = currentEngine();
   if (selectedValue == "mathjax") { return insertMathJax() }
 
   const script = document.getElementById("MathJax-script");
@@ -45,18 +44,17 @@ function insertMathJax() {
   }
 }
 
-function inputTimeouts(event) {
+function inputTimeouts(event, callableFunction = convert) {
   if (event.timeout) { clearTimeout(event.timeout) };
-  event.timeout = setTimeout(convert, 1000);
+  event.timeout = setTimeout(callableFunction, 1000);
 }
 
-function converter(from_fmt) {
+function converter(from_fmt, mathmlEngine = currentEngine) {
   const to = document.getElementById("to");
   const from = document.getElementById("from");
   const tofmt = document.getElementById("tofmt").value;
   const pre_render = document.getElementById("preview");
   const math_tree  = document.getElementById("math_tree");
-  const selectedValue = document.getElementById("mathmlEngine").selectedOptions[0].value;
 
   // empty result
   to.value = "";
@@ -71,12 +69,16 @@ function converter(from_fmt) {
   pre_render.innerHTML = mathml;
   pre_render.setAttribute("math-content", mathml);
   math_tree.value = pm.toDisplay(tofmt.toLowerCase());
-  if (selectedValue === "mathjax" && MathJax.hasOwnProperty("typeset")) { MathJax.typeset(); }
+  if (mathmlEngine() === "mathjax" && MathJax.hasOwnProperty("typeset")) { MathJax.typeset(); }
   return [from, pm]
+}
+
+function currentEngine() {
+  return document.getElementById("mathmlEngine").selectedOptions[0].value
 }
 
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-export { Initialize, converter, inputTimeouts, capitalize }
+export { Initialize, insertMathJax, converter, inputTimeouts, capitalize }

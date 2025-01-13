@@ -5,65 +5,259 @@ description: Demo.
 
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Demo</title>
 
-    <style>
+<head>
+  <meta charset="utf-8">
+  <title>Demo</title>
+
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1em;
+      padding: 1em 1em;
+      background-color: white;
+    }
+
+    form>* {
+      color: black;
+    }
+
+    form>div>* {
+      flex: 1;
+    }
+
+    #toggle-state {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .engine-toggler {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #input,
+    #output {
+      display: flex;
+      flex-direction: column;
+      gap: 10px !important;
+    }
+
+    #output {
+      align-items: flex-end;
+    }
+
+    #input>textarea,
+    #output>textarea {
+      width: 29.5vw;
+    }
+
+    @media (max-width: 500px) {
       form {
-        display: flex;
-        width: 70%;
+        width: 80%;
+      }
+    }
+
+    @media (max-width: 829px) {
+
+      form {
+        max-width: 88%;
+      }
+
+      #input>textarea,
+      #output>textarea {
+        width: 100%;
+      }
+
+      #output {
+        align-items: flex-start !important;
+      }
+
+      #io-section {
         flex-direction: column;
-        row-gap: 1em;
-        padding: 1em 1em;
-        background-color: white;
+        width: 100%;
       }
-      form>* {
-        color: black;
+
+      #swap-icon:before {
+        content: "\21c5" !important;
       }
-      form>div>* { flex: 1; }
-      textarea { min-height: 20vh; padding: 1rem; font-size: x-large; }
-      div#preview { font-size: x-large; padding: 1rem; border: 1px solid; }
-      form>label { margin-bottom: -1em; }
-      textarea#math_tree { font-size: small; }
-    </style>
-  </head>
-  <body>
-    <form>
-      <h2>Live Demo</h2>
-      <div>
-        <label>Input</label>&nbsp&nbsp
-        <select id="fromfmt">
-          <option value="asciimath">Asciimath</option>
-          <option value="omml">Omml</option>
-          <option value="html">Html</option>
-          <option value="mathml">Mathml</option>
-          <option value="latex">Latex</option>
-        </select>
+
+      #math_tree,
+      #preview {
+        width: 100%;
+      }
+
+      #options {
+        flex-wrap: wrap;
+        gap: .5rem;
+        padding-top: 1rem;
+      }
+    }
+
+    #io-section {
+      display: flex;
+      align-self: flex-start;
+      column-gap: .4rem;
+    }
+
+    #options {
+      display: flex;
+      flex-direction: column;
+      place-self: center;
+      align-content: center;
+      justify-items: center;
+      gap: 1rem;
+    }
+
+    textarea {
+      min-height: 20vh;
+      padding: 1rem;
+      font-size: x-large;
+    }
+
+    div#preview {
+      font-size: x-large;
+      padding: 1rem;
+      border: 1px solid;
+    }
+
+    form>label {
+      margin-bottom: -1em;
+    }
+
+    textarea#math_tree {
+      font-size: small;
+    }
+
+    .toggle {
+      position: relative;
+      display: inline-block;
+      margin-top: 0.5rem;
+      width: 50px;
+      height: 26px;
+      background-color: hsl(0, 0%, 85%);
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.25s ease-in;
+    }
+
+    .toggle::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 22px;
+      height: 22px;
+      background-color: white;
+      border-radius: 50%;
+      transition: all 0.25s ease-out;
+    }
+
+    #engine-toggle:checked+.toggle {
+      background-color: #6e31ed;
+    }
+
+    #engine-toggle:checked+.toggle::after {
+      transform: translateX(24px);
+    }
+
+    .hide-me {
+      opacity: 0;
+      height: 0;
+      width: 0;
+    }
+
+    .button-1 {
+      background-color: transparent;
+      border-radius: 8px;
+      border-style: none;
+      box-sizing: border-box;
+      color: #6e31ed;
+      cursor: pointer;
+      display: inline-block;
+      font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      height: 40px;
+      line-height: 20px;
+      list-style: none;
+      margin: 0;
+      outline: none;
+      padding: 10px 16px;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      transition: color 100ms;
+      vertical-align: baseline;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    #swap-button {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #swap-icon:before {
+      font-size: 30px;
+      font-style: normal;
+      content: "\21c4";
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <h2>Live Demo</h2>
+    <div id="io-section">
+      <div id="input">
+        <div id="input-options">
+          <label>Input</label>&nbsp&nbsp
+          <select id="fromfmt">
+            <option value="asciimath">Asciimath</option>
+            <option value="omml">Omml</option>
+            <option value="html">Html</option>
+            <option value="mathml">Mathml</option>
+            <option value="latex">Latex</option>
+          </select>
+        </div>
+        <!-- <textarea id="from">sum_(i=1)^n i^3=((n(n+1))/2)^2</textarea> -->
+        <textarea id="from"></textarea>
       </div>
-      <textarea id="from">sum_(i=1)^n i^3=((n(n+1))/2)^2</textarea>
-      <div id="renderer">
-        <label>Rendering</label>
-        <select id="mathmlEngine">
-          <option value="mathjax" selected>MathJax</option>
-          <option value="mathml">Browser native</option>
-        </select>
+      <div id="options">
+        <div id="input-swapper">
+          <button id="swap-button" class="button-1" role="button"><i id="swap-icon"></i>Swap</button>
+        </div>
+        <div class="engine-toggler">
+          <input id="engine-toggle" type="checkbox" class="hide-me" checked>
+          <label for="engine-toggle" class="toggle"></label>
+          <div id="cb-label">
+            <span id="toggle-state">MathJax</span>
+          </div>
+        </div>
       </div>
-      <div id="preview"></div>
-      <div>
-        <label>Output</label>&nbsp&nbsp
-        <select id="tofmt">
-          <option value="Asciimath">Asciimath</option>
-          <option value="Omml">Omml</option>
-          <option value="Html">Html</option>
-          <option selected value="Mathml">Mathml</option>
-          <option value="Latex">Latex</option>
-        </select>
+      <div id="output">
+        <div id="output-options">
+          <label>Output</label>&nbsp&nbsp
+          <select id="tofmt">
+            <option value="Asciimath">Asciimath</option>
+            <option value="Omml">Omml</option>
+            <option value="Html">Html</option>
+            <option selected value="Mathml">Mathml</option>
+            <option value="Latex">Latex</option>
+          </select>
+        </div>
+        <textarea id="to" readonly></textarea>
       </div>
-      <textarea id="to" readonly></textarea>
-      <label>Rendering Tree</label>
-      <textarea id="math_tree" wrap="off" readonly></textarea>
-    </form>
-    <script src="./../javascript/demo.js" type="module"></script>
-  </body>
+    </div>
+    <div id="preview"></div>
+    <label>Rendering Tree</label>
+    <textarea id="math_tree" wrap="off" readonly></textarea>
+  </form>
+  <script src="./../javascript/demo.js" type="module"></script>
+</body>
+
 </html>
