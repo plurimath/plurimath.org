@@ -54,4 +54,13 @@ function demoEngine(returnBoolean = false) {
 
 function swapInputOutput() {
   event.preventDefault();
+  const toValueForFrom = document.querySelector("#to").value
+  const toFmt = document.querySelector("#tofmt")
+  const fromFmt = document.querySelector("#fromfmt")
+  const tofmtSelectedIndex = toFmt.selectedIndex
+  const fromFmtSelectedIndex = fromFmt.selectedIndex
+  document.querySelector("#from").value = toValueForFrom
+  toFmt.selectedIndex = fromFmtSelectedIndex
+  fromFmt.selectedIndex = tofmtSelectedIndex
+  demoConvert()
 }

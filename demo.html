@@ -13,7 +13,6 @@ description: Demo.
   <style>
     form {
       display: flex;
-      width: 70%;
       flex-direction: column;
       row-gap: 1em;
       padding: 1em 1em;
@@ -39,15 +38,62 @@ description: Demo.
       align-items: center;
     }
 
+    #input,
+    #output {
+      display: flex;
+      flex-direction: column;
+      gap: 10px !important;
+    }
+
+    #output {
+      align-items: flex-end;
+    }
+
     #input>textarea,
     #output>textarea {
       width: 29.5vw;
     }
 
-    #output {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
+    @media (max-width: 500px) {
+      form {
+        width: 80%;
+      }
+    }
+
+    @media (max-width: 829px) {
+
+      form {
+        max-width: 88%;
+      }
+
+      #input>textarea,
+      #output>textarea {
+        width: 100%;
+      }
+
+      #output {
+        align-items: flex-start !important;
+      }
+
+      #io-section {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      #swap-icon:before {
+        content: "\21c5" !important;
+      }
+
+      #math_tree,
+      #preview {
+        width: 100%;
+      }
+
+      #options {
+        flex-wrap: wrap;
+        gap: .5rem;
+        padding-top: 1rem;
+      }
     }
 
     #io-section {
@@ -57,7 +103,12 @@ description: Demo.
     }
 
     #options {
+      display: flex;
+      flex-direction: column;
+      place-self: center;
       align-content: center;
+      justify-items: center;
+      gap: 1rem;
     }
 
     textarea {
@@ -117,6 +168,7 @@ description: Demo.
       height: 0;
       width: 0;
     }
+
     .button-1 {
       background-color: transparent;
       border-radius: 8px;
@@ -144,9 +196,15 @@ description: Demo.
       touch-action: manipulation;
     }
 
-    .button-1:hover,
-    .button-1:focus {
-      background-color: #6e31ed;
+    #swap-button {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #swap-icon:before {
+      font-size: 30px;
+      font-style: normal;
+      content: "\21c4";
     }
   </style>
 </head>
@@ -171,7 +229,7 @@ description: Demo.
       </div>
       <div id="options">
         <div id="input-swapper">
-          <button id="swap-button" class="button-1" role="button">&#x2190;</button>
+          <button id="swap-button" class="button-1" role="button"><i id="swap-icon"></i>Swap</button>
         </div>
         <div class="engine-toggler">
           <input id="engine-toggle" type="checkbox" class="hide-me" checked>
