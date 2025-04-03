@@ -35,8 +35,16 @@ function changeDemoEngine() {
 }
 
 function demoConvert() {
-  changeDemoEngine();
-  converter(document.getElementById("fromfmt").value, demoEngine);
+  const overlay = document.getElementById("overlay")
+  const loader = document.getElementById("loader")
+  loader.style.display = "block";
+  overlay.style.display = "block";
+  setTimeout(() => {
+    changeDemoEngine()
+    converter(document.getElementById("fromfmt").value, demoEngine)
+    loader.style.display = "none";
+    overlay.style.display = "none";
+  }, 1)
 }
 
 function updateEngineName() {
