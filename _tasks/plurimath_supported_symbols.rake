@@ -3,9 +3,7 @@ require "plurimath"
 task :symbols_yaml_file do
   utility = Plurimath::Utility
   symbols_array = []
-  utility.symbols_files.each do |file_path|
-    file_name = File.basename(file_path, ".rb")
-    symbol_object = utility.get_symbol_class(file_name)
+  utility.symbols_files.each do |symbol_object|
     temp_hash = {}
     symbol_object::INPUT.map do |lang, symbols|
       symbols.flatten!
