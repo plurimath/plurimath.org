@@ -55,6 +55,7 @@ function converter(from_fmt, mathmlEngine = currentEngine) {
   const tofmt = document.getElementById("tofmt").value;
   const pre_render = document.getElementById("preview");
   const math_tree  = document.getElementById("math_tree");
+  const intent_box = document.getElementById("display-intent");
 
   // empty result
   to.value = "";
@@ -65,7 +66,9 @@ function converter(from_fmt, mathmlEngine = currentEngine) {
 
   const pm = new Plurimath(from.value, from_fmt);
   const mathml = pm.toMathml();
-  to.value = pm["to"+tofmt]();
+  const mathml_intent = intent_box?.parentElement?.style?.display == "block" && intent_box.checked 
+
+  to.value = pm["to"+tofmt](mathml_intent);
   pre_render.innerHTML = mathml;
   pre_render.setAttribute("math-content", mathml);
   math_tree.value = pm.toDisplay(tofmt.toLowerCase());
