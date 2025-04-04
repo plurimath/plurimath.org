@@ -206,6 +206,20 @@ description: Demo.
       font-style: normal;
       content: "\21c4";
     }
+
+    #mathml-intent {
+      margin: 0 1rem 0 1rem;
+      display: none;
+    }
+
+    label[for="display-intent"] {
+      font-size: 1.1em;
+      color: #333;
+    }
+
+    input#display-intent {
+      transform: scale(1.2);
+    }
   </style>
 </head>
 
@@ -241,16 +255,22 @@ description: Demo.
         </div>
       </div>
       <div id="output">
-        <div id="output-options">
-          <label>Output</label>&nbsp&nbsp
-          <select id="tofmt">
-            <option value="Asciimath">Asciimath</option>
-            <option value="Omml">Omml</option>
-            <option value="Html">Html</option>
-            <option selected value="Mathml">Mathml</option>
-            <option value="Latex">Latex</option>
-            <option value="Unicodemath">UnicodeMath</option>
-          </select>
+        <div style="display: flex; direction: row;">
+          <div id="output-options">
+            <label>Output</label>&nbsp&nbsp
+            <select id="tofmt">
+              <option value="Asciimath">Asciimath</option>
+              <option value="Omml">Omml</option>
+              <option value="Html">Html</option>
+              <option selected value="Mathml">Mathml</option>
+              <option value="Latex">Latex</option>
+              <option value="Unicodemath">UnicodeMath</option>
+            </select>
+          </div>
+          <div id="mathml-intent">
+            <input id="display-intent" type="checkbox" class="display-intent">
+            <label for="display-intent">Display Intent</label>
+          </div>
         </div>
         <textarea id="to" readonly></textarea>
       </div>
