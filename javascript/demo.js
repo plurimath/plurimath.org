@@ -11,6 +11,7 @@ import { converter, insertMathJax, capitalize, inputTimeouts } from "./core.js";
     document.removeEventListener("focus", event.target);
   });
   document.querySelector("#fromfmt").addEventListener("change", changeInputValue);
+  document.querySelector("#display-intent").addEventListener("change", demoConvert);
 })();
 
 
@@ -35,6 +36,7 @@ function changeDemoEngine() {
 }
 
 function demoConvert() {
+  mathmlIntent()
   changeDemoEngine();
   converter(document.getElementById("fromfmt").value, demoEngine);
 }
@@ -63,4 +65,11 @@ function swapInputOutput() {
   toFmt.selectedIndex = fromFmtSelectedIndex
   fromFmt.selectedIndex = tofmtSelectedIndex
   demoConvert()
+}
+
+function mathmlIntent() {
+  const to = document.getElementById("tofmt");
+  const mathmlIntent = document.getElementById("mathml-intent");
+  const displayProperty = to.value == "Mathml" ? "block" : "none";
+  mathmlIntent.style.display = displayProperty;
 }
