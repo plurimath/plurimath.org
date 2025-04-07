@@ -54,6 +54,10 @@ description: Demo.
       width: 29.5vw;
     }
 
+    #fromfmt {
+      max-width: fit-content;
+    }
+
     @media (max-width: 500px) {
       form {
         width: 80%;
@@ -207,6 +211,11 @@ description: Demo.
       content: "\21c4";
     }
 
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+    }
+
     #mathml-intent {
       margin: 0 1rem 0 1rem;
       display: none;
@@ -255,7 +264,7 @@ description: Demo.
         </div>
       </div>
       <div id="output">
-        <div style="display: flex; direction: row;">
+        <div class="flex-row">
           <div id="output-options">
             <label>Output</label>&nbsp&nbsp
             <select id="tofmt">
