@@ -1,21 +1,29 @@
 import { converter, insertMathJax, capitalize, inputTimeouts } from "./core.js";
 
 (() => {
+  const fromfmt = document.querySelector("#fromfmt")
   document.addEventListener("DOMContentLoaded", demoConvert);
   document.querySelector("#swap-button").addEventListener("click", swapInputOutput)
   document.querySelector("#engine-toggle").addEventListener("change", updateEngineName);
-  document.querySelector("#from").addEventListener("input", function(event) { inputTimeouts(event, demoConvert) });
+  document.querySelector("#from").addEventListener("input", function(event) {
+    if (document.querySelector("#fromfmt").value == "latex"){
+      updateSpecialCharacters(event);
+    }
+    inputTimeouts(event, demoConvert);
+  });
   document.querySelector("#tofmt").addEventListener("change", function (event) { inputTimeouts(event, demoConvert) });
-  document.querySelector("#fromfmt").addEventListener("focus", () => {
+  fromfmt.addEventListener("focus", () => {
     event.target.dataset.pre_selected = event.target.value;
     document.removeEventListener("focus", event.target);
   });
-  document.querySelector("#fromfmt").addEventListener("change", changeInputValue);
+  fromfmt.addEventListener("change", changeInputValue);
   document.querySelector("#display-intent").addEventListener("change", demoConvert);
 })();
 
 
 function changeInputValue() {
+  if (document.querySelector("#from").value.trim("") == "") return;
+
   const pre_selected = this.dataset.pre_selected;
   this.dataset.pre_selected = this.value;
   const [from, pm] = converter(pre_selected, demoEngine)
@@ -72,4 +80,19 @@ function mathmlIntent() {
   const mathmlIntent = document.getElementById("mathml-intent");
   const displayProperty = to.value == "Mathml" ? "block" : "none";
   mathmlIntent.style.display = displayProperty;
+}
+
+function updateSpecialCharacters(event) {
+  if (event.inputType.includes("delete")) { return };
+
+  const SPECIAL_CHARACTERS = ["&", "-", "=", "+", "#", "@", "!", ",", "."];
+  const input = event.target;
+  
+  // Add backslash before special chars only if not already escaped
+  input.value = input.value.split('').map((char, i, arr) => {
+    if (SPECIAL_CHARACTERS.includes(char) && arr[i-1] !== '\\') {
+      return '\\' + char;
+    }
+    return char;
+  }).join('');
 }
