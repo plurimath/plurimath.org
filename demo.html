@@ -94,6 +94,12 @@ description: Demo.
         gap: .5rem;
         padding-top: 1rem;
       }
+
+      #flash-messages {
+        position: relative !important;
+        margin: 0.5rem;
+        right: 0 !important;
+      }
     }
 
     #io-section {
@@ -222,6 +228,7 @@ description: Demo.
     }
 
     .loader {
+      display: none;
       border: 8px solid #f3f3f3;
       /* Light grey */
       border-top: 8px solid #3498db;
@@ -248,6 +255,7 @@ description: Demo.
     }
 
     #overlay {
+      display: none;
       position: fixed;
       top: 0;
       left: 0;
@@ -276,8 +284,8 @@ description: Demo.
 </head>
 
 <body>
-  <div id="overlay" style="display: none;"></div>
-  <div id="loader" style="display: none;" class="loader">....</div>
+  <div id="overlay"></div>
+  <div id="loader" class="loader">....</div>
   <div id="flash-messages">
     <div id="error">
       An error occurred while processing your input. Please try again or report this issue if it persists.
