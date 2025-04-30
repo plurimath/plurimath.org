@@ -234,8 +234,7 @@ description: Demo.
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      z-index: 1000;
-      /* Ensure it appears above other content */
+      z-index: 40;
     }
 
     @keyframes spin {
@@ -255,10 +254,23 @@ description: Demo.
       width: 100%;
       height: 100%;
       background-color: rgba(255, 255, 255, 0.7);
-      /* Semi-transparent white */
       backdrop-filter: blur(5px);
-      /* Blur effect */
-      z-index: 1000;
+      z-index: 40;
+    }
+
+    #flash-messages {
+      margin-top: 0.5rem;
+      position: absolute;
+      right: 2.6rem;
+      z-index: 41;
+    }
+
+    #flash-messages>#error {
+      display: none;
+      padding: .6rem 1rem;
+      border-radius: .9rem;
+      background-color: #f44336;
+      color: white;
     }
   </style>
 </head>
@@ -266,6 +278,11 @@ description: Demo.
 <body>
   <div id="overlay" style="display: none;"></div>
   <div id="loader" style="display: none;" class="loader">....</div>
+  <div id="flash-messages">
+    <div id="error">
+      An error occurred while processing your input. Please try again or report this issue if it persists.
+    </div>
+  </div>
   <form>
     <h2>Live Demo</h2>
     <div id="io-section">
