@@ -1,4 +1,4 @@
-import { converter, insertMathJax, capitalize, inputTimeouts } from "./core.js";
+import { converter, insertMathJax, capitalize, inputTimeouts, flashMessage } from "./core.js";
 
 (() => {
   const fromfmt = document.querySelector("#fromfmt")
@@ -24,14 +24,30 @@ import { converter, insertMathJax, capitalize, inputTimeouts } from "./core.js";
 function changeInputValue() {
   if (document.querySelector("#from").value.trim("") == "") return;
 
-  const pre_selected = this.dataset.pre_selected;
-  this.dataset.pre_selected = this.value;
-  const [from, pm] = converter(pre_selected, demoEngine)
-  from.value = pm["to"+capitalize(this.value)]();
+  const overlay = document.getElementById("overlay")
+  const loader = document.getElementById("loader")
+  loader.style.display = "block";
+  overlay.style.display = "block";
+  setTimeout(() => {
+    try {
+      const pre_selected = this.dataset.pre_selected;
+      this.dataset.pre_selected = this.value;
+      const [from, pm] = converter(pre_selected, demoEngine)
+      from.value = pm["to"+capitalize(this.value)]();
+    }
+    catch (error) {
+      console.error(error);
+      flashMessage();
+    }
+    finally {
+      loader.style.display = "none";
+      overlay.style.display = "none";
+    }
+  }, 1)
 }
 
 function changeDemoEngine() {
-  const isMathJax = demoEngine(true);
+  const isMathJax = isDemoEngineMathJax();
   if (isMathJax) { return insertMathJax() }
 
   const script = document.getElementById("MathJax-script");
@@ -44,14 +60,30 @@ function changeDemoEngine() {
 }
 
 function demoConvert() {
-  mathmlIntent()
-  changeDemoEngine();
-  converter(document.getElementById("fromfmt").value, demoEngine);
+  const overlay = document.getElementById("overlay")
+  const loader = document.getElementById("loader")
+  loader.style.display = "block";
+  overlay.style.display = "block";
+  setTimeout(() => {
+    try {
+      mathmlIntent()
+      changeDemoEngine()
+      converter(document.getElementById("fromfmt").value, demoEngine)
+    }
+    catch (error) {
+      console.error(error);
+      flashMessage();
+    }
+    finally {
+      loader.style.display = "none";
+      overlay.style.display = "none";
+    }
+  }, 1)
 }
 
 function updateEngineName() {
   const engineNameElement = document.querySelector("#toggle-state")
-  engineNameElement.innerHTML = demoEngine(true) ? "MathJax" : "Browser native"
+  engineNameElement.innerHTML = isDemoEngineMathJax ? "MathJax" : "Browser native"
   changeDemoEngine();
 }
 
@@ -60,6 +92,10 @@ function demoEngine(returnBoolean = false) {
   if (returnBoolean) { return isMathJax }
 
   return isMathJax ? "mathjax" : "mathml" 
+}
+
+function isDemoEngineMathJax() {
+  return document.getElementById("engine-toggle").checked
 }
 
 function swapInputOutput() {

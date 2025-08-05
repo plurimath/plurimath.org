@@ -84,4 +84,12 @@ function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-export { Initialize, insertMathJax, converter, inputTimeouts, capitalize }
+function flashMessage(type = "error", timeout = 5000) {
+  const message = document.querySelector(`#flash-messages > #${type}`);
+  message.style.display = "block";
+  setTimeout(() => {
+    message.style.display = "none";
+  }, timeout);
+}
+
+export { Initialize, insertMathJax, converter, inputTimeouts, capitalize, flashMessage }

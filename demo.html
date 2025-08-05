@@ -98,6 +98,12 @@ description: Demo.
         gap: .5rem;
         padding-top: 1rem;
       }
+
+      #flash-messages {
+        position: relative !important;
+        margin: 0.5rem;
+        right: 0 !important;
+      }
     }
 
     #io-section {
@@ -229,10 +235,71 @@ description: Demo.
     input#display-intent {
       transform: scale(1.2);
     }
+
+    .loader {
+      display: none;
+      border: 8px solid #f3f3f3;
+      /* Light grey */
+      border-top: 8px solid #3498db;
+      /* Blue */
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 40;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(5px);
+      z-index: 40;
+    }
+
+    #flash-messages {
+      margin-top: 0.5rem;
+      position: absolute;
+      right: 2.6rem;
+      z-index: 41;
+    }
+
+    #flash-messages>#error {
+      display: none;
+      padding: .6rem 1rem;
+      border-radius: .9rem;
+      background-color: #f44336;
+      color: white;
+    }
   </style>
 </head>
 
 <body>
+  <div id="overlay"></div>
+  <div id="loader" class="loader">....</div>
+  <div id="flash-messages">
+    <div id="error">
+      An error occurred while processing your input. Please try again or report this issue if it persists.
+    </div>
+  </div>
   <form>
     <h2>Live Demo</h2>
     <div id="io-section">
