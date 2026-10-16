@@ -6,3 +6,14 @@ https://twitter.com/RiboseUS
 https://.*\.?plurimath\.(com|org).*
 https://gravatar\.com/.*
 https?://(?:www\.)?npmjs\.com(/.*)?
+# Namespace identifiers in literal XML examples are not web resources.
+^http://schemas\.microsoft\.com/office/mac/office/2008/main$
+^http://schemas\.microsoft\.com/office/word/2006/wordml$
+^http://schemas\.microsoft\.com/office/word/2010/wordprocessingCanvas$
+^http://schemas\.microsoft\.com/office/word/2010/wordprocessingDrawing$
+^http://schemas\.microsoft\.com/office/word/2010/wordprocessingGroup$
+^http://schemas\.microsoft\.com/office/word/2010/wordprocessingInk$
+^http://schemas\.microsoft\.com/office/word/2010/wordprocessingShape$
+^http://schemas\.microsoft\.com/office/word/2012/wordml$
+^https://schema\.unitsml\.org/unitsml/1\.0$
+^http://schemas\.microsoft\.com/office/word/2010/wordml$

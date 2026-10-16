@@ -201,7 +201,7 @@ and the first font to implement the OpenType math extension, and was released in
 2007.
 
 The design philosophy and process of Cambria Math is elaborated in the
-http://tiro.com/Articles/mathematical_typesetting.pdf[Mathematical Typesetting: Mathematical and Scientific Typesetting Solutions from Microsoft]
+https://learn.microsoft.com/en-us/typography/cleartype/pdfs/cambriamath.pdf[Mathematical Typesetting: Mathematical and Scientific Typesetting Solutions from Microsoft]
 document edited by Ross Mills and John Hudson, with contributions by Richard
 Lawrence and Murray Sargent.
 
