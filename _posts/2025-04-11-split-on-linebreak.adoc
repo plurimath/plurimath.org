@@ -1,0 +1,155 @@
+---
+layout: post
+title:  "Preserving line breaks across math formats"
+date:   2025-04-11 00:00:00 +0800
+categories:
+  - plurimath
+  - using
+authors:
+  -
+    name: Suleman Uzair
+    email: sulemanuzair600@gmail.com
+    social_links:
+      - https://github.com/suleman-uzair/
+  -
+    name: Ronald Tse
+    email: tse@ribose.com
+    use_picture: assets
+    social_links:
+      - https://www.linkedin.com/in/rhtse/
+      - https://github.com/ronaldtse
+excerpt: >-
+  A calculation can retain every symbol and still lose its layout during
+  conversion. Plurimath offers a way to carry its steps into MathML and OMML
+  as separate equations.
+---
+
+= Preserving line breaks across math formats
+
+== More than a change of syntax
+
+A mathematical expression rarely stays in the format in which it was written.
+An author might enter LaTeX, while the published document needs MathML for
+the web and OMML for Word. This is the sort of publishing problem that
+link:/blog/2023-08-11-introducing-plurimath/[led us to create Plurimath].
+
+Converting the symbols is only part of that job. The layout also tells the
+reader how to follow the math. A line break, for example, can separate one
+step of a calculation from the next:
+
+++++
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mi>x</mi><mo>+</mo><mn>1</mn><mo>=</mo><mn>2</mn>
+  </mstyle>
+</math>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mi>x</mi><mo>=</mo><mn>1</mn>
+  </mstyle>
+</math>
+++++
+
+There is nothing complicated about this calculation. That is what makes it
+useful here: even with every symbol converted correctly, running the two
+steps together would make the result harder to read.
+
+So how should a converter carry that separation into another math language?
+
+== One formula, or separate equations?
+
+One approach is to keep the calculation in a single equation and mark the
+point where a new line should begin. This is Plurimath's default MathML
+output for the example above: one `<math>` element containing a
+`<mo linebreak="newline"/>` marker between the steps.
+
+That leaves the viewer to act on the marker. If it does, the calculation
+can appear on two lines. If it ignores the marker, preserving it in the
+converted markup has not preserved the layout the reader sees.
+
+Another approach is to make each step an equation in its own right. This
+gives the application publishing the result separate equation blocks to
+place in the document, rather than an internal break for the math viewer
+to interpret.
+
+Plurimath supports this second approach through `split_on_linebreak`, an
+export option for MathML and OMML. The distinction is small in the API,
+but useful when a publishing workflow needs to handle the steps separately.
+
+== From LaTeX to MathML
+
+Here is the calculation in LaTeX, with `\\` marking the break between its
+two steps. We parse it once, then ask for separate equations on export:
+
+[source,ruby]
+----
+require "plurimath"
+
+input = <<~'LATEX'
+  x + 1 = 2 \\
+  x = 1
+LATEX
+
+formula = Plurimath::Math.parse(input, :latex)
+puts formula.to_mathml(split_on_linebreak: true)
+----
+
+The result contains two complete `<math>` elements, one for each step.
+The following outline leaves out the expression markup to show the change
+in structure:
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <!-- MathML for x + 1 = 2 -->
+</math>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <!-- MathML for x = 1 -->
+</math>
+----
+
+The actual output includes the symbols and their `<mstyle>` wrappers.
+There is no need to split the LaTeX string and parse each line yourself;
+Plurimath uses the break already present in the parsed formula.
+
+The option belongs to the export call. We can therefore keep the same
+formula and choose the output structure to suit the application consuming
+it. Calling `formula.to_mathml` without the option retains the single
+`<math>` element and its line-break marker.
+
+== The same choice for Word
+
+For a Word publishing workflow, we can export that formula as OMML instead:
+
+[source,ruby]
+----
+puts formula.to_omml(split_on_linebreak: true)
+----
+
+Here, splitting produces two `<m:oMath>` equation elements inside one
+`<m:oMathPara>` paragraph. The surrounding document and the application
+rendering it still determine their placement.
+
+OMML has a
+https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.math.break?view=openxml-3.0.1[manual line-break mechanism]
+of its own. The purpose of this option is to offer separate equation
+elements when that is the structure the publishing application needs.
+
+== Where splitting helps
+
+There is a boundary between preserving the author's breaks and typesetting
+the calculation. `split_on_linebreak` handles the former: it uses explicit
+breaks in the input. It does not decide where a long expression should
+wrap, or align the equals signs in a derivation. Those remain layout
+decisions for the document or math renderer.
+
+For a workflow that already displays internal breaks as intended, the
+default output may be all that is needed. When the application needs each
+step as a separate equation, `split_on_linebreak: true` provides that
+structure without changing the source calculation.
+
+The option was introduced in
+https://github.com/plurimath/plurimath/pull/191[Plurimath 0.7.0]
+and is available on both `to_mathml` and `to_omml`. See the
+link:/usage/[usage guide] for installing Plurimath and converting your own
+formulas.
