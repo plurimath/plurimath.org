@@ -1,0 +1,14 @@
+{
+  "name": "plurimath-website",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build:converter": "node scripts/build-converter.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.0"
+  }
+}
