@@ -42,6 +42,10 @@ language string from the formula object through conversion methods.
 
 ==== AsciiMath
 
+For guidance on grouping, visible parentheses, matrices, text, and decimal
+commas, see the
+https://www.metanorma.org/author/ref/asciimath/[AsciiMath author guide].
+
 From AsciiMath:
 
 [source,ruby]
