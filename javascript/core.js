@@ -23,6 +23,7 @@ function changeEngine() {
 
 function renderPreview(engine) {
   const preview = document.getElementById("preview");
+  preview.dataset.renderer = engine;
   window.MathJax?.typesetClear?.([preview]);
   preview.innerHTML = preview.getAttribute("math-content") || "";
   if (engine !== "mathjax") return;
@@ -43,15 +44,19 @@ function insertMathJax() {
   element.type = "text/javascript";
   element.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js";
   element.async = true;
-  document.head.appendChild(element);
   window.MathJax = {
     startup: {
+      typeset: false,
       ready: () => {
         MathJax.startup.defaultReady();
-        console.info('MathJax is loaded, initialized, and the initial typeset is queued');
+        MathJax.startup.promise.then(() => {
+          const preview = document.getElementById("preview");
+          if (preview.dataset.renderer === "mathjax") renderPreview("mathjax");
+        });
       }
     }
-  }
+  };
+  document.head.appendChild(element);
 }
 
 function inputTimeouts(event, callableFunction = convert) {
