@@ -159,3 +159,10 @@ exclude:
   - Rakefile
   - README.adoc
   - vendor # for deployment
+
+  # Build-only converter sources and Node tooling are not website assets.
+  - javascript/plurimath-ts
+  - node_modules
+  - scripts
+  - package.json
+  - package-lock.json

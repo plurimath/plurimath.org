@@ -1,7 +1,8 @@
-import { converter, insertMathJax, capitalize, inputTimeouts, flashMessage } from "./core.js";
+import { converter, renderPreview, capitalize, inputTimeouts, flashMessage } from "./core.js";
 
 (() => {
   const fromfmt = document.querySelector("#fromfmt")
+  fromfmt.dataset.pre_selected = fromfmt.value;
   document.addEventListener("DOMContentLoaded", demoConvert);
   document.querySelector("#swap-button").addEventListener("click", swapInputOutput)
   document.querySelector("#engine-toggle").addEventListener("change", updateEngineName);
@@ -12,17 +13,16 @@ import { converter, insertMathJax, capitalize, inputTimeouts, flashMessage } fro
     inputTimeouts(event, demoConvert);
   });
   document.querySelector("#tofmt").addEventListener("change", function (event) { inputTimeouts(event, demoConvert) });
-  fromfmt.addEventListener("focus", () => {
-    event.target.dataset.pre_selected = event.target.value;
-    document.removeEventListener("focus", event.target);
-  });
   fromfmt.addEventListener("change", changeInputValue);
   document.querySelector("#display-intent").addEventListener("change", demoConvert);
 })();
 
 
 function changeInputValue() {
-  if (document.querySelector("#from").value.trim("") == "") return;
+  if (document.querySelector("#from").value.trim() === "") {
+    this.dataset.pre_selected = this.value;
+    return;
+  }
 
   const overlay = document.getElementById("overlay")
   const loader = document.getElementById("loader")
@@ -33,7 +33,9 @@ function changeInputValue() {
       const pre_selected = this.dataset.pre_selected;
       this.dataset.pre_selected = this.value;
       const [from, pm] = converter(pre_selected, demoEngine)
-      from.value = pm["to"+capitalize(this.value)]();
+      const format = this.value === "unicode" ? "Unicodemath" : capitalize(this.value);
+      from.value = pm["to"+format]();
+      demoConvert();
     }
     catch (error) {
       console.error(error);
@@ -47,16 +49,7 @@ function changeInputValue() {
 }
 
 function changeDemoEngine() {
-  const isMathJax = isDemoEngineMathJax();
-  if (isMathJax) { return insertMathJax() }
-
-  const script = document.getElementById("MathJax-script");
-  if (!isMathJax && !script) return;
-
-  const preview = document.getElementById("preview")
-  document.head.removeChild(script);
-
-  preview.innerHTML = preview.getAttribute("math-content")
+  renderPreview(demoEngine());
 }
 
 function demoConvert() {
@@ -83,7 +76,7 @@ function demoConvert() {
 
 function updateEngineName() {
   const engineNameElement = document.querySelector("#toggle-state")
-  engineNameElement.innerHTML = isDemoEngineMathJax ? "MathJax" : "Browser native"
+  engineNameElement.innerHTML = isDemoEngineMathJax() ? "MathJax" : "Browser native"
   changeDemoEngine();
 }
 
@@ -98,7 +91,7 @@ function isDemoEngineMathJax() {
   return document.getElementById("engine-toggle").checked
 }
 
-function swapInputOutput() {
+function swapInputOutput(event) {
   event.preventDefault();
   const toValueForFrom = document.querySelector("#to").value
   const toFmt = document.querySelector("#tofmt")
@@ -108,6 +101,7 @@ function swapInputOutput() {
   document.querySelector("#from").value = toValueForFrom
   toFmt.selectedIndex = fromFmtSelectedIndex
   fromFmt.selectedIndex = tofmtSelectedIndex
+  fromFmt.dataset.pre_selected = fromFmt.value;
   demoConvert()
 }
 

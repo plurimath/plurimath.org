@@ -5,3 +5,6 @@ _site
 vendor
 .DS_Store
 Gemfile.lock
+
+node_modules/
+javascript/plurimath.js

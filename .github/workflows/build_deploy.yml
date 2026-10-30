@@ -47,7 +47,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive
+          submodules: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Build TypeScript converter
+        run: npm ci && npm run build:converter
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1

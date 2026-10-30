@@ -19,12 +19,18 @@ Refer to their respective docs for details.
 
 === Getting started
 
-* Ensure you have reasonable Ruby version
+* Ensure you have a suitable Ruby version and Node.js 22 or newer
+* Run `git submodule update --init javascript/plurimath-ts` to fetch the pinned TypeScript converter
+* Run `npm ci` and `npm run build:converter` to build the browser bundle
 * Run `bundle` from within site directory to install Ruby dependencies
 
 === Serving site preview
 
-* Run `jekyll serve` from within site directory
+* Run `bundle exec jekyll serve` from within the site directory
+
+The playground uses the native TypeScript converter from the pinned
+`javascript/plurimath-ts` submodule. It does not require an npm release or Opal.
+Rebuild with `npm run build:converter` after changing the pinned source.
 
 
 == Workflow

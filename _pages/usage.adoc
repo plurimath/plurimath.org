@@ -121,24 +121,29 @@ To MathML:
 
 === General
 
-Plurimath.js, the Javascript version of Plurimath is available at:
+The website's native TypeScript converter is available as a browser module:
 
-* Javascript: https://www.plurimath.org/javascript/plurimath-js/dist/index.js[`index.js`]
-* NPM package: https://www.npmjs.com/package/@plurimath/plurimath[`@plurimath/plurimath`]
+* Javascript: https://www.plurimath.org/javascript/plurimath.js[`plurimath.js`]
+
+The website builds a pinned source revision from
+https://github.com/plurimath/plurimath-ts[`plurimath-ts`].
 
 === Web applications
 
 [source,html]
 ----
 <script type="module">
-  import Plurimath from "https://www.plurimath.org/javascript/plurimath-js/dist/index.js";
+  import Plurimath from "https://www.plurimath.org/javascript/plurimath.js";
 
   const formula = new Plurimath('ubrace(1+2+3+4)_("4 terms")', "asciimath");
   console.log(formula.toLatex());
 </script>
 ----
 
-=== Node.js
+=== Node.js (legacy Opal package)
+
+The published https://www.npmjs.com/package/@plurimath/plurimath[`@plurimath/plurimath`]
+package uses Opal. The instructions below apply to that package.
 
 ==== Install
 
